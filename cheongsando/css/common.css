@@ -7,14 +7,13 @@ body {
     color: #555;
 }
 #wrap {
-    min-width: 1308px; /* 1260px + 24px + 24px = 1308px */
+    min-width: 1308px;
     position: relative;
 }
 .wrapper {
     width: 1260px;
     margin: 0 auto;
 }
-/* 글자를 숨겨야하는 경우 blind 클래스를 사용한다. */
 .blind {
     position: absolute;
     clip: rect(0 0 0 0);
