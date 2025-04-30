@@ -1,0 +1,216 @@
+@import url(common.css);
+@import url(default.css);
+@import url(font.css);
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    margin: 0 30px;
+}
+header .logo {
+    margin: 28px 0 0 0;
+}
+header .inner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+header .inner .gnb ul {
+    display: flex;
+}
+header .inner .gnb ul li a {
+    display: block;
+    padding: 0 32px;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 100px;
+    color: #3d3d3d;
+}
+header .inner .shop {   
+    border-radius: 20px;
+    border: 1px solid #00AC47;
+    font-size: 20px;
+    color: #00AC47;
+    padding: 3px 22px;
+}
+.visual {
+    height: 800px;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    margin: 0 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    padding: 375px 0 8px 0;
+}
+.product {
+    margin: 174px 0 0 0;
+}
+.product .tit h2 {
+    color: #00AC47;
+}
+.product .tit p {
+    margin: 7px 0 0 0;
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #1d1d1d;
+}
+.product .list {
+    margin: 30px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.product .list ul li {
+    width: 297px;
+}
+.product .list ul li a {
+    display: block;
+}
+.product .list ul li a .photo {
+    font-size: 0;
+    line-height: 0;
+}
+.product .list ul li a h3 {
+    margin: 12px 0 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.network {
+    height: 800px;
+    background: url(../images/network_bg.jpg);
+    margin: 174px 0 0 0;
+    color: #fff;
+}
+.network h2 {
+    padding: 250px 0 0 0;
+    color: #00AC47;
+}
+.network .sub_tit {
+    margin:  7px 0 8px 0;
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+.network a {
+    display: inline-block;
+    margin: 50px 0 0 0;
+    padding: 7px 24px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.community {
+    margin: 170px 0 0 0;
+}
+.community .tit h2 {
+    color: #00AC47;
+}
+.community .tit p {
+    margin: 7px 0 0 0;
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #1d1d1d;
+}
+.community .list {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 0 0;
+}
+.community .list .group {
+    width: calc(50% - 12px);
+}
+.community .list .group ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.community .list .group ul li.color,
+.community .list .group ul li.gray {
+    width: calc(50% - 12px);
+}
+.community .list .group ul li.color a,
+.community .list .group ul li.gray a {
+    height: 244px;
+}
+.community .list .group ul li.color.bg1 {
+    background-color: #00AC47;
+    color: #fff;
+}
+.community .list .group ul li.color.bg2 {
+    background-color: #005EB8;
+    color: #fff;
+}
+.community .list .group ul li.gray a {
+    background-color: #F4F4F4;
+}
+.community .list .group ul li.review {
+    width: 100%;
+    color: #fff;
+}
+.community .list .group ul li.review a {
+    height: 375px;
+}
+.community .list .group ul li.review.bg1 a {
+    background: url(../images/community_bg1.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li.review.bg2 a {
+    background: url(../images/community_bg2.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 30px 30px 30px;
+}
+.community .list .group ul li a h3 {
+    margin: 15px 0 30px 0;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .list .group ul li a .date {
+    display: flex;
+    gap: 22px;
+}
+.community .list .group ul li.color a .date,
+.community .list .group ul li.review a .date {
+    color: rgba(255,255,255,0.8)
+}
+.community .list .group ul li.review a .date {
+    color: #666;
+}
+footer {
+    margin: 140px 0 0 0;
+    padding: 66px 0 95px 0;
+    background-color: #000000;
+    color: rgba(255,255,255,0.8);
+}
+footer .f_nav {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 0 0 35px 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 33px;
+}
+footer .f_info {
+    margin: 33px 0 33px 0;
+}
+footer .f_info .group {
+    display: flex;
+    gap: 30px;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}

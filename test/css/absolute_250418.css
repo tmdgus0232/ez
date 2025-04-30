@@ -1,0 +1,85 @@
+@import url(default.css);
+@import url(common.css);
+@import url(font.css);
+header {
+    width: 100%;
+    height: 110px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+}
+header .gnb ul {
+    display: flex;
+    justify-content: center;
+}
+header.gnb ul li a{
+    display: block;
+    line-height: 110px;
+    font-size: 22px;
+    font-weight: 800;
+    padding: 0 26px;
+}
+body {
+    margin: 0 0 400px 0;
+}
+.visual {
+    height: 800px;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    text-align: center;
+    color: #fff;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 270px 0 5px 0;
+}
+.product {
+    margin: 173px 0 0 0;
+}
+.product .wrapper {
+    position: relative;
+}
+.product h2 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.product .list {
+    margin: 35px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.product .list ul li {
+    width: calc(33.33% - 16px);
+}
+.product .list ul li a {
+    display: block;
+    position: relative;
+}
+.product .list ul li a .photo {
+    font-size: 0;
+    line-height: 0;
+}
+.product .list ul li a h3 {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    width: calc(100% - 60px);
+}
+.product .more {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border: 1px solid #666;
+    border-radius: 30px;
+    padding: 6px 42px;
+}

@@ -1,0 +1,146 @@
+@import url(font.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+    color: #555555;
+}
+h1, h2, h3, h4, h5, h6{
+    font-size: inherit;
+    font-weight: inherit;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+em, address{
+    font-style: normal;
+}
+#wrap {
+    min-width: 1300px;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+header {
+    height: 100px;
+}
+header .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 30px 0 0 0;
+}
+header .logo a img {
+    width: 140px;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    padding: 35px 39px 29px 39px;
+    color: #1d1d1d;
+}
+.visual {
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    height: 800px;
+    color: #fff;
+}
+.visual h2 {
+    padding: 85px 0 30px 0;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+.biz {
+    margin: 170px 0 0 0;
+}
+.biz .tit h2 {
+    margin: 0 0 5px 0;
+    color: #004096;
+}
+.biz .tit p {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.biz .list {
+    margin: 25px 0 0 0;
+}
+.biz .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .list ul li {
+    width: 297px;
+}
+.biz .list ul li a {
+    display: block;
+    text-align: center;
+}
+.biz .list ul li a h3 {
+    margin: 15px 0 15px 0;
+    font-size: 35px;
+    letter-spacing: -0.02em;
+    color: #1d1d1d;
+}
+.biz .list ul li .more {
+    display: block;
+    margin: 23px 0 0 0;
+    padding: 17px 0;
+    border: 1px solid #ccc;
+}
+.brand {
+    height: 850px;
+    margin: 125px 0 0 0;
+    background: url(../images/brand_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.brand h2 {
+    padding: 260px 0 5px 0;
+}
+.brand .sub_tit {
+    margin: 0 0 50px 0;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+.brand .cont {
+    padding: 17px 0 0 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+}
+footer {
+    padding: 60px 0 70px 0;
+    background-color: #202020;
+    color: rgba(255,255,255,0.6);
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+footer .f_info {
+    display: flex;
+    margin: 30px 0 7px 0;
+    gap: 30px;
+}

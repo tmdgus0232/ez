@@ -1,0 +1,309 @@
+@import url(default.css);
+@import url(res_common.css);
+@import url(font.css);
+body {
+    margin: 0 0 400px 0;
+}
+/************************************************** news start **************************************************/
+.news {
+    margin: 152px 0 0 0;
+}
+.news .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.news h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.news .list {
+    width: 66.03%;
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+.news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.news .list ul li a .txt {
+    width: calc(100% - 169px);
+}
+.news .list ul li a .txt strong {
+    display: block;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    color: #1d1d1d;
+}
+.news .list ul li a .photo {
+    width: 190px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.news .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news .more {
+    position: absolute;
+    top: 84px;
+    left: 0;
+    padding: 5px 34px 5px 14px;
+    border: 1px solid #999;
+}
+.news .more::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_3_91' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_3_91)'%3E%3Cpath d='M11.5 12.5H6.5C6.35833 12.5 6.23958 12.452 6.14375 12.356C6.04792 12.26 6 12.1411 6 11.9992C6 11.8574 6.04792 11.7388 6.14375 11.6433C6.23958 11.5478 6.35833 11.5 6.5 11.5H11.5V6.5C11.5 6.35833 11.548 6.23958 11.644 6.14375C11.74 6.04792 11.8589 6 12.0008 6C12.1426 6 12.2613 6.04792 12.3568 6.14375C12.4523 6.23958 12.5 6.35833 12.5 6.5V11.5H17.5C17.6417 11.5 17.7604 11.548 17.8562 11.644C17.9521 11.74 18 11.8589 18 12.0008C18 12.1426 17.9521 12.2613 17.8562 12.3568C17.7604 12.4523 17.6417 12.5 17.5 12.5H12.5V17.5C12.5 17.6417 12.452 17.7604 12.356 17.8562C12.26 17.9521 12.1411 18 11.9992 18C11.8574 18 11.7388 17.9521 11.6433 17.8562C11.5478 17.7604 11.5 17.6417 11.5 17.5V12.5Z' fill='%233D3D3D'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 1s;
+}
+.news .more:hover::after {
+    transform: rotate(360deg);
+}
+@media screen and (max-width:640px) {
+    .news {
+        margin: 76px 0 0 0;
+    }
+    .news .wrapper {
+        display: block;
+        justify-content: space-between;
+        position: relative;
+    }
+    .news h2 {
+        font-size: 30px;
+    }
+    .news .list {
+        width: auto;
+        margin: 35px 0 0 0;
+    }
+    .news .list ul li a {
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+    .news .list ul li a .txt {
+        width: calc(100% - 112px);
+    }
+    .news .list ul li a .txt strong {
+        display: block;
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        white-space: normal;
+        overflow: visible;
+        color: #1d1d1d;
+    }
+    .news .list ul li a .photo {
+        width: 95px;
+        height: 60px;
+        border-radius: 8px;
+    }
+    .news .more {
+        font-size: 12px;
+        top: 9px;
+        left: auto;
+        right: 0;
+        padding: 0px 22px 0px 11px;
+        border: 1px solid #999;
+    }
+    .news .more::after {
+        top: 1px;
+        right: 4px;
+        width: 16px;
+        height: 16px;
+    }
+}
+/************************************************** news end **************************************************/
+/************************************************** global start **************************************************/
+.global {
+    margin: 300px 0 0 0;
+}
+.global .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.global .txt {
+    width: calc(50% - 12px);
+    padding: 40px 0;
+}
+.global .txt h2 {
+    position: relative;
+    margin: 0 0 30px 0;
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.global .txt h2::after {
+    content: "";
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    width: 406px;
+    height: 1px;
+    background-color: #ccc;
+}
+.global .photo {
+    width: calc(50% - 12px);
+    overflow: hidden;
+    border-radius: 20px;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px) {
+    .global {
+        margin: 80px 0 0 0;
+    }
+    .global .txt {
+        width: calc(50% - 8px);
+        padding: 20px 0;
+    }
+    .global .txt h2 {
+        font-size: 30px;
+        margin: 0 0 16px 0;
+    }
+    .global .txt h2::after {
+        bottom: -16px;
+        width: 152px;
+    }
+    .global .txt h2 br {
+        display: none;
+    }
+    .global .txt p br {
+        display: none;
+    }
+    .global .photo {
+        width: calc(50% - 8px);
+        border-radius: 8px;
+    }
+}
+/************************************************** global end **************************************************/
+/************************************************** esg start **************************************************/
+.esg {
+    margin: 300px 0 0 0;
+}
+.esg .tit h2 {
+    margin: 0 0 17px 0;
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.esg .list {
+    margin: 17px 0 0 0;
+}
+.esg .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.esg .list ul li {
+    width: calc(25% - 18px);
+}
+.esg .list ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 464px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 0 0 50px 0;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+}
+.esg .list ul li.list1 a {
+    background-image: url(../images/esg_bg1.jpg);
+}
+.esg .list ul li.list2 a {
+    background-image: url(../images/esg_bg2.jpg);
+}
+.esg .list ul li.list3 a {
+    background-image: url(../images/esg_bg3.jpg);
+}
+.esg .list ul li.list4 a {
+    background-image: url(../images/esg_bg4.jpg);
+}
+@media screen and (max-width:640px) {
+    .esg {
+        margin: 300px 0 0 0;
+    }
+    .esg .tit h2 {
+        margin: 0 0 16px 0;
+        font-size: 30px;
+    }
+    .esg .list {
+        margin: 16px 0 0 0;
+    }
+    .esg .list ul {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .esg .list ul li {
+        width: calc(50% - 12px);
+    }
+    .esg .list ul li a {
+        align-items: center;
+        height: 140px;
+        border-radius: 7px;
+        padding: 0;
+        font-size: 20px;
+    }
+}
+/************************************************** esg end **************************************************/
+/************************************************** esg_fix start **************************************************/
+.esg_fix {
+    margin: 300px 0 0 0;
+}
+.esg_fix .wrapper {
+    display: flex;
+}
+.esg_fix .tit {
+    position: sticky;
+    top: 20px;
+    width: 23%;
+}
+.esg_fix .list {
+    width: 57.54%;
+}
+.esg_fix .list ul li a {
+    display: block;
+    height: 464px;
+}
+.esg_fix .list ul li.list1 a {
+    background-image: url(../images/esg_bg1.jpg);
+}
+.esg_fix .list ul li.list2 a {
+    background-image: url(../images/esg_bg2.jpg);
+}
+.esg_fix .list ul li.list3 a {
+    background-image: url(../images/esg_bg3.jpg);
+}
+.esg_fix .list ul li.list4 a {
+    background-image: url(../images/esg_bg4.jpg);
+}
+/************************************************** esg_fix end **************************************************/
