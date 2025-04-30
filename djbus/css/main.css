@@ -1,0 +1,285 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 0 23px 0 23px;
+    line-height: 100px;
+    color: #1D1D1D;
+    font-size: 22px;
+    letter-spacing: -0.05em;
+    position: relative; /* after 정렬의 기준 */
+}
+header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
+    color: #255698;
+    font-weight: 800;
+}
+
+.visual {
+    height: 800px;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual h2 {
+    padding: 291px 0 5px 0;
+    display: block;
+}
+.visual p {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.int {
+    margin: 136px 0 0 0;
+}
+.int .group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.int .group .inner {
+    width: 511px;
+}
+.int .group .inner h2 {
+    color: #255698;
+}
+.int .group.txt_left .inner h2 {
+    margin: 76px 0 8px 0;
+}
+.int .group.txt_right .inner h2 {
+    margin: 104px 0 8px 0;
+}
+.int .group .inner .main_tit {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 1.2;
+}
+.int .group .inner .main_tit strong {
+    color: #255698;
+}
+.int .group .inner .sub_tit {
+    font-size: 20px;
+    margin: 8px 0 14px 0;
+}
+.int .group .inner .btn_wrap {
+    margin: 54px 0 0 0;
+    display: flex;
+    /* a태그가 inline태그라서 좌우로 배치되지만
+       중간에 space 한칸의 여백이 존재함
+       이를 없애고 내가 디자인한대로 정확하게 여백주려고 */
+}
+.int .group .inner .btn_wrap a {
+    color: #255698;
+    border: 1px solid #255698;
+    padding: 12px 29px 12px 29px;
+    border-radius: 25px;
+    display: inline-block;
+    /* a태그에 display:block; inline-block 필수   */
+    margin: 0 10px 0 0;
+}
+/* a태그 중에서 point 클래스를 갖은 a */
+.int .group .inner .btn_wrap a.point {
+    background-color: #255698;
+    color: #fff;
+}
+.int .group .inner .btn_wrap a:hover {
+    border-color: #229EA0;
+    background-color: #229EA0;
+    color: #fff;
+}
+.int .group .photo {
+    overflow: hidden;/* photo가 지정한 영역 밖에 나가는 요소는 숨김 */
+    border-radius: 30px;
+    /* 이미지 하단에 여백 */
+    font-size: 0;
+    line-height: 0;
+}
+.news {
+    height: 800px;
+    background: url(../images/news_bg.jpg) no-repeat center center / cover;
+    margin: 136px 0 0 0;
+    padding: 137px 0 0 0;
+    color: #fff;
+}
+.news .wrapper {
+    position: relative;
+}
+.news .tit h2 {
+    color: #255698;
+}
+.news .tit p {
+    margin: 7px 0 0 0;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.news .tit p strong {
+    color: #255698;
+}
+.news .list {
+    margin: 37px 0 0 0;
+}
+.news .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: calc(33% - 16px);
+    height: 309px;
+    padding: 50px;
+    border-radius: 20px;
+    background-color: rgba(61,61,61,0.6);
+    backdrop-filter: blur(4px);
+}
+.news .list ul li h3 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+.news .list ul li p {
+    margin: 29px 0 74px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255,255,255,0.6);
+}
+.news .list ul li span {
+    display: block;
+    position: relative;
+}
+.news .list ul li span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_118_70' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_118_70)'%3E%3Cpath d='M15.8438 15L12 18.8437L13.75 20.625L19.375 15L13.75 9.375L12 11.1563L15.8438 15ZM15 27.5C13.2708 27.5 11.6458 27.1719 10.125 26.5156C8.60417 25.8594 7.28125 24.9688 6.15625 23.8438C5.03125 22.7188 4.14063 21.3958 3.48438 19.875C2.82812 18.3542 2.5 16.7292 2.5 15C2.5 13.2708 2.82812 11.6458 3.48438 10.125C4.14063 8.60417 5.03125 7.28125 6.15625 6.15625C7.28125 5.03125 8.60417 4.14063 10.125 3.48438C11.6458 2.82812 13.2708 2.5 15 2.5C16.7292 2.5 18.3542 2.82812 19.875 3.48438C21.3958 4.14063 22.7188 5.03125 23.8438 6.15625C24.9688 7.28125 25.8594 8.60417 26.5156 10.125C27.1719 11.6458 27.5 13.2708 27.5 15C27.5 16.7292 27.1719 18.3542 26.5156 19.875C25.8594 21.3958 24.9688 22.7188 23.8438 23.8438C22.7188 24.9688 21.3958 25.8594 19.875 26.5156C18.3542 27.1719 16.7292 27.5 15 27.5ZM15 25C17.7917 25 20.1563 24.0313 22.0938 22.0938C24.0313 20.1563 25 17.7917 25 15C25 12.2083 24.0313 9.84375 22.0938 7.90625C20.1563 5.96875 17.7917 5 15 5C12.2083 5 9.84375 5.96875 7.90625 7.90625C5.96875 9.84375 5 12.2083 5 15C5 17.7917 5.96875 20.1563 7.90625 22.0938C9.84375 24.0313 12.2083 25 15 25Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.news .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 20px 0 0;
+}
+.news .more::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_119_82' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_119_82)'%3E%3Cpath d='M9.16699 10.8334H4.16699V9.16675H9.16699V4.16675H10.8337V9.16675H15.8337V10.8334H10.8337V15.8334H9.16699V10.8334Z' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.promotion .wrapper {
+    position: relative;
+}
+.promotion .tit h2 {
+    margin: 137px 0 0 0;
+    color: #255698;
+}
+.promotion .tit p {
+    margin: 7px 0 0 0;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.promotion .tit p strong {
+    color: #255698;
+}
+.promotion .list {
+    margin: 37px 0 0 0;
+}
+.promotion .list ul{
+    display: flex;
+    justify-content: space-between;
+}
+.promotion .list ul li a .photo img {
+    border-radius: 20px;
+}
+.promotion .list ul li h3 {
+    margin: 7px 0 0 0;
+    text-align: center;
+}
+.promotion .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 20px 0 0;
+}
+.promotion .more::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_119_84' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_119_84)'%3E%3Cpath d='M9.16699 10.8334H4.16699V9.16675H9.16699V4.16675H10.8337V9.16675H15.8337V10.8334H10.8337V15.8334H9.16699V10.8334Z' fill='%233D3D3D' fill-opacity='0.9'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+footer {
+    background-color: #202020;
+    padding: 68px 0 78px 0;
+    color: rgba(255,255,255,0.8);
+    margin: 141px 0 0 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 41px;
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_nav ul li::after {
+    content: ""; /* 필수 */
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -21px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.3);
+}
+/* li중에서 마지막 li의 after가 숨김처리 */
+footer .f_nav ul li:last-child::after {
+    display: none; /* 숨김 */
+}
+footer .f_nav ul li a {
+    display: block;
+}
+footer .f_nav ul li a:hover {
+    text-decoration: underline; /* 밑줄 */
+}
+footer .f_info {
+    margin: 35px 0 30px 0;
+}
+footer .f_info span {
+    margin: 0 16px 0 0;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
