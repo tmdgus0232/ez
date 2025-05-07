@@ -1,0 +1,39 @@
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+    color: #555;
+}
+#wrap {
+    min-width: 1308px;
+    position: relative;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+/* 브라우저 넓이가 640px 이하일 때 적용된다. */
+@media screen and (max-width:640px) {
+    #wrap {
+        min-width: 0px;
+    }
+    .wrapper {
+        /* 넓이는 알아서, 좌우여백 20px를 준다. */
+        width: auto;
+        margin: 0 20px;
+    }
+    body {
+        font-size: 16px;
+    }
+}
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
