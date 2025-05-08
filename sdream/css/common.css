@@ -3,7 +3,10 @@ body {
     font-size: 17px;
     font-weight: 400;
     line-height: 1.5;
+    /* 스페이스 기준 단어별로 줄 바꿈한다. */
     word-break: keep-all;
+    /* 단어가 너무 긴 경우, 강제로 줄 바꿈을 적용한다. */
+    word-wrap: break-word;
     color: #555;
 }
 #wrap {
