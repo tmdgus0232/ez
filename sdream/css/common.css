@@ -3,9 +3,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     line-height: 1.5;
-    /* 스페이스 기준 단어별로 줄 바꿈한다. */
     word-break: keep-all;
-    /* 단어가 너무 긴 경우, 강제로 줄 바꿈을 적용한다. */
     word-wrap: break-word;
     color: #555;
 }
@@ -17,13 +15,11 @@ body {
     width: 1260px;
     margin: 0 auto;
 }
-/* 브라우저 넓이가 640px 이하일 때 적용된다. */
 @media screen and (max-width:640px) {
     #wrap {
         min-width: 0px;
     }
     .wrapper {
-        /* 넓이는 알아서, 좌우여백 20px를 준다. */
         width: auto;
         margin: 0 20px;
     }
