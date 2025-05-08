@@ -1,5 +1,5 @@
-@import url(default.css);
 @import url(common.css);
+@import url(default.css);
 @import url(font.css);
 header {
     width: 100%;

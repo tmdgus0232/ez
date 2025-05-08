@@ -252,16 +252,126 @@ header .tnb .lang {
     background-position: center center;
 }
 /******************** 오버할 경우 ********************/
-.project .list ul li a:hover .photo::before {
-    opacity: 0.9;
+@media screen and (min-width:641px) {
+    .project .list ul li a:hover .photo::before {
+        opacity: 0.9;
+    }
+    .project .list ul li a:hover .txt p {
+        display: block;
+    }
+    .project .list ul li a:hover .txt span {
+        /* none으로 숨긴 요소는 보통 block으로 보이게 한다. */
+        display: inline-block;
+    }
 }
-.project .list ul li a:hover .txt p {
-    display: block;
+@media screen and (max-width:640px) {
+    .project {
+        margin: 84px 0 0 0;
+    }
+    .project .wrapper {
+        /* flex 해제, display 다른 속성 값을 주면 해제된다. */
+        display: block;
+    }
+    .project .tit {
+        /* sticky를 해제하기 위한 값이다. */
+        position: relative;
+        /* top 값을 지정하지 않은 것처럼 취소하는 값이다. 0은 아니다. */
+        top: auto;
+    }
+    .project .tit h2 {
+        margin: 0 0 5px 0;
+    }
+    .project .list {
+        /* block 요소이기 때문에 100%가 들어간다. */
+        width: auto;
+        margin: 25px 0 0 0;
+    }
+    .project .list ul {
+        /* 위아래, 좌우 */
+        gap: 10px 18px;
+    }
+    .project .list ul li {
+        /* 
+            100% / 한줄에 보일 li의 개수 = 50% 
+            한 줄에 있는 여백의 총합 / 한 줄에 보일 li의 개수 = 18px / 2 = 9px
+        */
+        width: calc(50% - 9px);
+    }
+    /* odd - 홀수, even - 짝수 */
+    .project .list ul li:nth-child(even) {
+        /* 오른쪽 올린거 취소 */
+        transform: none;
+    }
+    .project .list ul li a .photo {
+        height: 152px;
+        border-radius: 5px;
+    }
+    .project .list ul li a .txt {
+        /* absolute 해제 */
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: auto;
+        padding: 10px 0 0 0;
+        color: #1d1d1d;
+    }
+    .project .list ul li a .txt h3 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .project .list ul li a .txt h3 br {
+        display: none;
+    }
+    .project .list ul li a .txt p {
+        display: none;
+        margin: 10px 0;
+        color: rgba(255,255,255,0.8);
+    }
+    .project .list ul li a .txt span {
+        /* 태그가 존재하지 않는 것처럼 코딩되어 숨겨진다. */
+        display: none;
+        color: rgba(255,255,255,0.6);
+        padding: 0 22px 0 0;
+        /* after 정렬의 기준 */
+        position: relative;
+    }
+    .project .list ul li a .txt span::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.45863 4.56311H0.9375C0.777875 4.56311 0.64425 4.50923 0.536625 4.40148C0.428875 4.29386 0.375 4.16023 0.375 4.00061C0.375 3.84098 0.428875 3.70736 0.536625 3.59973C0.64425 3.49198 0.777875 3.43811 0.9375 3.43811H9.45863L6.98944 0.968922C6.87794 0.857297 6.82288 0.726734 6.82425 0.577234C6.82575 0.427734 6.88081 0.294798 6.98944 0.178423C7.10581 0.0621726 7.23944 0.00210918 7.39031 -0.00176582C7.54131 -0.00564082 7.675 0.0506092 7.79137 0.166984L11.1504 3.52605C11.2207 3.5963 11.2702 3.67036 11.2989 3.74823C11.3278 3.82611 11.3422 3.91023 11.3422 4.00061C11.3422 4.09098 11.3278 4.17511 11.2989 4.25298C11.2702 4.33086 11.2207 4.40492 11.1504 4.47517L7.79137 7.83423C7.67975 7.94573 7.54731 8.0008 7.39406 7.99942C7.24069 7.99792 7.10581 7.93905 6.98944 7.8228C6.88081 7.70642 6.82456 7.57467 6.82069 7.42755C6.81681 7.28042 6.87306 7.14867 6.98944 7.0323L9.45863 4.56311Z' fill='white' fill-opacity='0.6'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    /******************** 오버할 경우 ********************/
+    .project .list ul li a:hover .photo::before {
+        opacity: 0.9;
+    }
+    .project .list ul li a:hover .txt p {
+        display: block;
+    }
+    .project .list ul li a:hover .txt span {
+        /* none으로 숨긴 요소는 보통 block으로 보이게 한다. */
+        display: inline-block;
+    }
 }
-.project .list ul li a:hover .txt span {
-    /* none으로 숨긴 요소는 보통 block으로 보이게 한다. */
-    display: inline-block;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 footer {
     margin: 1000px 0 0 0;
 }
