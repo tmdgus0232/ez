@@ -379,14 +379,14 @@ header .tnb .lang {
     right: 20px;
     width: 12px;
     height: 12px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_40_1767' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_40_1767)'%3E%3Cpath d='M9.16797 10.8334H4.16797V9.16675H9.16797V4.16675H10.8346V9.16675H15.8346V10.8334H10.8346V15.8334H9.16797V10.8334Z' fill='%23395886'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.16797 6.83342H0.167969V5.16675H5.16797V0.166748H6.83464V5.16675H11.8346V6.83342H6.83464V11.8334H5.16797V6.83342Z' fill='%23395886'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: center center;
 }
 @media screen and (min-width:641px) {
     .news .list ul li a:hover {
         background-color: #395886;
-        box-shadow: 10px 10px 10px 0 rgba(0,0,0,0,15);
+        box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.15);
     }
     .news .list ul li a:hover .subject strong {
         color: #395886;
@@ -404,7 +404,7 @@ header .tnb .lang {
         color: #fff;
     }
     .news .more:hover:after {
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_40_1767' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_40_1767)'%3E%3Cpath d='M9.16797 10.8334H4.16797V9.16675H9.16797V4.16675H10.8346V9.16675H15.8346V10.8334H10.8346V15.8334H9.16797V10.8334Z' fill='%23395886'/%3E%3C/g%3E%3C/svg%3E%0A");
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.16797 6.83342H0.167969V5.16675H5.16797V0.166748H6.83464V5.16675H11.8346V6.83342H6.83464V11.8334H5.16797V6.83342Z' fill='white'/%3E%3C/svg%3E%0A");
     }
 }
 @media screen and (max-width:640px) {
@@ -463,9 +463,9 @@ header .tnb .lang {
         text-align: left;
     }
     .news .more {
-        top: 25px;
-        width: 24px;
-        height: 24px;
+        top: 15px;
+        width: 36px;
+        height: 36px;
         padding: 0;
         border-radius: 50%;
     }
@@ -474,7 +474,7 @@ header .tnb .lang {
         right: 0;
         width: 100%;
         height: 100%;
-        background-size: 24px;
+        background-size: 18px;
     }
     .news .more span {
         display: none;
@@ -482,6 +482,7 @@ header .tnb .lang {
 }
 .webzine {
     padding: 145px 0 145px 0;
+    position: relative;
     color: #fff;
     background-color: #395886;
 }
@@ -496,11 +497,13 @@ header .tnb .lang {
     position: relative;
     left: calc(50% - 630px);
     width: calc(50% + 630px);
-    margin: 45px 0 0 0;
+    padding: 45px 0 0 0;
+    overflow: hidden;
 }
 .webzine .list ul {
     display: flex;
     gap: 24px;
+    width: 1605px;
 }
 .webzine .list ul li {
     width: 297px;
@@ -509,6 +512,7 @@ header .tnb .lang {
     display: block;
     border-radius: 20px;
     overflow: hidden;
+    transition: 0.5s;
     color: #555;
     background-color: #fff;
 }
@@ -520,23 +524,136 @@ header .tnb .lang {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.webzine .list ul li a .txt {
+    padding: 17px 25px 25px 25px;
 }
 .webzine .list ul li a .txt strong {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #395886;
 }
 .webzine .list ul li a .txt h3 {
+    height: 2.4em;
+    margin: 17px 0 0 0;
+    overflow: hidden;
+    font-family: "Gmarket Sans";
     font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    color: #1d1d1d;
+
+}
+.webzine .list ul li a .txt p {
+    margin: 17px 0 17px 0;
+    height: 3em;
+    overflow: hidden;
+}
+.webzine .more {
+    position: absolute;
+    top: 200px;
+    right: calc(50% - 630px);
+    padding: 6px 38px 6px 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+}
+.webzine .more::after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.16797 6.83342H0.167969V5.16675H5.16797V0.166748H6.83464V5.16675H11.8346V6.83342H6.83464V11.8334H5.16797V6.83342Z' fill='white'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media screen and (min-width:641px) {
+    .webzine .list ul li a:hover {
+        transform: translate(0, -10px);
+        box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.15);
+    }
+    .webzine .list ul li a:hover .photo img {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+    .webzine .more:hover {
+        background-color: #fff;
+        border-color: #fff;
+        color: #395886;
+    }
+    .webzine .more:hover:after {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.16797 6.83342H0.167969V5.16675H5.16797V0.166748H6.83464V5.16675H11.8346V6.83342H6.83464V11.8334H5.16797V6.83342Z' fill='%23395886'/%3E%3C/svg%3E%0A");
+    }
 }
 @media screen and (max-width:640px) {
     .webzine {
         padding: 50px 0 50px 0;
     }
+    .webzine .tit {
+        margin-right: 36px;
+    }
     .webzine .tit p {
         margin: 5px 0 0 0;
     }
     .webzine .list {
-        left: 20px;
-        width: calc(100% - 20px);
+        left: 0;
+        width: 100%;
+        padding: 25px 0 10px 20px;
+        overflow-x: auto;
+    }
+    .webzine .list ul { 
+        gap: 16px;
+        width: 1330px;
+    }
+    .webzine .list ul li {
+        width: 250px;
+    }
+    .webzine .list ul li a {
+        border-radius: 10px;
+    }
+    .webzine .list ul li a .photo {
+        height: 240px;
+    }
+    .webzine .list ul li a .txt {
+        padding: 15px;
+    }
+    .webzine .list ul li a .txt strong {
+        font-size: 16px;
+    }
+    .webzine .list ul li a .txt h3 {
+        margin: 17px 0 0 0;
+        font-size: 16px;
+    }
+    .webzine .list ul li a .txt p {
+        margin: 10px 0 10px 0;
+    }
+    .webzine .list ul li a .txt .date {
+        font-size: 16px;
+    }
+    .webzine .more {
+        top: 90px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: #fff;
+    }
+    .webzine .more::after {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 18px;
+    }
+    .webzine .more span {
+        display: none;
     }
 }
 footer {
