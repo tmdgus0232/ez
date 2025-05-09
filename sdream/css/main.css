@@ -574,11 +574,11 @@ header .tnb .lang {
     background-position: center center;
 }
 @media screen and (min-width:641px) {
-    .webzine .list ul li a:hover {
+    .webzine .list ul li:hover a {
         transform: translate(0, -10px);
         box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.15);
     }
-    .webzine .list ul li a:hover .photo img {
+    .webzine .list ul li:hover a .photo img {
         transform: scale3d(1.2, 1.2, 1);
     }
     .webzine .more:hover {
@@ -654,6 +654,117 @@ header .tnb .lang {
     }
     .webzine .more span {
         display: none;
+    }
+}
+.service {
+    padding: 145px 0 145px 0;
+    background-color: #B1C9EF;
+}
+.service .tit h2 {
+    color: #395886;
+}
+.service .tit p {
+    margin: 17px 0 0 0;
+    color: white;
+}
+.service .list {
+    margin: 45px 0 0 0;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service .list ul li {
+    width: calc(33.33% - 16px);
+}
+.service .list ul li a {
+    position: relative;
+    display: block;
+    padding: 17px 0 17px 30px;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.service .list ul li a::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #395886;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+}
+.service .list ul li a span {
+    display: block;
+    font-size: 15px;
+    color: #1d1d1d;
+}
+.service .list ul li a strong {
+    margin: 17px 0 0 0;
+    font-family: "Gmarket Sans";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    color: #1d1d1d;
+}
+@media screen and (min-width:641px) {
+    .service .list ul li:hover a {
+        background-color: #395886;
+        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.15);
+        transform: translate(-10px, -10px);
+    }
+    .service .list ul li:hover a::after {
+        background-color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9Z' fill='%23395886'/%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li:hover a span {
+        color: #fff;
+    }
+    .service .list ul li:hover a strong {
+        color: #fff;
+    }
+}
+@media screen and (max-width:640px) {
+    .service {
+        padding: 50px 0 50px 0;
+    }
+    .service .tit h2 {
+        font-size: 14px;
+    }
+    .service .tit p {
+        margin: 10px 0 0 0;
+    }
+    .service .list {
+        margin: 25px 0 0 0;
+    }
+    .service .list ul li {
+        width: calc(33.33% - 10.66px);
+    }
+    .service .list ul li a {
+        height: 100%;
+        padding: 17px 20px 92px 20px;
+        text-align: center;
+    }
+    .service .list ul li a::after {
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    .service .list ul li a span {
+        display: none;
+    }
+    .service .list ul li a strong {
+        height: 100%;
+        margin: 20px 0 0 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1d1d1d;
     }
 }
 footer {
