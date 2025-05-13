@@ -1,0 +1,39 @@
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+    word-wrap: break-word;
+    color: #555;
+}
+#wrap {
+    /* 1260 + 20 + 20 */
+    min-width: 1300px;
+    position: relative;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+@media screen and (max-width:640px) {
+    #wrap {
+        min-width: 0px;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+    body {
+        font-size: 16px;
+    }
+}
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
