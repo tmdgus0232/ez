@@ -580,6 +580,7 @@ header .tnb .search {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
 }
 .story .list ul li a .txt strong {
     display: block;
@@ -637,8 +638,7 @@ header .tnb .search {
 @media screen and (min-width:641px) {
     .story .list ul li a:hover .photo img {
         transform: scale3d(1.2, 1.2, 1);
-        transition: 0.5s;
-    } 
+    }
     .story .list ul li a .txt h3 span {
         position: relative; /* after 정렬의 기준 */
     }
@@ -658,9 +658,155 @@ header .tnb .search {
 }
 /***** section - story mobile *****/
 @media screen and (max-width:640px) {
-    
+    .story {
+        margin: 84px 0 0 0;
+    }
+    .story .tit h2 {
+        font-size: 28px;
+    }
+    .story .list {
+        margin: 20px 0 0 0;
+    }
+    .story .list ul {
+        display: block; /* flex 해제 */
+    }
+    .story .list ul li {
+        width: auto;
+        border: 0;
+        border-bottom: 1px solid rgba(93, 93, 93, 0.4);
+        border-radius: 0;
+        padding: 20px 0;
+    }
+    .story .list ul li:first-child {
+        border-top: 1px solid rgba(93, 93, 93, 0.4);
+    }
+    .story .list ul li a {
+        display: flex; /* photo, txt 좌우 배치 */
+        flex-direction: row-reverse; /* 좌우 반전 */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .story .list ul li a .photo {
+        /* width: 36.8%; */
+        width: 118px;
+        height: 78px; /* 짧은거 */
+    }
+    .story .list ul li.long a .photo {
+        height: 78px;
+    }
+    .story .list ul li a .txt {
+        /* width: 57.5%; */
+        width: calc(100% - 135px);
+    }
+    .story .list ul li a .txt strong {
+        margin: 0;
+        /* 1줄 제한 -> 여러줄 허용 */
+        white-space: normal; /* 여러줄 허용 */
+        overflow: visible; /* 넘치는 요소 안자름 */
+        font-size: 16px;
+    }
+    .story .list ul li a .txt h3 {
+        /* 1줄 제한 -> 여러줄 허용 */
+        white-space: normal; /* 여러줄 허용 */
+        overflow: visible; /* 넘치는 요소 안자름 */
+        margin: 0;
+    }
+    .story .list ul li a .txt p {
+        display: none;
+    }
+    .story .more {
+        display: block;
+        position: absolute; /* wrapper를 기준으로 정렬 */
+        top: 5px;
+        right: 0;
+        padding: 0 20px 0 0;
+    }
+    .story .more::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: 0;
+        width: 16px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.33398 5.66732H1.00065C0.811762 5.66732 0.653429 5.60343 0.525651 5.47565C0.397873 5.34787 0.333984 5.18954 0.333984 5.00065C0.333984 4.81176 0.397873 4.65343 0.525651 4.52565C0.653429 4.39787 0.811762 4.33398 1.00065 4.33398H4.33398V1.00065C4.33398 0.811762 4.39787 0.653429 4.52565 0.525651C4.65343 0.397873 4.81176 0.333984 5.00065 0.333984C5.18954 0.333984 5.34787 0.397873 5.47565 0.525651C5.60343 0.653429 5.66732 0.811762 5.66732 1.00065V4.33398H9.00065C9.18954 4.33398 9.34787 4.39787 9.47565 4.52565C9.60343 4.65343 9.66732 4.81176 9.66732 5.00065C9.66732 5.18954 9.60343 5.34787 9.47565 5.47565C9.34787 5.60343 9.18954 5.66732 9.00065 5.66732H5.66732V9.00065C5.66732 9.18954 5.60343 9.34787 5.47565 9.47565C5.34787 9.60343 5.18954 9.66732 5.00065 9.66732C4.81176 9.66732 4.65343 9.60343 4.52565 9.47565C4.39787 9.34787 4.33398 9.18954 4.33398 9.00065V5.66732Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 /************************************************** footer **************************************************/
 footer {
-    margin: 500px 0 0 0;
+    margin: 145px 0 0 0;
+    padding: 145px 0 145px 0;
+    color: #fff;
+    background-color: #34170D;
+}
+footer .wrapper {
+    display: flex; /* slogan, f_info 좌우 배치 */
+    justify-content: space-between;
+    position: relative;
+}
+footer .slogan p {
+    font-size: 45px;
+}
+footer .f_info h3 {
+    font-size: 24px;
+    margin: 0 0 17px 0;
+}
+footer .f_info address,
+footer .f_info ul.tel {
+    margin-bottom: 60px;
+}
+footer .f_info ul.sns {
+    display: flex;
+    gap: 14px;
+}
+footer .copyright {
+    position: absolute; /* wrapper 기준으로 정렬 */
+    bottom: 0;
+    left: 0;
+}
+footer .copyright .f_logo {
+    margin: 0 0 17px 0
+}
+footer .copyright .f_logo img {
+    width: 164px;
+}
+/***** footer mobile *****/
+@media screen and (max-width:640px) {
+    footer {
+        margin: 84px 0 0 0;
+        padding: 84px 0 84px 0;
+    }
+    footer .wrapper {
+        display: block; /* slogan, f_info 좌우 배치 */
+    }
+    footer .slogan p {
+        font-size: 20px;
+    }
+    footer .f_info {
+        margin: 30px 0 0 0;
+        font-size: 16px;
+    }
+    footer .f_info h3 {
+        font-size: 18px;
+        margin: 0 0 5px 0;
+    }
+    footer .f_info address,
+    footer .f_info ul.tel {
+        margin-bottom: 20px;
+    }
+    footer .f_info ul.sns {
+        margin-bottom: 30px;
+    }
+    footer .copyright {
+        position: relative; /* absolute 해제 */
+        bottom: auto;
+        left: auto;
+    }
+    footer .copyright .f_logo {
+        margin: 0 0 5px 0
+    }
+    footer .copyright .f_logo img {
+        width: 132px;
+    }
 }
