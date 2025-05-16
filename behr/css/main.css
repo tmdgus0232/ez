@@ -180,10 +180,6 @@ header .gnb .gnb_wrap ul li a {
         width: auto;
         margin: 16px 0 0 0;
     }
-    .product .list ul li a {
-        display: block;
-        position: relative;
-    }
     .product .list ul li a .photo {
         height: 140px;
     }
