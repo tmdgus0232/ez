@@ -1,0 +1,145 @@
+@import url(default.css);
+@import url(font.css);
+@import url(res_common.css);
+/**************************************** header **************************************************/
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    transition: 0.5s;
+}
+header .wrapper {
+    display: flex; /* logo, gnb, tnb 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    width: 151px;
+    height: 50px;
+    /* contain 로고가 안잘리고, 영역에 맞게 리사이즈 */
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;
+}
+header .gnb .gnb_wrap ul.depth1 {
+    display: flex; /* 1차 메뉴 li 좌우 배치*/
+}
+header .gnb .gnb_wrap ul.depth1 > li > a {
+    /* 1차 메뉴 */
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 100px; /* header와 동일 */
+    color: #fff;
+    padding: 0 22px;
+}
+header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+    display: none;
+}
+header .tnb .search {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.4 27.5L15.95 18.05C15.2 18.65 14.3375 19.125 13.3625 19.475C12.3875 19.825 11.35 20 10.25 20C7.525 20 5.21875 19.0563 3.33125 17.1688C1.44375 15.2813 0.5 12.975 0.5 10.25C0.5 7.525 1.44375 5.21875 3.33125 3.33125C5.21875 1.44375 7.525 0.5 10.25 0.5C12.975 0.5 15.2813 1.44375 17.1688 3.33125C19.0563 5.21875 20 7.525 20 10.25C20 11.35 19.825 12.3875 19.475 13.3625C19.125 14.3375 18.65 15.2 18.05 15.95L27.5 25.4L25.4 27.5ZM10.25 17C12.125 17 13.7188 16.3438 15.0312 15.0312C16.3438 13.7188 17 12.125 17 10.25C17 8.375 16.3438 6.78125 15.0312 5.46875C13.7188 4.15625 12.125 3.5 10.25 3.5C8.375 3.5 6.78125 4.15625 5.46875 5.46875C4.15625 6.78125 3.5 8.375 3.5 10.25C3.5 12.125 4.15625 13.7188 5.46875 15.0312C6.78125 16.3438 8.375 17 10.25 17Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+/***** header가 고정되었을 때 *****/
+header.fixed {
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+}
+header.fixed .logo a {
+    /* 
+        background로 선언하고 배경 이미지, 반복, 위치, 크기 지정하고 이미지만 변경하려고 하면
+        반드시 background-image 라고 속성을 쓰고 변경해야한다.
+        background를 사용하면 모든 반복, 위치, 크기 등의 다른 속성이 취소된다.
+    */
+    background-image: url(../images/logo_b.svg);
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li > a {
+    color: #1d1d1d;
+}
+header.fixed .tnb .search {
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.4 27.5L15.95 18.05C15.2 18.65 14.3375 19.125 13.3625 19.475C12.3875 19.825 11.35 20 10.25 20C7.525 20 5.21875 19.0563 3.33125 17.1688C1.44375 15.2813 0.5 12.975 0.5 10.25C0.5 7.525 1.44375 5.21875 3.33125 3.33125C5.21875 1.44375 7.525 0.5 10.25 0.5C12.975 0.5 15.2813 1.44375 17.1688 3.33125C19.0563 5.21875 20 7.525 20 10.25C20 11.35 19.825 12.3875 19.475 13.3625C19.125 14.3375 18.65 15.2 18.05 15.95L27.5 25.4L25.4 27.5ZM10.25 17C12.125 17 13.7188 16.3438 15.0312 15.0312C16.3438 13.7188 17 12.125 17 10.25C17 8.375 16.3438 6.78125 15.0312 5.46875C13.7188 4.15625 12.125 3.5 10.25 3.5C8.375 3.5 6.78125 4.15625 5.46875 5.46875C4.15625 6.78125 3.5 8.375 3.5 10.25C3.5 12.125 4.15625 13.7188 5.46875 15.0312C6.78125 16.3438 8.375 17 10.25 17Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+}
+/***** header mobile *****/
+@media screen and (max-width:640px) {
+    header {
+        height: 60px;
+    }
+    header .wrapper {
+        margin-right: 0; /* 오른쪽 여백 삭제, gnb_open 배치하려고*/
+    }
+    header .logo a {
+        width: 105px;
+        height: 35px;
+    }
+    header .gnb .gnb_open {
+        display: block;
+        width: 60px;
+        height: 60px;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='18' viewBox='0 0 22 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 3.16667V0.833334H21.5V3.16667H0.5ZM0.5 17.1667V14.8333H21.5V17.1667H0.5ZM0.5 10.1667V7.83333H21.5V10.1667H0.5Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+    }
+    header .tnb {
+        display: none;
+    }
+    /***** header가 고정되었을 때 *****/
+    header.fixed {
+        background-color: #fff;
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+    }
+    header.fixed .logo a {
+        /* 
+            background로 선언하고 배경 이미지, 반복, 위치, 크기 지정하고 이미지만 변경하려고 하면
+            반드시 background-image 라고 속성을 쓰고 변경해야한다.
+            background를 사용하면 모든 반복, 위치, 크기 등의 다른 속성이 취소된다.
+        */
+        background-image: url(../images/logo_b.svg);
+    }
+    header.fixed .gnb .gnb_wrap ul.depth1 > li > a {
+        color: #1d1d1d;
+    }
+    header.fixed .tnb .search {
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.4 27.5L15.95 18.05C15.2 18.65 14.3375 19.125 13.3625 19.475C12.3875 19.825 11.35 20 10.25 20C7.525 20 5.21875 19.0563 3.33125 17.1688C1.44375 15.2813 0.5 12.975 0.5 10.25C0.5 7.525 1.44375 5.21875 3.33125 3.33125C5.21875 1.44375 7.525 0.5 10.25 0.5C12.975 0.5 15.2813 1.44375 17.1688 3.33125C19.0563 5.21875 20 7.525 20 10.25C20 11.35 19.825 12.3875 19.475 13.3625C19.125 14.3375 18.65 15.2 18.05 15.95L27.5 25.4L25.4 27.5ZM10.25 17C12.125 17 13.7188 16.3438 15.0312 15.0312C16.3438 13.7188 17 12.125 17 10.25C17 8.375 16.3438 6.78125 15.0312 5.46875C13.7188 4.15625 12.125 3.5 10.25 3.5C8.375 3.5 6.78125 4.15625 5.46875 5.46875C4.15625 6.78125 3.5 8.375 3.5 10.25C3.5 12.125 4.15625 13.7188 5.46875 15.0312C6.78125 16.3438 8.375 17 10.25 17Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+    }
+}
+/**************************************** section - visual **************************************************/
+.visual {
+    height: 100vh;
+    background: url(../images/visual_bg2.jpg) no-repeat center center / cover;
+    color: #fff;
+    /* 투명한 1px border - margin이 영역 밖으로 못나가게 하는 방법 */
+    border: 1px solid transparent;
+}
+.visual h2 {
+    padding: 44vh 0 0 0;
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+/***** section - visual mobile *****/
+@media screen and (max-width:640px){
+    .visual h2 {
+        /* 400 / 800 * 100 = 50 */
+        margin: 50vh 0 0 0;
+        /* 나의 높이 절반을 밑에서 거꾸로 위로 이동 */
+        transform: translateY(-50%);
+        font-size: 24px;
+        text-align: center;
+    }
+}
+/**************************************** footer **************************************************/
+footer {
+    margin: 3000px 0 0 0;
+}
