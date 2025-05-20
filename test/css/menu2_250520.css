@@ -268,6 +268,7 @@ header.fixed .util .search .search_open {
     }
 }
 .visual {
+    position: relative;
     height: 100vh;
     color: #fff;
     background: url(../images/visual_bg2.jpg) no-repeat center center / cover;
@@ -282,6 +283,13 @@ header.fixed .util .search .search_open {
     .visual p {
         font-size: 20px;
     }
+}
+.visual span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
 footer {
     margin: 2000px 0 500px 0;
