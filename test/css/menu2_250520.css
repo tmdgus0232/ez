@@ -279,17 +279,17 @@ header.fixed .util .search .search_open {
     line-height: 1.2;
     padding: 40vh 0 0 0;
 }
-@media screen and (max-width:768px) {
-    .visual p {
-        font-size: 20px;
-    }
-}
 .visual span {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     text-align: center;
+}
+@media screen and (max-width:768px) {
+    .visual p {
+        font-size: 20px;
+    }
 }
 footer {
     margin: 2000px 0 500px 0;
