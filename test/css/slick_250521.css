@@ -1,0 +1,102 @@
+@import url(common_full.css);
+@import url(default.css);
+@import url(font.css);
+
+.visual .popup .popup_wrap .popup_item {
+    height: 900px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.visual .popup .popup_wrap .popup_item.bg01 {
+    background-image: url(../images/popup01.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg02 {
+    background-image: url(../images/popup02.jpg);
+}
+.visual .popup .popup_wrap .popup_item.bg03 {
+    background-image: url(../images/popup03.jpg);
+}
+.visual .popup .popup_wrap .popup_item h3 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 359px 0 17px 0;
+}
+.visual .slick-next,
+.visual .slick-prev {
+    position: absolute; /* popup_wrap을 기준으로 정렬 */
+    top: 425px;
+    left: 20px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    color: transparent; /* 글자를 안보이게 */
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_108_26' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_108_26)'%3E%3Cpath d='M20.8333 45.8332L0 24.9998L20.8333 4.1665L24.5313 7.86442L7.39583 24.9998L24.5313 42.1353L20.8333 45.8332Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.visual .slick-next {
+    left: auto;
+    right: 20px;
+    transform: rotate(180deg);
+}
+.visual ul.slick-dots {
+    position: absolute; /* popup_wrap을 기준으로 정렬 */
+    bottom: 32px;
+    left: 0;
+    width: 100%;
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: center; /* 가운데 */
+}
+.visual ul.slick-dots li button {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: transparent;
+}
+.visual ul.slick-dots li.slick-active button {
+    background-color: #fff;
+}
+.visual .btn_wrap .ctrl_stop {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+.visual .btn_wrap .ctrl_play {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+@media screen and (max-width:1440px){
+    .visual .slick-next,
+    .visual .slick-prev {
+        display: none !important; /* 숨김 */
+        /* 
+            !important
+            css 적용 우선순위 상관없이 무조건 먼저 실행하도록 하는 명령
+
+            주의, pc, mobile에서 important 남발하면 스타일 꼬임
+        */
+    }
+}
+@media screen and (max-width:768px) {
+    .visual .popup .popup_wrap .popup_item {
+        height: 600px;
+    }
+    .visual .popup .popup_wrap .popup_item h3 {
+        font-size: 28px;
+        padding: 430px 0 136px 0;
+    }
+    .visual .popup .popup_wrap .popup_item p {
+        display: none;
+    }
+    .visual ul.slick-dots {
+        bottom: 25px;
+    }
+}
