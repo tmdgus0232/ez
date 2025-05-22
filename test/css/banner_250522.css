@@ -1,0 +1,70 @@
+@import url(common_full.css);
+@import url(default.css);
+@import url(font.css);
+
+.tour {
+    margin: 150px 0;
+}
+.tour .tit h2 {
+    margin: 0 0 17px 0;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.tour .list {
+    margin: 34px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.tour.acc01 .list ul li {
+    /* width: 25%; */
+    flex: 1 1 0%;
+    transition: 0.5s;
+}
+.tour.acc01 .list ul li.on {
+    /* width: 70%; */
+    flex: 3 1 0%;
+}
+.tour.acc02 .list ul li {
+    /* (24+24+24) / 4 = 18 */
+    flex: 1 1 0%;
+    transition: 0.5s;
+}
+.tour.acc02 .list ul li.on {
+    flex: 3 1 0%;
+}
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 354px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    padding: 0 30px 44px 30px;
+}
+.tour .list ul li.list01 a {
+    background-image: url(../images/tour01.jpg);
+}
+.tour .list ul li.list02 a {
+    background-image: url(../images/tour02.jpg);
+}
+.tour .list ul li.list03 a {
+    background-image: url(../images/tour03.jpg);
+}
+.tour .list ul li.list04 a {
+    background-image: url(../images/tour04.jpg);
+}
+.tour .list ul li a h3 {
+    font-size: 25px;
+    font-weight: 800;
+}
+.tour .list ul li a p {
+    margin: 5px 0 0 0;
+    display: none;
+}
