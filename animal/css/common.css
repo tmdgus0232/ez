@@ -1,0 +1,42 @@
+body {
+    font-family: "LaundryGo", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+    word-wrap: break-word;
+    color: #555;
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 가로 스크롤 삭제 */
+    width: 100%;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+/*
+    1260 * 0.5  = 63 + 63 = 126 + 1260 = 1386
+    20 + 20 = 40 + 1260 = 1300
+*/
+@media screen and (max-width:1300px) {
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width:768px) {
+    body {
+        font-size: 16px;
+    }
+}
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
