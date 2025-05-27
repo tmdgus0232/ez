@@ -14,7 +14,16 @@
     <title>동물보호센터</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <!-- id="skip_content"인 요소로 바로가기 (내부 링크) -->
+        <a href="#skip_content">본문바로가기</a>
+    </div>
     <div id="wrap">
+        <!--
+            header에 마우스를 오버하고너 스크롤을 내리면 fixed 클래스 추가
+            메뉴에 마우스를 오버하면 오버한 li에만 over 클래스 추가
+            모바일에서 메뉴 열기 버튼을 클릭하면 header에 menu_open 클래스 추가
+        -->
         <header>
             <h1 class="logo"><a href="#"><span class="blind">동물보호센터</span></a></h1>
             <nav class="gnb">
@@ -88,7 +97,229 @@
                     </div>
                 </div>
             </section>
-            <section class="find"></section>
+            <section class="find" id="skip_content">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>찾습니다</h2>
+                    </div>
+                    <div class="list">
+                        <div class="tab_list">
+                            <ul role="tablist">
+                                <!-- 
+                                    선택된 li에는 active 클래스 추가, button에 선택됨이라고 씀
+                                    aria-selected가 true면 선택됨, false면 선택안됨
+                                    aria-content li를 눌렀을 때 나타날 탭 콘텐츠 id값
+                                    li를 클릭했을 때 data-content 값을 호출해서 id가 같은 요소만 보이게함
+                                    data-content는 내 맘대로 속성을 추가함, 값을 저장할 공간이 필요해서, 표준 위배
+                                    data-link, data-value 이렇게 data가 들어간 속성은 퍼블이 만든 속성
+                                 -->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tab_item1"><button>가족을<span class="blind">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2" data-content="tab_item2"><button>주인을</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab_content">
+                            <!-- 
+                                가족을, 주인을 탭 콘텐츠를 구분 item1, item2로 클래스명 구분
+                                현재 선택된 탭 콘텐츠는 active 클래스 추가
+                            -->
+                            <div class="tab_item item1 active" id="tab_item1">
+                                <h3 class="blind">가족을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find01.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>믹스견 수컷 3살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>대구광역시 달성군 서재보성타운</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-22</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>미용한지 얼마 안지나 털이 짧음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find02.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>토이 푸들</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>울산광역시 울주군 웅촌면 초천리</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-19</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>가슴에만 조금 흰털이 있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find03.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>골든 리트리버</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 수원시 권선구 스타벅스</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-19</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>사람을 잘따름</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find04.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>코리아 쇼트 헤어</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 화성시 마도면 송정서길</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-18</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>활동량이 많아 마른편</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab_item item2" id="tab_item2">
+                                <h3 class="blind">주인을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find05.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>웰시코기</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>충청남도 논산시 강변로</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-22</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>통통하고 건강함</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find06.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">실종</strong>
+                                                <h4>퍼그</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>제주시 월성로4길리</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-19</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>겁이 많고 잘 움</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find07.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>믹스묘 암컷 2살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>충청남도 공주시 금학초등학교</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-19</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>오른쪽 옆구리에 노란색 점이 있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find08.jpg" alt=""></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>코리아 쇼트 헤어</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>인천광역시 서구 신현동</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-18</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>꼬리 끝이 휘어짐</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="slogan"></section>
             <section class="adopt"></section>
             <section class="review"></section>

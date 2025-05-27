@@ -1,4 +1,109 @@
 $(document).ready(function(){
+    /************************************************** header **************************************************
+        * pc인지 모바일인지 구분 - 브라우저 넓이로
+        * 스크롤 값 계산
+        * 공통사항 : 브라우저가 스크롤되면 or header에 오버하면 header에 fixed 클래스 추가
+        * pc일때 마우스를 오버한 li에만 over 클래스 추가
+        * 모바일일 때 메뉴열기를 클릭하면 header에 menu_open 클래스 추가
+        * 하위 메뉴가 존재하는 1차 메뉴를 클릭하면 클릭한 li에 open 클래스 추가
+    */
+   
+    let device_status; // 모바일인지 pc인지
+    let scrolling; // 스크롤한 값
+    let window_w; // 브라우저 넓이
+    let mobile_size = 1024; // 모바일로 전환되는 사이즈
+    
+    resize_chk(); // 함수 실행(문서가 처음 로딩되었을 때 한번)
+    scroll_chk(); // 함수 실행(문서가 처음 로딩되었을 때 한번)
+
+    // 브라우저가 리사이즈 될 때마다 한번씩 실행
+    $(window).resize(function(){
+        resize_chk();
+    });
+
+    $(window).scroll(function(){
+        scroll_chk();
+    });
+
+    // 함수 선언
+    function resize_chk(){
+        window_w = $(window).width();
+        if(window_w > mobile_size)
+        {
+            device_status = 'pc';
+        }
+        else
+        {
+            device_status = 'mobile';
+        }
+    };
+
+    function scroll_chk(){
+        scrolling = $(window).scrollTop();
+        if(scrolling > 0)
+        {
+            $('header').addClass('fixed');
+        }
+        else
+        {
+            $('header').removeClass('fixed');
+        }
+    };
+
+    // header에 마우스를 오버했을 때, 클릭했을 때도 작동함
+    $('header').on('mouseenter focusin', function(){
+        if(device_status == 'pc')
+        {
+            $('header').addClass('fixed');
+        }
+    });
+    
+    $('header').on('mouseleave focusout', function(){
+        // 브라우저가 스크롤 된 상태에서는 header에 fixed 클래스를 삭제하면 안됨, 맨 위에 있을 때만 삭제해야 함
+        if(scrolling == 0)
+        {
+            $('header').removeClass('fixed');
+        }
+    });
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        if(device_status == 'pc')
+        {
+            $(this).addClass('over');
+        }
+    });
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
+        $(this).removeClass('over');
+    });
+
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_open');
+    });
+
+    $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child').on('focusout', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+    });
+
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open');
+    });
+
+    /*
+        닫힌 메뉴를 클릭하면 열리고, 열린 메뉴를 클릭하면 닫힘
+        동시에 여러 개의 메뉴가 열려있을 수도 있음
+        toggleClass - 클래스가 없으면 추가하고, 있으면 삭제
+    */
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile')
+        {
+            e.preventDefault();
+            $(this).parents('li').toggleClass('open');
+        }
+    });
+    
+    /************************************************** visual swiper **************************************************/
+    
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         autoplay: {  /* 팝업 자동 실행 */
@@ -37,5 +142,18 @@ $(document).ready(function(){
         visual_swiper.autoplay.start();
         $(this).hide(); // 재생 숨김
         $('.visual .btn_wrap button.btn_stop').show(); // 정지 보임
+    });
+
+    /************************************************** find **************************************************/
+    
+    let find_content; // 클릭한 메뉴 이름(id)
+
+    $('.find .list .tab_list ul li').on('click', function(){
+        
+        if($(this).hasClass('active') == false)
+        {
+            find_content = $(this).attr('data-content');
+            console.log(find_content);
+        }
     });
 });
