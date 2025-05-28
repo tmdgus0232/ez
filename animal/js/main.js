@@ -153,7 +153,38 @@ $(document).ready(function(){
         if($(this).hasClass('active') == false)
         {
             find_content = $(this).attr('data-content');
-            console.log(find_content);
+
+            $('.find .list .tab_content .tab_item').removeClass('active');
+            $('.find .list .tab_content').find('#'+find_content).addClass('active');
+
+            $('.find .list .tab_list ul li').removeClass('active');
+            $(this).addClass('active');
+
+            $('.find .list .tab_list ul li button span').text('');
+            $(this).find('span').text('선택됨');
+
+            $('.find .list .tab_list ul li').attr('aria-selected', 'false');
+            $(this).attr('aria-selected', 'true');
         }
+    });
+
+    /************************************************** adopt swiper **************************************************/
+
+    const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 640px 이상일때 적용 */
+                spaceBetween: 24,
+                centeredSlides: true,
+            },
+        },
+        centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+        navigation: {
+            nextEl: '.adopt .list_ctrl .btn_next',
+            prevEl: '.adopt .list_ctrl .btn_prev',
+        },
     });
 });

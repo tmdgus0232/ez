@@ -15,10 +15,13 @@
     padding: 10px 0;
     color: #fff;
     background-color: aqua;
-    transform: translateX(-120%);
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    width: 100%;
 }
 .skip_nav a:focus {
-    transform: translateX(0);
+    top: 0;
 }
 
 /************************************************** header **************************************************/
@@ -51,7 +54,7 @@ header.fixed {
 header.fixed .logo a {
     background-image: url(../images/logo_b.svg);
 }
-@media screen and (min-width:1025px) {
+@media screen and (min-width:1025px){
     header .gnb .gnb_open,
     header .gnb .gnb_close {
         display: none; /* 모바일에서만 보임 */
@@ -157,7 +160,7 @@ header.fixed .logo a {
     }
 }
 /********** 1025 ~ 1280까지만 적용 **********/
-@media screen and (min-width:1025px) and (max-width:1280px) {
+@media screen and (min-width:1025px) and (max-width:1280px){
     header .gnb .gnb_wrap ul.depth1 > li > a {
         padding: 0 15px;
     }
@@ -165,7 +168,7 @@ header.fixed .logo a {
         padding: 16px 10px 14px 10px;
     }
 }
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1024px){
     header {
         padding: 0 0 0 20px;
         height: 60px;
@@ -338,24 +341,25 @@ header.fixed .logo a {
 }
 @media screen and (max-width:1024px){
     .visual .swiper-slide .wrapper {
-        height: 700px;
+        height: 800px;
         /* padding: 0 0 100px 0; */
     }
     .visual .swiper-slide p {
-        font-size: 40px;
+        margin: 600px 0 0 0;
+        font-size: 50px;
     }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px){
     .visual .swiper-slide {
-        height: 450px;
+        height: 700px;
     }
     .visual .swiper-slide p {
-        margin: 456px 0 0 0;
+        margin: 500px 0 0 0;
         font-size: 30px;
     }
-    .visual .swiper-slide p br {
+    /* .visual .swiper-slide p br {
         display: none;
-    }
+    } */
     .visual .btn_wrap {
         left: 20px;
         bottom: 30px;
@@ -433,6 +437,11 @@ header.fixed .logo a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+/***** 마우스 오버 효과 *****/
+.find .list .tab_content .tab_item > ul > li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .find .list .tab_content .tab_item > ul > li a .subject {
     display: flex;
@@ -441,9 +450,8 @@ header.fixed .logo a {
     margin: 15px 0 0 0;
 }
 .find .list .tab_content .tab_item > ul > li a .subject strong {
-    padding: 5px 15px;
+    padding: 10px 20px;
     border-radius: 30px;
-    font-size: 17px;
     line-height: 1.2;
     white-space: nowrap;
 }
@@ -483,6 +491,432 @@ header.fixed .logo a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+@media screen and (max-width:1024px){
+    .find {
+        padding: 72px 0;
+    }
+    .find .tit h2 {
+        font-size: 36px;
+    }
+    .find .list {
+        margin: 15px 0 0 0;
+    }
+    .find .list .tab_list ul {
+        gap: 10px;
+    }
+    .find .list .tab_list ul li button {
+        font-size: 14px;
+        padding: 5px 18px;
+    }
+    .find .list .tab_content {
+        margin: 20px 0 0 0;
+    }
+    .find .list .tab_content .tab_item > ul > li a .subject {
+        display: block;
+        position: relative; /* strong 카테고리 정렬의 기준 */
+        margin: 10px 0 0 0;
+    }
+    .find .list .tab_content .tab_item > ul > li a .subject strong {
+        position: absolute;
+        top: -40px;
+        left: 10px;
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+    .find .list .tab_content .tab_item > ul > li a .subject h4 {
+        font-size: 16px;
+    }
+    .find .list .tab_content .tab_item > ul > li a ul.detail {
+        margin: 5px 0 0 0;
+        font-size: 12px;
+    }
+    .find .list .tab_content .tab_item > ul > li a ul.detail li {
+        display: block;
+    }
+    .find .list .tab_content .tab_item > ul > li a ul.detail li strong {
+        display: none;
+    }
+    .find .list .tab_content .tab_item > ul > li a ul.detail li span {
+        display: block;
+    }
+}
+@media screen and (max-width:768px){
+    .find .list .tab_content .tab_item > ul {
+        gap: 16px 16px;
+        flex-wrap: wrap; /* 줄바꿈 허용 */
+    }
+    .find .list .tab_content .tab_item > ul > li {
+        /* 여백의 합 16 / 한줄에 나오는 li 개수 2 = 8 */
+        width: calc(50% - 8px);
+    }
+    .find .list .tab_content .tab_item > ul > li a .photo {
+        height: 165px;
+        border-radius: 20px;
+    }
+}
+/************************************************** slogan **************************************************/
+.slogan {
+    margin: 150px 0 0 0;
+}
+.slogan .sub_tit {
+    font-size: 60px;
+    font-weight: 700;
+    color: #1d1d1d;
+    text-align: center;
+}
+.slogan .sub_tit strong {
+    display: inline-block;
+}
+.slogan .sub_tit span {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+}
+/* 1em 은 현재 해당 요소에 상속 글자크기를  */
+.slogan .sub_tit span.item1 {
+    /* 145 / 60 = 2.41 */
+    width: 2.41em;
+}
+.slogan .sub_tit span.item2 {
+    /* 165 / 60 = 2.75 */
+    width: 2.75em;
+}
+.slogan .sub_tit span.item3 {
+    /* 130 / 60 = 2.16 */
+    width: 2.16em;
+}
+.slogan .sub_tit span.item4 {
+    /* 150 / 60 = 2.5 */
+    width: 2.5em;
+}
+.slogan .sub_tit span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* span의 영역에 위아래 가운데, 좌우 가운데 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.slogan .sub_tit span.item1::before {
+    width: 1.4em; /* 84 / 60 */
+    height: 1.4em; /* 84 / 60*/
+    background-image: url(../images/slogan1.jpg);
+}
+.slogan .sub_tit span.item2::before {
+    width: 2em; /* 120 / 60 */
+    height: 1.16em; /* 70 / 60*/
+    background-image: url(../images/slogan2.jpg);
+}
+.slogan .sub_tit span.item3::before {
+    width: 1.66em; /* 100 / 60 */
+    height: 1.16em; /* 70 / 60*/
+    background-image: url(../images/slogan3.jpg);
+}
+.slogan .sub_tit span.item4::before {
+    width: 1.66em; /* 100 / 60 */
+    height: 1.35em; /* 81 / 60*/
+    background-image: url(../images/slogan4.jpg);
+}
+.slogan .ex {
+    margin: 45px 0 0 0;
+    text-align: center;
+    color: #555;
+}
+@media screen and (max-width:1300px){
+    .slogan .sub_tit {
+        font-size: 55px;
+    }
+}
+@media screen and (max-width:1024px){
+    .slogan .sub_tit {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:768px){
+    .slogan {
+        margin: 72px 0 0 0;
+    }
+    .slogan .sub_tit {
+        font-size: 24px;
+    }
+    .slogan .sub_tit br {
+        display: none;
+    }
+    .slogan .ex {
+        margin: 10px 0 0 0;
+        font-size: 14px;
+    }
+}
+
+/************************************************** adopt **************************************************/
+
+.adopt {
+    position: relative; /* rolling 정렬의 기준 */
+    margin: 150px 0 0 0;
+    padding: 135px 0 200px 0;
+    color: #fff;
+    background-color: #003049;
+    text-align: center;
+}
+.adopt .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+}
+.adopt .list {
+    margin: 50px 0 0 0;
+}
+.adopt .list .swiper-slide {
+    width: 250px;
+}
+.adopt .list .swiper-slide a {
+    display: block;
+}
+.adopt .list .swiper-slide a .photo {
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.adopt .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.adopt .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.adopt .list .swiper-slide a strong {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 10px 20px;
+    background-color: #C1121F;
+    border-radius: 30px;
+    position: relative;
+    top: -20px;
+}
+.adopt .list .swiper-slide a h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.adopt .list .swiper-slide a p {
+    margin: 10px 0 0 0;
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.8);
+}
+.adopt .list .swiper-slide a strong.cate_care {
+    background-color: #2161B9;
+}
+.adopt .list_ctrl {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 0 0;
+    gap: 10px;
+}
+.adopt .list_ctrl button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_23_405' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect x='30' width='30' height='30' transform='rotate(90 30 0)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_23_405)'%3E%3Cpath d='M11.2812 15.001C11.2812 14.8343 11.3073 14.6781 11.3594 14.5322C11.4115 14.3864 11.5 14.251 11.625 14.126L17.375 8.37598C17.6042 8.14681 17.8958 8.03223 18.25 8.03223C18.6042 8.03223 18.8958 8.14681 19.125 8.37598C19.3542 8.60514 19.4688 8.89681 19.4688 9.25098C19.4688 9.60514 19.3542 9.89681 19.125 10.126L14.25 15.001L19.125 19.876C19.3542 20.1051 19.4687 20.3968 19.4687 20.751C19.4687 21.1051 19.3542 21.3968 19.125 21.626C18.8958 21.8551 18.6042 21.9697 18.25 21.9697C17.8958 21.9697 17.6042 21.8551 17.375 21.626L11.625 15.876C11.5 15.751 11.4115 15.6156 11.3594 15.4697C11.3073 15.3239 11.2812 15.1676 11.2812 15.001Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.adopt .list_ctrl button.btn_next {
+    transform: rotate(180deg);
+}
+.adopt .list_ctrl .more {
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 40px 0 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.adopt .list_ctrl .more::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_23_424' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_23_424)'%3E%3Cpath d='M11 13H6C5.71667 13 5.47917 12.9042 5.2875 12.7125C5.09583 12.5208 5 12.2833 5 12C5 11.7167 5.09583 11.4792 5.2875 11.2875C5.47917 11.0958 5.71667 11 6 11H11V6C11 5.71667 11.0958 5.47917 11.2875 5.2875C11.4792 5.09583 11.7167 5 12 5C12.2833 5 12.5208 5.09583 12.7125 5.2875C12.9042 5.47917 13 5.71667 13 6V11H18C18.2833 11 18.5208 11.0958 18.7125 11.2875C18.9042 11.4792 19 11.7167 19 12C19 12.2833 18.9042 12.5208 18.7125 12.7125C18.5208 12.9042 18.2833 13 18 13H13V18C13 18.2833 12.9042 18.5208 12.7125 18.7125C12.5208 18.9042 12.2833 19 12 19C11.7167 19 11.4792 18.9042 11.2875 18.7125C11.0958 18.5208 11 18.2833 11 18V13Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.adopt .rolling {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+}
+.adopt .rolling p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 70px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.2);
+    white-space: nowrap; /* 1줄 제한 */
+
+    animation-name: rolling;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rolling {
+    0% { left: 0; }
+    100% { left: -14.83em; }
+}
+@media screen and (max-width:1300px){
+    .adopt {
+        margin: 72px 0 0 0;
+        padding: 72px 0 150px 0;
+    }
+    .adopt .tit h2 {
+        font-size: 24px;
+    }
+    .adopt .list {
+        margin: 45px 0 0 0;
+    }
+    .adopt .list .swiper {
+        padding-left: 16px;
+    }
+    .adopt .list .swiper-slide {
+        width: 170px;
+    }
+    .adopt .list .swiper-slide a .photo {
+        height: 170px;
+    }
+    .adopt .list .swiper-slide a strong {
+        font-size: 14px;
+        padding: 5px 15px;
+        top: -8px;
+    }
+    .adopt .list .swiper-slide a h3 {
+        font-size: 16px;
+    }
+    .adopt .list .swiper-slide a p {
+        margin: 5px 0 0 0;
+        font-size: 10px;
+    }
+    .adopt .list_ctrl {
+        margin: 40px 0 0 0;
+    }
+    .adopt .list_ctrl button {
+        display: none;
+    }
+    .adopt .list_ctrl .more {
+        line-height: 30px;
+        height: 30px;
+        padding: 0 30px 0 15px;
+    }
+    .adopt .list_ctrl .more::before {
+        top: 7px;
+        right: 12px;
+        width: 12px;
+        height: 12px;
+        font-size: 16px;
+    }
+    .adopt .rolling {
+        bottom: 15px;
+    }
+    .adopt .rolling p {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:1300px){
+    .adopt {
+        margin: 72px 0 0 0;
+        padding: 72px 0 150px 0;
+    }
+    .adopt .tit h2 {
+        font-size: 30px;
+    }
+    .adopt .list {
+        margin: 45px 0 0 0;
+    }
+    .adopt .list .swiper {
+        padding-left: 16px;
+    }
+    .adopt .list .swiper-slide {
+        width: 170px;
+    }
+    .adopt .list .swiper-slide a .photo {
+        height: 170px;
+    }
+    .adopt .list .swiper-slide a strong {
+        font-size: 14px;
+        padding: 5px 15px;
+        top: -8px;
+    }
+    .adopt .list .swiper-slide a h3 {
+        font-size: 16px;
+    }
+    .adopt .list .swiper-slide a p {
+        margin: 5px 0 0 0;
+        font-size: 10px;
+    }
+    .adopt .list_ctrl {
+        margin: 40px 0 0 0;
+    }
+    .adopt .list_ctrl button {
+        display: none;
+    }
+    .adopt .list_ctrl .more {
+        line-height: 30px;
+        height: 30px;
+        padding: 0 30px 0 15px;
+    }
+    .adopt .list_ctrl .more::before {
+        top: 7px;
+        right: 12px;
+        width: 12px;
+        height: 12px;
+        font-size: 16px;
+    }
+    .adopt .rolling {
+        bottom: 15px;
+    }
+    .adopt .rolling p {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:1024px){
+    .adopt .tit h2 {
+        font-size: 24px;
+    }
+    .adopt .list .swiper-slide {
+        width: 150px;
+    }
+    .adopt .list .swiper-slide a .photo {
+        height: 150px;
+    }
+    .adopt .rolling p {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:768px){
+    .adopt .tit h2 {
+        font-size: 20px;
+    }
+    .adopt .list .swiper-slide {
+        width: 120px;
+    }
+    .adopt .list .swiper-slide a .photo {
+        height: 120px;
+    }
+    .adopt .rolling p {
+        font-size: 24px;
+    }
 }
 
 /************************************************** footer **************************************************/
