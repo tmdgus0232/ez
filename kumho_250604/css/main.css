@@ -160,3 +160,175 @@
             font-size: 2.5rem; /* 40/16 = 2.5 */
         }
 }
+/* title의 공통스타일 */
+section .tit {
+    margin: 10.35em 0 3.24em 0; /* 176/17 = 10.35, 55/17 = 3.24 */
+}
+section .tit strong {
+    color: var(--point-color);
+    font-weight: var(--bold-weight);
+    display: inline-block;
+    padding: 0 0.76em 0 0; /* 13/17 = 0.76 */
+    position: relative;
+    margin: 0 0 0.23em 0;
+}
+section .tit strong::after {
+    content: "";
+    position: absolute;
+    right: 0.1em;
+    top: -0.4em;
+    width: 0.76em;
+    height: 0.76em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: var(--tit-ico);
+}
+section .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+}
+@media screen and (max-width:768px){
+    section .tit {
+        margin: 7.81em 0 2em 0; /* 125/16 = 7.81, 32/16 = 2 */
+    }
+}
+.biz .list ul {
+    display: flex;
+    gap: 1px;
+}
+.biz .list ul li {
+    width: 25%;
+    position: relative; /* txt정렬의 기준 */
+    transition: 0.5s;
+}
+.biz .list ul li .photo {
+    overflow: hidden;
+    height: 41.18em; /* 700/17 = 41.18 */
+    position: relative; /* before 정렬의 기준 */
+}
+.biz .list ul li .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    transition: 0.5s;
+}
+.biz .list ul li .more {
+    display: none; /* 모바일에서만 나옴 */
+}
+.biz .list ul li .photo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: 0.5s;
+}
+.biz .list ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biz .list ul li .txt {
+    position: absolute;
+    left: 8.33%;
+    bottom: 1.18em; /* 20/17 = 1.18em */
+    color: #fff;
+    white-space: nowrap; /* 줄바꿈 금지 */
+    transition: 0.5s;
+}
+.biz .list ul li .txt h3 {
+    font-size: 2.05rem; /* 35/17 = 2.05 */
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0.11em 0 0.51em 0;
+}
+.biz .list ul li .txt a {
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 1em;
+    padding: 0.24em 1.65em 0.12em 1em ;
+    position: relative; /* after 정렬의 기준 */
+    opacity: 0;
+    transition: 0.5s;
+}
+.biz .list ul .txt a::after {
+    content: "";
+    position: absolute;
+    right: 0.9em;
+    top: 0.7em;
+    width: 0.41em; /* 7/17 = 0.41 */
+    height: 0.41em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_37_1375' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='11' height='11'%3E%3Crect width='11' height='11' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_37_1375)'%3E%3Cpath d='M5.04163 5.95768H2.29163V5.04102H5.04163V2.29102H5.95829V5.04102H8.70829V5.95768H5.95829V8.70768H5.04163V5.95768Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+@media screen and (min-width:1025px){
+   /******************** 마우스를 오버했을 때 ********************/
+    .biz .list ul li:hover {
+        width: 70%;
+    }
+    .biz .list ul li:hover .txt {
+        bottom: 4.88em; /* 83/17 = 4.88 */
+    }
+    .biz .list ul li:hover .txt a {
+        opacity: 1;
+    }
+    .biz .list ul:hover li:not(:hover) .photo::before {
+        opacity: 0;
+    }
+    .biz .list ul:hover li:not(:hover) .photo::after {
+        opacity: 1;
+    } 
+}
+@media screen and (max-width:1024px){
+    .biz .list ul {
+        display: block;
+    }
+    .biz .list ul li {
+        width: auto;
+    }
+    .biz .list ul li + li { /* 두번째 li부터 */
+        margin-top: 1px;
+    }
+    .biz .list ul li .more {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+    }
+    .biz .list ul li .photo {
+        height: 11.25em; /* 180/16 = 41.18 */
+    }
+    .biz .list ul li .photo::before {
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+    }
+    .biz .list ul li .photo::after {
+        display: none;
+    }
+    .biz .list ul li .txt {
+        left: 20px;
+        bottom: 1.31em; /* 21/16 = 1.31em */
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 1.56rem; /* 25/16 = 1.56 */
+        margin: 0.11em 0 0 0;
+    }
+    .biz .list ul li .txt a {
+        display: none;
+    }
+}

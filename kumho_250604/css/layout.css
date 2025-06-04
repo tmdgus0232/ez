@@ -144,7 +144,7 @@ header.menu_over .util .search .search_open::after {
         background-color: var(--point-color);
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-        display: none; /* 숨김 */
+        display: none !important; /* 숨김 */
         position: absolute; /* li를 기준으로 */
         left: 0;
         top: var(--header-h);
@@ -176,7 +176,7 @@ header.menu_over .util .search .search_open::after {
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.05);
     }
     header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-        display: block; /* 나타남 */
+        display: block !important; /* 나타남 */
     }
 }/*@media*/
 @media screen and (min-width:1025px) and (max-width:1300px){
@@ -335,9 +335,76 @@ header.menu_over .util .search .search_open::after {
             }
             header.menu_open .gnb .gnb_bg {
                 display: block;
+                animation-name: gnb_bg;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+            @keyframes gnb_bg {
+                0% { opacity: 0; }
+                100% { opacity: 1; }         
             }
 }/*@media*/
 
+.news .list {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);
+}
+.news .list .swiper-slide {
+    width: 23.76em; /* 404/17 = 23.76 */
+}
+.news .list .swiper-slide a {
+    display: block;
+}
+.news .list .swiper-slide a .date {
+    display: block;
+    border-top: 2px solid var(--base-color);
+    font-size: var(--tit-font-size);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+    padding: 0.73em 0 0.27em 0; /* 33/45 = 0.73, 12/45 = 0.27*/
+}
+.news .list .swiper-slide a h3 {
+    font-size: 1.47rem;
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+
+    /* 2줄 제한 */
+    height: 2.4em; /* 행간 * 줄수 = em */
+    overflow: hidden;
+
+    /* 길어서 잘리면 뒤에 ... 추가 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    word-break: normal; /* 단어별 줄바꿈 해제*/
+}
+.news .list .swiper-slide a p {
+    /* 3줄 제한 */
+    height: 4.5em; /* 행간 * 줄수 = em */
+    overflow: hidden;
+    
+    /* 길어서 잘리면 뒤에 ... 추가 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+    word-break: normal; /* 단어별 줄바꿈 해제*/
+
+    margin: 0.88em 0 1.12em 0; /* 15/17 = 0.88, 19/15 = 1.12 */
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 166px;
+}
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 footer {
     margin: 1500px 0 0 0;
 }
