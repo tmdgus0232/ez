@@ -1,0 +1,262 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual .swiper {
+    width: 100%;
+    height: 100%;
+}
+.visual .swiper .swiper-slide .photo {
+    overflow: hidden;
+    height: 100dvh;
+}
+.visual .swiper .swiper-slide .photo img,
+.visual .swiper .swiper-slide .photo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper .swiper-slide .visual_txt {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-align: center;
+}
+.visual .swiper .swiper-slide .visual_txt h3 {
+    font-size: var(--display-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    margin: 18px 0;
+}
+.visual .swiper .swiper-slide .visual_txt a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 14px 41px;
+    border-radius: 28px;
+}
+.visual .paging {
+    position: absolute;
+    left: 50%;
+    bottom: 76px;
+    z-index: 10;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1260px;
+    color: #fff;
+    display: flex;
+}
+.visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
+.visual .paging .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: transparent;
+}
+.visual .paging .swiper-pagination-bullet {
+    width: 25%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    background: transparent;
+    opacity: 1;
+    margin: 0;
+    text-align: center;
+    border-bottom: 7px solid rgba(255, 255, 255, 0.2);
+    padding: 0 0 5px 0;
+    position: relative;
+}
+.visual .paging .swiper-pagination-bullet::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 7px;
+    background-color: #fff;
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    animation-name: visual_paging;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes visual_paging {
+    0% { width: 0 }
+    100% { width: 100% }
+}
+#fp-nav.fp-left {
+    left: 20px;
+}
+#fp-nav {
+    top: 50%;
+}
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 8px 0;
+    /* padding: 0 0 0 20px; */
+}
+#fp-nav ul li:last-child {
+    display: none;
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#fp-nav ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+/* 마우스를 오버하거나 현재 선택된 메뉴 */
+#fp-nav ul li a.active::before,
+#fp-nav ul li:hover a::before {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+#fp-nav ul li a.active::after,
+#fp-nav ul li:hover a::after {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 12px;
+    width: 50px;
+    height: 1px;
+    background-color: var(--main-color);
+}
+#fp-nav ul li a span {
+    display: none;
+}
+#fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active+.fp-tooltip {
+    background-color: var(--main-color);
+    font-weight: var(--bold-weight);
+}
+#fp-nav ul li .fp-tooltip.fp-left {
+    left: 20px;
+}
+#fp-nav ul li .fp-tooltip {
+    position: relative;
+    top: auto;
+    font-size: 14px;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    display: inline-block;
+    opacity: 1;
+    width: auto;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+/* 배경이 흰색일 때 */
+body.bg_white #fp-nav ul li .fp-tooltip {
+    color: var(--base-color);
+}
+body.bg_white #fp-nav ul li:hover .fp-tooltip,
+body.bg_white #fp-nav.fp-show-active a.active+.fp-tooltip {
+    color: #fff;
+}
+body.bg_white #fp-nav ul li a::before {
+    border-color: #999;
+}
+body.bg_white #fp-nav ul li a.active::before,
+body.bg_white #fp-nav ul li:hover a::before {
+    border-color: var(--main-color);
+}
+.quick {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    z-index: 99;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column-reverse;
+    width: 80px;
+}
+.quick .btn {
+    margin: 0 3px;
+    height: 74px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 15px;
+    font-weight: var(--bold-weight);
+    text-align: center;
+    padding: 20px 0 0 0;
+    position: relative;
+}
+.quick .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 21px;
+    width: 100%;
+    height: 9px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.quick .btn.open::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_49_773' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='34' height='34'%3E%3Crect width='34' height='34' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_49_773)'%3E%3Cpath d='M7.08317 21.25C6.68178 21.25 6.34532 21.1142 6.0738 20.8427C5.80227 20.5712 5.6665 20.2347 5.6665 19.8333C5.6665 19.4319 5.80227 19.0955 6.0738 18.824C6.34532 18.5524 6.68178 18.4167 7.08317 18.4167H26.9165C27.3179 18.4167 27.6544 18.5524 27.9259 18.824C28.1974 19.0955 28.3332 19.4319 28.3332 19.8333C28.3332 20.2347 28.1974 20.5712 27.9259 20.8427C27.6544 21.1142 27.3179 21.25 26.9165 21.25H7.08317ZM7.08317 15.5833C6.68178 15.5833 6.34532 15.4476 6.0738 15.176C5.80227 14.9045 5.6665 14.5681 5.6665 14.1667C5.6665 13.7653 5.80227 13.4288 6.0738 13.1573C6.34532 12.8858 6.68178 12.75 7.08317 12.75H26.9165C27.3179 12.75 27.6544 12.8858 27.9259 13.1573C28.1974 13.4288 28.3332 13.7653 28.3332 14.1667C28.3332 14.5681 28.1974 14.9045 27.9259 15.176C27.6544 15.4476 27.3179 15.5833 26.9165 15.5833H7.08317Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .btn.close::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_28_705' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='34' height='34'%3E%3Crect width='34' height='34' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_28_705)'%3E%3Cpath d='M16.9998 18.9839L12.8915 23.0922C12.6317 23.3519 12.3012 23.4818 11.8998 23.4818C11.4984 23.4818 11.1679 23.3519 10.9081 23.0922C10.6484 22.8325 10.5186 22.5019 10.5186 22.1005C10.5186 21.6991 10.6484 21.3686 10.9081 21.1089L15.0165 17.0005L10.9081 12.9276C10.6484 12.6679 10.5186 12.3373 10.5186 11.9359C10.5186 11.5345 10.6484 11.204 10.9081 10.9443C11.1679 10.6845 11.4984 10.5547 11.8998 10.5547C12.3012 10.5547 12.6317 10.6845 12.8915 10.9443L16.9998 15.0526L21.0727 10.9443C21.3324 10.6845 21.663 10.5547 22.0644 10.5547C22.4658 10.5547 22.7963 10.6845 23.0561 10.9443C23.3394 11.2276 23.4811 11.5641 23.4811 11.9536C23.4811 12.3432 23.3394 12.6679 23.0561 12.9276L18.9477 17.0005L23.0561 21.1089C23.3158 21.3686 23.4456 21.6991 23.4456 22.1005C23.4456 22.5019 23.3158 22.8325 23.0561 23.0922C22.7727 23.3755 22.4363 23.5172 22.0467 23.5172C21.6571 23.5172 21.3324 23.3755 21.0727 23.0922L16.9998 18.9839Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail {
+    margin: 0 0 10px 0;
+    background-color: #fff;
+    border: 2px solid var(--main-color);
+    border-radius: 40px;
+    padding: 19px 0 19px 0;
+    display: none;
+}
+.quick .detail ul li + li {
+    border-top: 1px solid rgba(16, 165, 58, 0.2);
+}
+.quick .detail ul li a,
+.quick .detail ul li button {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    color: var(--main-color);
+    text-align: center;
+    padding: 32px 0 8px 0;
+    position: relative;
+}
+.quick .detail ul li.top button {
+    padding-top: 25px;
+}
+.quick .detail ul li a::before,
+.quick .detail ul li.top button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.quick .detail ul li.kakao a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_28_677' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_28_677)'%3E%3Cpath d='M11.9905 19.7094C11.7763 19.7094 11.5612 19.671 11.3453 19.5942C11.1293 19.5172 10.9392 19.3967 10.775 19.2327L9.3385 17.9269C7.5655 16.3102 5.9825 14.7221 4.5895 13.1624C3.1965 11.6027 2.5 9.9319 2.5 8.1499C2.5 6.73074 2.9785 5.54257 3.9355 4.5854C4.89267 3.6284 6.08083 3.1499 7.5 3.1499C8.30633 3.1499 9.10283 3.33582 9.8895 3.70765C10.676 4.07949 11.3795 4.68332 12 5.51915C12.6205 4.68332 13.324 4.07949 14.1105 3.70765C14.8972 3.33582 15.6937 3.1499 16.5 3.1499C17.9192 3.1499 19.1073 3.6284 20.0645 4.5854C21.0215 5.54257 21.5 6.73074 21.5 8.1499C21.5 9.95124 20.7917 11.6407 19.375 13.2182C17.9583 14.7957 16.3788 16.3703 14.6365 17.9422L13.2153 19.2327C13.0513 19.3967 12.8597 19.5172 12.6405 19.5942C12.4212 19.671 12.2045 19.7094 11.9905 19.7094ZM11.2808 7.0384C10.7397 6.21407 10.1702 5.6099 9.572 5.2259C8.974 4.8419 8.28333 4.6499 7.5 4.6499C6.5 4.6499 5.66667 4.98324 5 5.6499C4.33333 6.31657 4 7.1499 4 8.1499C4 8.9524 4.25867 9.79149 4.776 10.6672C5.29333 11.5428 5.94267 12.4133 6.724 13.2787C7.50533 14.1442 8.35183 14.9897 9.2635 15.8152C10.175 16.6408 11.0198 17.4082 11.798 18.1172C11.8557 18.1685 11.923 18.1942 12 18.1942C12.077 18.1942 12.1443 18.1685 12.202 18.1172C12.9802 17.4082 13.825 16.6408 14.7365 15.8152C15.6482 14.9897 16.4947 14.1442 17.276 13.2787C18.0573 12.4133 18.7067 11.5428 19.224 10.6672C19.7413 9.79149 20 8.9524 20 8.1499C20 7.1499 19.6667 6.31657 19 5.6499C18.3333 4.98324 17.5 4.6499 16.5 4.6499C15.7167 4.6499 15.026 4.8419 14.428 5.2259C13.8298 5.6099 13.2603 6.21407 12.7192 7.0384C12.6346 7.16657 12.5282 7.26274 12.4 7.3269C12.2718 7.3909 12.1385 7.4229 12 7.4229C11.8615 7.4229 11.7282 7.3909 11.6 7.3269C11.4718 7.26274 11.3654 7.16657 11.2808 7.0384Z' fill='%2310A53A'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail ul li.naver a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_28_684' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_28_684)'%3E%3Cpath d='M11.9999 19.4614C11.0944 19.4614 10.2414 19.3124 9.4409 19.0144C8.64057 18.7163 7.91474 18.3005 7.2634 17.7672L5.5269 19.4787C5.39057 19.6172 5.21707 19.6864 5.0064 19.6864C4.79574 19.6864 4.62115 19.6172 4.48265 19.4787C4.34415 19.3403 4.2749 19.1658 4.2749 18.9549C4.2749 18.7443 4.34415 18.5708 4.48265 18.4347L6.19415 16.7229C5.66082 16.0718 5.24515 15.3418 4.94715 14.5332C4.64899 13.7243 4.4999 12.8671 4.4999 11.9614C4.4999 9.86776 5.22649 8.09434 6.67965 6.64118C8.13282 5.18801 9.90624 4.46143 11.9999 4.46143H17.9807C18.4025 4.46143 18.7612 4.60918 19.0567 4.90468C19.3522 5.20018 19.4999 5.55884 19.4999 5.98067V11.9614C19.4999 14.0553 18.7733 15.8287 17.3202 17.2817C15.867 18.7348 14.0936 19.4614 11.9999 19.4614ZM11.9999 17.9614C13.6666 17.9614 15.0832 17.3781 16.2499 16.2114C17.4166 15.0448 17.9999 13.6281 17.9999 11.9614V5.96143H11.9999C10.3332 5.96143 8.91657 6.54476 7.7499 7.71143C6.58324 8.87809 5.9999 10.2948 5.9999 11.9614C5.9999 12.6563 6.11274 13.3172 6.3384 13.9442C6.56407 14.5712 6.87749 15.1359 7.27865 15.6384L12.4827 10.4347C12.619 10.2962 12.7925 10.2269 13.0032 10.2269C13.2138 10.2269 13.3893 10.2971 13.5297 10.4374C13.6828 10.5906 13.7594 10.7678 13.7594 10.9692C13.7594 11.1705 13.6819 11.3487 13.5269 11.5037L8.3229 16.6979C8.82557 17.0993 9.39032 17.4102 10.0172 17.6307C10.6442 17.8512 11.3051 17.9614 11.9999 17.9614Z' fill='%2310A53A'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail ul li.green a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_28_692' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_28_692)'%3E%3Cpath d='M11.25 20.0579V15.6924H9C7.75133 15.6924 6.68917 15.2545 5.8135 14.3789C4.93783 13.5034 4.5 12.4412 4.5 11.1924C4.5 10.25 4.78142 9.39813 5.34425 8.63663C5.90708 7.87513 6.6295 7.30913 7.5115 6.93863C7.65517 5.65663 8.14492 4.62847 8.98075 3.85413C9.81675 3.07963 10.8232 2.69238 12 2.69238C13.1768 2.69238 14.1833 3.07963 15.0193 3.85413C15.8551 4.62847 16.3448 5.65663 16.4885 6.93863C17.3768 7.2963 18.1008 7.85913 18.6605 8.62713C19.2202 9.39497 19.5 10.25 19.5 11.1924C19.5 12.4412 19.0622 13.5034 18.1865 14.3789C17.3108 15.2545 16.2487 15.6924 15 15.6924H12.75V20.0579H17.75C17.9625 20.0579 18.1406 20.1298 18.2843 20.2736C18.4281 20.4175 18.5 20.5956 18.5 20.8081C18.5 21.0208 18.4281 21.1989 18.2843 21.3424C18.1406 21.486 17.9625 21.5579 17.75 21.5579H6.25C6.0375 21.5579 5.85942 21.486 5.71575 21.3421C5.57192 21.1983 5.5 21.0201 5.5 20.8074C5.5 20.5949 5.57192 20.4168 5.71575 20.2731C5.85942 20.1296 6.0375 20.0579 6.25 20.0579H11.25ZM9 14.1924H15C15.8333 14.1924 16.5417 13.9007 17.125 13.3174C17.7083 12.734 18 12.0257 18 11.1924C18 10.5475 17.8019 9.9703 17.4057 9.46063C17.0096 8.95113 16.5077 8.5733 15.9 8.32713L15.1 7.99238L14.9885 7.09238C14.882 6.19505 14.5544 5.48738 14.0057 4.96938C13.4571 4.45138 12.7885 4.19238 12 4.19238C11.2115 4.19238 10.5429 4.45138 9.99425 4.96938C9.44558 5.48738 9.118 6.19505 9.0115 7.09238L8.9 7.99238L8.023 8.36563C7.441 8.6118 6.95833 8.98647 6.575 9.48963C6.19167 9.9928 6 10.5604 6 11.1924C6 12.0257 6.29167 12.734 6.875 13.3174C7.45833 13.9007 8.16667 14.1924 9 14.1924Z' fill='%2310A53A'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.quick .detail ul li.top button::before {
+    top: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_28_699' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect x='24' width='24' height='24' transform='rotate(90 24 0)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_28_699)'%3E%3Cpath d='M12 3.18449L4.46723 10.7172C4.26857 10.9159 4.03465 11.0127 3.76548 11.0077C3.49615 11.0026 3.26215 10.9007 3.06349 10.702C2.86482 10.5032 2.76548 10.2692 2.76548 9.99999C2.76548 9.73082 2.86482 9.49682 3.06349 9.29799L10.7192 1.62699C10.9001 1.44615 11.1027 1.31215 11.327 1.22499C11.5513 1.13782 11.7757 1.09424 12 1.09424C12.2243 1.09424 12.4487 1.13782 12.673 1.22499C12.8973 1.31215 13.0999 1.44615 13.2807 1.62699L20.952 9.29799C21.1507 9.49682 21.2474 9.73341 21.2422 10.0077C21.2371 10.2821 21.1352 10.5186 20.9365 10.7172C20.7378 10.9159 20.5038 11.0152 20.2345 11.0152C19.9653 11.0152 19.7314 10.9159 19.5327 10.7172L12 3.18449Z' fill='%2310A53A'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
