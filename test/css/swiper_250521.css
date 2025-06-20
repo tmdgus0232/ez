@@ -10,13 +10,13 @@
     background-size: cover;
     color: #fff;
 }
-.visual .swiper-slide.popup01 {
+.visual .swiper-slide.popup1 {
     background-image: url(../images/popup01.jpg);
 }
-.visual .swiper-slide.popup02 {
+.visual .swiper-slide.popup2 {
     background-image: url(../images/popup02.jpg);
 }
-.visual .swiper-slide.popup03 {
+.visual .swiper-slide.popup3 {
     background-image: url(../images/popup03.jpg);
 }
 .visual h3 {
@@ -91,6 +91,7 @@
         bottom: 30px;
     }
 }/*@media*/
+
 .biz {
     margin: 146px 0 0 0;
 }
@@ -122,6 +123,7 @@
     color: #1d1d1d;
     margin: 20px 0 13px 0;
 }
+
 @media screen and (max-width:768px){
     .biz {
         margin: 71px 0 0 0;
@@ -133,23 +135,20 @@
         margin: 24px 0 0 0;
     }
     .biz .list ul li a .photo {
-        overflow: hidden;
-        height: 218px;
+        height: 197px;
     }
     .biz .list ul li a h3 {
-        font-size: 25px;
-        font-weight: 800;
-        line-height: 1.2;
-        color: #1d1d1d;
-        margin: 20px 0 13px 0;
+        font-size: 20px;
+        margin: 16px 0 9px 0;
     }
-}
+    
+}/*@media*/
+
 .notice {
+    background-color: #004289;
     color: #fff;
-    background-color: #395886;
-    margin: 145px 0 0 0;
-    padding: 145px 0 145px 0;
-    height: 900px;
+    padding: 175px 0 121px 0;
+    margin: 146px 0 0 0;
 }
 .notice .tit h2 {
     font-size: 45px;
@@ -157,26 +156,25 @@
     line-height: 1.2;
 }
 .notice .list {
-    /* wrapper 사이즈 1260의 절반 630px */
+    margin: 47px 0 0 0;
+    width: calc(50% + 630px);
+    /* wrapper사이즈 1260px의 절반 630px 더함 */
     position: relative;
     left: calc(50% - 630px);
-    margin: 40px 0 0 0;
-    width: calc(50% + 630px);
-    height: 300px;
 }
 .notice .list ul li {
     width: 404px;
 }
 .notice .list ul li a {
     display: block;
-    color: #555;
     background-color: #fff;
-    border-radius: 30px;
+    color: #555;
+    border-radius: 20px;
 }
 .notice .list ul li a .photo {
-    height: 300px;
     overflow: hidden;
-    border-radius: 30px 30px 0 0;
+    height: 326px;
+    border-radius: 20px 20px 0 0 ;
 }
 .notice .list ul li a .photo img {
     width: 100%;
@@ -184,51 +182,51 @@
     object-fit: cover;
 }
 .notice .list ul li a .txt {
-    padding: 51px 54px;
+    padding: 44px 30px;
 }
 .notice .list ul li a .txt h3 {
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 800;
     line-height: 1.2;
     color: #1d1d1d;
-    margin: 0 0 17px 0;
+    margin: 0 0 13px 0;
 }
 @media screen and (max-width:1300px){
     .notice .list {
         width: calc(100% - 20px);
         left: 20px;
     }
-}
+}/*@media*/
 @media screen and (max-width:768px){
     .notice {
-        margin: 84px 0 0 0;
-        padding: 44px 0 69px 0;
-        height: 900px;
+        padding: 75px 0 57px 0;
+        margin: 90px 0 0 0;
     }
     .notice .tit h2 {
-        font-size: 28px;
+        font-size: 25px;
     }
     .notice .list {
-        margin: 32px 0 0 0;
+        margin: 25px 0 0 0;
     }
     .notice .list ul li {
-        width: 264px;
+        width: 250px;
     }
     .notice .list ul li a {
-        border-radius: 20px;
+        border-radius: 10px;
     }
     .notice .list ul li a .photo {
-        height: 194px;
-        border-radius: 20px 20px 0 0;
+        height: 205px;
+        border-radius: 10px 10px 0 0 ;
     }
     .notice .list ul li a .txt {
-        padding: 28px 23px;
+        padding: 25px 20px;
     }
     .notice .list ul li a .txt h3 {
-        font-size: 16px;
-        margin: 0 0 10  px 0;
+        font-size: 20px;
+        margin: 0 0 7px 0;
     }
-}
+}/*@media*/
+
 footer {
     margin: 500px 0 0 0;
 }

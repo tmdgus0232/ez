@@ -1,6 +1,6 @@
 p{
-    font-size: 40px;
+    font-size: 17px;
     font-weight: 700;
-    line-height: 1.5;
-    word-break: break-all;
+    line-height: 3;
+    word-break: keep-all;
 }

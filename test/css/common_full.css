@@ -13,26 +13,21 @@ body {
 }
 #wrap {
     position: relative; /* header 정렬의 기준 */
+    overflow: hidden;
 }
-/* 1260 + 20 + 20 = 1300 */
-@media screen and (max-width:1300px){ 
-    /* 브라우저 넓이가 640px 이하에서만 적용되는 스타일 */
-    body {
-        font-size: 17px;
-    }
+@media screen and (max-width:1300px){  /* 1260 + 20 + 20 = 1300 */
+    /* 브라우저 넓이가 1300px 이하에서만 적용되는 스타일 */
     .wrapper {
         width: auto; /* 100%절대 안됨 */
         margin: 0 20px; /* 좌우여백 20px */
     }
-    #wrap {
-        min-width: 0;
-    }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px){
     body {
         font-size: 16px;
     }
 }
+
 /* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
 .blind {
     position: absolute;

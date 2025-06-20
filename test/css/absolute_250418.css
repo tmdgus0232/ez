@@ -1,52 +1,52 @@
-@import url(common.css);
-@import url(default.css);
 @import url(font.css);
+@import url(default.css);
+@import url(common.css);
+
 header {
-    width: 100%;
-    height: 110px;
-    position: absolute;
-    top: 0;
+    position: absolute; /* wrap 기준으로 정렬 */
     left: 0;
-    border: 1px solid rgba(255,255,255,0.2);
+    top: 0;
     color: #fff;
+    width: 100%; /* wrap의 넓이의 100% */
+    height: 110px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 header .gnb ul {
     display: flex;
     justify-content: center;
 }
-header.gnb ul li a{
+header .gnb ul li a {
     display: block;
     line-height: 110px;
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     padding: 0 26px;
 }
-body {
-    margin: 0 0 400px 0;
-}
+
 .visual {
-    height: 800px;
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
-    text-align: center;
+    height: 800px;
     color: #fff;
+    text-align: center;
 }
 .visual h2 {
     font-size: 60px;
     font-weight: 700;
     line-height: 1.3;
-    padding: 270px 0 5px 0;
+    padding: 366px 0 5px 0;
 }
+
 .product {
     margin: 173px 0 0 0;
 }
 .product .wrapper {
-    position: relative;
+    position: relative; /* more 정렬의 기준점 */
 }
 .product h2 {
-    font-size: 35px;
+    font-size: 45px;
     font-weight: 700;
-    line-height: 1.3;
     color: #1d1d1d;
+    line-height: 1.3;
 }
 .product .list {
     margin: 35px 0 0 0;
@@ -57,29 +57,37 @@ body {
 }
 .product .list ul li {
     width: calc(33.33% - 16px);
+    /*
+        한줄에 한번에 나오는 갯수 : 3 = 100/3 = 33.33%
+        여백의 총합 24+24 = 48 / 3 = 16 
+    */
 }
 .product .list ul li a {
     display: block;
-    position: relative;
+    position: relative; /* h3 정렬의 기준점 */
 }
 .product .list ul li a .photo {
-    font-size: 0;
+    font-size: 0; /* 이미지 하단의 여백 삭제 */
     line-height: 0;
 }
 .product .list ul li a h3 {
-    position: absolute;
-    bottom: 30px;
+    position: absolute; /* a를 기준으로 정렬 */
     left: 30px;
+    bottom: 30px;
+    color: #fff;
     font-size: 20px;
     font-weight: 700;
-    color: #fff;
     width: calc(100% - 60px);
 }
 .product .more {
-    position: absolute;
-    top: 10px;
+    position: absolute; /* wrapper를 기준으로 정렬 */
     right: 0;
+    top: 10px;
     border: 1px solid #666;
     border-radius: 30px;
     padding: 6px 42px;
+}
+
+body {
+    margin: 0 0 400px 0;
 }
