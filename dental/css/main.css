@@ -1,0 +1,210 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+/****************************** visual start ******************************/
+.visual {
+    position: relative;
+}
+.visual .swiper-slide .photo {
+    overflow: hidden;
+    height: 1000px;
+    min-height: 500px;
+}
+.visual .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1.5s;
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1.1, 1.1, 1);
+}
+.visual .swiper-slide .txt_wrap {
+    position: absolute;
+    left: 0;
+    bottom: 15%;
+    width: 100%;
+}
+.visual .swiper-slide .txt_wrap .txt {
+    overflow: hidden;
+}
+.visual .swiper-slide .txt_wrap .txt p {
+    color: #fff;
+    font-size: 70px;
+    font-weight: var(--bold-weight);
+
+    transform: translateY(100%);
+    /*transform: translateY(50%);  100% -> 0으로 애니메이션 */
+    transition: 0.5s;
+    transition-delay: 0.8s;
+}
+.visual .swiper-slide.swiper-slide-active .txt_wrap .txt p {
+    transform: translateY(0);
+}
+/********** visual 하단 버튼 **********/
+.visual .ctrl_wrap {
+    position: absolute;
+    left: calc(50% - 630px);
+    bottom: 10%;
+    z-index: 10;
+    display: flex;
+    gap: 5px;
+}
+.visual .ctrl_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .ctrl_wrap button.btn_prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 12.75L0 6.5L6.25 0.25L7.35938 1.35938L2.21875 6.5L7.35938 11.6406L6.25 12.75Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .ctrl_wrap button.btn_next {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.75 0.25L8 6.5L1.75 12.75L0.640625 11.6406L5.78125 6.5L0.640625 1.35937L1.75 0.25Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+/********** visual 하단 게이지 바 **********/
+.visual .paging {
+    position: absolute; /* swiper를 기준으로 정렬 */
+    left: 50%;
+    bottom: 7%;
+    z-index: 10;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1260px;
+    color: #fff;
+    display: flex;
+}
+.visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
+.visual .paging .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: transparent;
+}
+
+.visual .paging .swiper-pagination-bullet {
+    width: 33.33%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    background: transparent;
+    opacity: 1;
+    margin: 0;
+    text-align: center;
+    border-bottom: 7px solid rgba(255,255,255,0.2);
+    padding: 0 0 5px 0;
+    position: relative; /* before 정렬의 기준 */
+}
+.visual .paging .swiper-pagination-bullet::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 7px;
+    background-color: var(--point-color);
+    
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    animation-name: visual_paging;
+    animation-duration: 5s;
+    animation-iteration-count: 1; /* 1번만 실행 */
+    animation-timing-function: linear; /* 가속도 삭제 */
+    animation-fill-mode: forwards; /* 마지막 100% 유지 */
+}
+@keyframes visual_paging {
+    0% { width: 0; }
+    100% { width: 100%; }
+}/* @media */
+/********** 1300px ~ **********/
+@media screen and (max-width:1300px) {
+    .visual .ctrl_wrap {
+        left: 20px;
+    }
+}/* @media */
+/********** 768px ~ 1024px **********/
+@media screen and (max-width:1024px) {
+    .visual .swiper-slide .photo {
+        height: 800px;
+    }
+    .visual .swiper-slide .txt_wrap .txt p {
+        font-size: 50px;
+    }
+}/* @media */
+/********** ~ 768px **********/
+@media screen and (max-width:768px) {
+    .visual .swiper-slide .photo {
+        height: 600px;
+    }
+    .visual .swiper-slide .txt_wrap .txt p {
+        font-size: 30px;
+    }
+}/* @media */
+/****************************** visual end ******************************/
+
+
+
+
+
+/****************************** system start ******************************/
+.system {
+    background-color: white;
+    height: 900px;
+}
+/****************************** system end ******************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************** doctor start ******************************/
+.doctor {
+    background-color: black;
+    height: 900px;
+}
+/****************************** doctor end ******************************/
+/****************************** subject start ******************************/
+.subject {
+    background-color: white;
+    height: 900px;
+}
+/****************************** subject end ******************************/
+/****************************** info start ******************************/
+.info {
+    background-color: black;
+    height: 900px;
+}
+/****************************** info end ******************************/
+/****************************** footer start ******************************/
+.footer {
+    background-color: red;
+    height: 900px;
+}
+/****************************** footer end ******************************/

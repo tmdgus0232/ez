@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--jquery 라이브러리-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--swiper 라이브러리-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+    <title>참조은치과</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">참조은치과</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <div class="gnb_util">
+                        <div class="search">
+                            <button class="search_open"><span class="blind">검색</span></button>
+                        </div><!-- //search -->
+                        <div class="lang">
+                            <button class="lang_open"><span class="blind">KR</span></button>
+                        </div><!-- //lang -->
+                    </div><!-- //gnb_util -->
+                    <ul class="depth1">
+                        <li>
+                            <a href="#"><span>병원소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>인삿말</span></a></li>
+                                <li><a href="#"><span>고객과의 약속</span></a></li>
+                                <li><a href="#"><span>지역사회활동</span></a></li>
+                                <li><a href="#"><span>참조은시스템</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>의료진소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>청주점</span></a></li>
+                                <li><a href="#"><span>천안점</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>진료안내</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>진료과정</span></a></li>
+                                <li><a href="#"><span>진료과목 안내</span></a></li>
+                                <li><a href="#"><span>진료시간 안내</span></a></li>
+                                <li><a href="#"><span>의료보수표</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>병원소식</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>참조은의 노력</span></a></li>
+                                <li><a href="#"><span>미디어센터</span></a></li>
+                                <li><a href="#"><span>병원 24시</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>공지사항</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>참조은뉴스</span></a></li>
+                                <li><a href="#"><span>채용공지</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                </div><!-- //gnb_wrap -->
+                <div class="gnb_bg"></div>
+            </nav><!-- //gnb -->
+            <div class="util">
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색</span></button>
+                </div>
+                <div class="lang">
+                    <button class="lang_open"><span class="blind">KR</span></button>
+                </div>
+            </div><!-- //util -->
+        </header>
+        <main class="container">
+            <section class="section fp-auto-height-responsive visual">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual01.jpg" alt=""></div>
+                            <div class="txt_wrap">
+                                <div class="wrapper">
+                                    <div class="txt"><p>늘 가까운 곳에서<br>참조은치과입니다</p></div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual02.jpg" alt=""></div>
+                            <div class="txt_wrap">
+                                <div class="wrapper">
+                                    <div class="txt"><p>아름다운 미소<br>참조은치과에서 시작하세요</p></div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual03.jpg" alt=""></div>
+                            <div class="txt_wrap">
+                                <div class="wrapper">
+                                    <div class="txt"><p>믿을 수 있는 치과<br>참조은에서 만나보세요</p></div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                    <div class="paging"></div>
+                </div>
+                <div class="ctrl_wrap">
+                    <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                    <button class="btn_next"><span class="blind">다음팝업보기</span></button>
+                </div>
+
+            </section><!-- //visual -->
+            <section class="system">
+                <h1>2</h1>
+            </section><!-- //system -->
+            <section class="doctor">
+                <h1>3</h1>
+            </section><!-- //doctor -->
+            <section class="subject">
+                <h1>4</h1>
+            </section><!-- //subject -->
+            <section class="info">
+                <h1>5</h1>
+            </section><!-- //info -->
+        </main>
+        <footer>
+            <h1>footer</h1>
+        </footer>
+    </div>
+</body>
+</html>

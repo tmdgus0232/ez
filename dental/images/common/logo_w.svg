@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467.14 147.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8f8f8f;
+        font-size: 20px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: YESMyoungjo-Bold, 'YES Myoungjo';
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-2 {
+        font-size: 50px;
+      }
+
+      .cls-9 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-10 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        font-size: 45px;
+      }
+
+      .cls-12 {
+        fill: #00a4ad;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-12" d="M174.86,3.76c-10.81,0-19.58,8.77-19.58,19.58s8.77,19.58,19.58,19.58,19.58-8.77,19.58-19.58-8.77-19.58-19.58-19.58ZM174.86,31.25c-4.37,0-7.91-3.54-7.91-7.91s3.54-7.91,7.91-7.91,7.91,3.54,7.91,7.91-3.54,7.91-7.91,7.91Z"/>
+      <path class="cls-12" d="M129.96,11.67c-10.81,0-19.58,8.77-19.58,19.58s8.77,19.58,19.58,19.58,19.58-8.77,19.58-19.58-8.77-19.58-19.58-19.58ZM129.96,39.16c-4.37,0-7.91-3.54-7.91-7.91s3.54-7.91,7.91-7.91,7.91,3.54,7.91,7.91-3.54,7.91-7.91,7.91Z"/>
+      <path class="cls-12" d="M86.04,51.79c-10.81,0-19.58,8.77-19.58,19.58s8.77,19.58,19.58,19.58,19.58-8.77,19.58-19.58-8.77-19.58-19.58-19.58ZM86.04,79.28c-4.37,0-7.91-3.54-7.91-7.91s3.54-7.91,7.91-7.91,7.91,3.54,7.91,7.91-3.54,7.91-7.91,7.91Z"/>
+      <path class="cls-12" d="M66.46,0c-10.81,0-19.58,8.77-19.58,19.58s8.77,19.58,19.58,19.58,19.58-8.77,19.58-19.58S77.28,0,66.46,0ZM66.46,27.49c-4.37,0-7.91-3.54-7.91-7.91s3.54-7.91,7.91-7.91,7.91,3.54,7.91,7.91-3.54,7.91-7.91,7.91Z"/>
+      <path class="cls-12" d="M19.58,23.34C8.77,23.34,0,32.11,0,42.92s8.77,19.58,19.58,19.58,19.58-8.77,19.58-19.58-8.77-19.58-19.58-19.58ZM19.58,50.83c-4.37,0-7.91-3.54-7.91-7.91s3.54-7.91,7.91-7.91,7.91,3.54,7.91,7.91-3.54,7.91-7.91,7.91Z"/>
+      <text class="cls-2" transform="translate(133.26 107.64)"><tspan x="0" y="0">참</tspan></text>
+      <text class="cls-1" transform="translate(135.1 142.29)"><tspan x="0" y="0">CHAM</tspan><tspan class="cls-7" x="65.34" y="0">JO</tspan><tspan class="cls-4" x="90.12" y="0">E</tspan><tspan x="103.08" y="0">UN </tspan><tspan class="cls-7" x="140.26" y="0">D</tspan><tspan x="155.4" y="0">EN</tspan><tspan class="cls-8" x="184.18" y="0">T</tspan><tspan class="cls-5" x="195.7" y="0">AL </tspan><tspan class="cls-10" x="228.96" y="0">H</tspan><tspan x="244.7" y="0">OSPI</tspan><tspan class="cls-9" x="292.86" y="0">T</tspan><tspan class="cls-11" x="304.38" y="0">AL</tspan></text>
+      <text class="cls-2" transform="translate(182.77 96.67)"><tspan x="0" y="0">조</tspan></text>
+      <text class="cls-3" transform="translate(230.68 107.64) scale(1.09 1)"><tspan class="cls-6" x="0" y="0">은</tspan><tspan class="cls-12" x="42.3" y="0">치과병원</tspan></text>
+    </g>
+  </g>
+</svg>
