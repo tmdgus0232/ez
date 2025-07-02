@@ -428,7 +428,9 @@
         font-size: 30px;
     }
 }
-@media screen and (max-width:468px)
+@media screen and (max-width:468px) {
+    
+}
 /****************************** treat start ******************************/
 .treat {
     background-color: blue;
