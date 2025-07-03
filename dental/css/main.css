@@ -3,7 +3,7 @@
 @import url(common.css);
 @import url(layout.css);
 
-/****************************** visual start ******************************/
+/****************************** section - visual ******************************/
 .visual {
     position: relative;
 }
@@ -18,9 +18,11 @@
     object-fit: cover;
     transition: 1.5s;
 }
+/* visual 사진 확대 */
 .visual .swiper-slide.swiper-slide-active .photo img {
     transform: scale3d(1.1, 1.1, 1);
 }
+/* visual 문구 */
 .visual .swiper-slide .txt_wrap {
     position: absolute;
     left: 0;
@@ -35,16 +37,14 @@
     font-size: 70px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-
     transform: translateY(100%);
-    /*transform: translateY(50%);  100% -> 0으로 애니메이션 */
     transition: 0.5s;
     transition-delay: 0.8s;
 }
 .visual .swiper-slide.swiper-slide-active .txt_wrap .txt p {
     transform: translateY(0);
 }
-/***** swiper button *****/
+/********** swiper button **********/
 .visual .ctrl_wrap {
     position: absolute;
     left: calc(50% - 630px);
@@ -61,15 +61,17 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+/* visual 이전 버튼 */
 .visual .ctrl_wrap button.btn_prev {
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 12.75L0 6.5L6.25 0.25L7.35938 1.35938L2.21875 6.5L7.35938 11.6406L6.25 12.75Z' fill='white'/%3E%3C/svg%3E%0A");
 }
+/* visual 다음 버튼 */
 .visual .ctrl_wrap button.btn_next {
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.75 0.25L8 6.5L1.75 12.75L0.640625 11.6406L5.78125 6.5L0.640625 1.35937L1.75 0.25Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-/***** paging *****/
+/********** paging **********/
 .visual .paging {
-    position: absolute; /* swiper를 기준으로 정렬 */
+    position: absolute;
     left: 50%;
     bottom: 7%;
     z-index: 10;
@@ -87,7 +89,6 @@
     opacity: 1;
     background: transparent;
 }
-
 .visual .paging .swiper-pagination-bullet {
     width: 33.33%;
     height: auto;
@@ -109,7 +110,6 @@
     width: 0;
     height: 7px;
     background-color: var(--point-color);
-    
 }
 .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
     animation-name: visual_paging;
@@ -121,58 +121,69 @@
 @keyframes visual_paging {
     0% { width: 0; }
     100% { width: 100%; }
-}/* @media */
+}/* @keyframes */
+/********** 1025px ~ 1300px **********/
 @media screen and (max-width:1300px) {
     .visual .ctrl_wrap {
         left: 20px;
     }
 }/* @media */
+/********** 769px ~ 1023px **********/
 @media screen and (max-width:1024px) {
-    /* .visual .swiper-slide .photo {
-        height: 800px;
-    } */
     .visual .swiper-slide .txt_wrap .txt p {
-        font-size: 50px;
+        font-size: 55px;
     }
 }/* @media */
+/********** 481px ~ 768px **********/
 @media screen and (max-width:768px) {
+    .visual .swiper-slide .photo {
+        height: 800px;
+    }
+    .visual .swiper-slide .txt_wrap .txt p {
+        font-size: 40px;
+    }
+}/* @media */
+/********** ~ 480px **********/
+@media screen and (max-width:480px) {
     .visual .swiper-slide .photo {
         height: 600px;
     }
     .visual .swiper-slide .txt_wrap .txt p {
-        font-size: 30px;
+        font-size: 32px;
     }
 }/* @media */
-/****************************** merit start ******************************/
+/****************************** section - merit ******************************/
 .merit {
     background: url(../images/main/merit01.jpg);
-    height: 1000px;
-    padding: 190px 0;
-    color: #fff;
+    height: 900px;
+    padding: 160px 0 0 0;
 }
 .merit .tit h2 {
-    color: var(--point-color);
     text-align: center;
+    color: var(--point-color);
+
 }
 .merit .tit p {
-    font-size: 50px;
+    font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
     text-align: center;
+    color: #fff;
 }
 .merit .list {
-    margin: 74px 0 0 0;
+    margin: 70px 0 0 0;
+    color: #fff;
 }
 .merit .list ul {
     display: flex;
+    position: relative;
     justify-content: center;
     gap: 70px;
-    position: relative;
 }
 .merit .list ul li {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -183,11 +194,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--sub-color);
     font-family: "YESMyoungjo";
     font-size: 24px;
     font-weight: var(--bold-weight);
     text-align: center;
+    color: var(--sub-color);
 }
 .merit .list ul li span::before {
     content: "";
@@ -217,7 +228,11 @@
     opacity: 0;
     transition: 0.3s;
 }
-@media screen and (min-width:1025px) {
+
+
+/********** 1025px ~ **********/
+/* 1024px 이하부턴 hover 안씀 */
+@media screen and (min-width:768px) {
     .merit .list ul li {
         transition: 0.5s;
     }
@@ -246,49 +261,50 @@
         opacity: 1;
     }
 }
+/********** 769px ~ 1024px **********/
 @media screen and (max-width:1024px) {
     .merit {
         height: 800px;
-        padding: 80px 0;
+        padding: 150px 0 0 0;
     }
-    .merit .tit h2 {
-        font-size: 16px;
-    }
-    .merit .tit p {
-        font-size: 30px;
-        margin: 3px 0 0 0;
-    }
-    /* .merit .tit p br {
-        display: none;
-    } */
     .merit .list {
-        margin: 20px 0 0 0;
+        margin: 40px 0 0 0;
     }
     .merit .list ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        gap: 50px;
     }
     .merit .list ul li {
-        width: 170px;
-        height: 170px;
+        width: 180px;
+        height: 180px;
     }
     .merit .list ul li span {
         font-size: 16px;
     }
     .merit .list ul li span::before {
-        width: 40px;
-        height: 40px;
-        margin: 0 0 7px 0;
+        width: 50px;
+        height: 50px;
+        margin: 0 0 8px 0;
+    }
+    .merit .list ul li p {
+        font-size: 16px;
     }
 }
+
+
+/********** 481px ~ 768px **********/
 @media screen and (max-width:768px) {
     .merit {
-        height: 600px;
-        padding: 70px 0;
+        /* height: 700px; */
+        padding: 120px 0 0 0;
+    }
+    .merit .tit p {
+        font-size: 28px;
+    }
+    .merit .tit p {
+        margin: 7px 0 0 0;
     }
     .merit .tit h2 {
-        font-size: 14px;
+        font-size: 16px;
     }
     .merit .tit p {
         font-size: 22px;
@@ -300,7 +316,41 @@
     .merit .list ul {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
+    }
+    .merit .list ul li {
+        width: 140px;
+        height: 140px;
+    }
+    .merit .list ul li span {
+        font-size: 14px;
+    }
+    .merit .list ul li span::before {
+        width: 40px;
+        height: 40px;
+        margin: 0 0 5px 0;
+    }
+}
+/********** ~ 480px **********/
+@media screen and (max-width:480px) {
+    .merit {
+        height: 600px;
+        padding: 80px 0 0 0;
+    }
+    .merit .tit h2 {
+        font-size: 14px;
+    }
+    .merit .tit p br {
+        display: none;
+    }
+    .merit .tit p {
+        margin: 5px 0 0 0;
+    }
+    .merit .list {
+        margin: 15px 0 0 0;
+    }
+    .merit .list ul {
+        gap: 15px;
     }
     .merit .list ul li {
         width: 100px;
@@ -310,14 +360,14 @@
         font-size: 10px;
     }
     .merit .list ul li span::before {
-        width: 25px;
-        height: 25px;
-        margin: 0 0 5px 0;
+        width: 30px;
+        height: 30px;
+        margin: 0 0 3px 0;
     }
 }
-/****************************** doctor start ******************************/
+/****************************** section - doctor ******************************/
 .doctor {
-    margin: 150px 0 220px 0;
+    margin: 135px 0 200px 0;
     position: relative;
 }
 .doctor .profile {
@@ -329,9 +379,10 @@
     height: 500px;
     overflow: hidden;
 }
-/* .doctor .profile .photo img {
+.doctor .profile .photo img {
     width: 100%;
-} */
+    object-fit: cover;
+}
 .doctor .profile .inner .tit h2 {
     font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
@@ -342,7 +393,7 @@
     margin: 5px 0 0 0;
 }
 .doctor .profile .inner .name {
-    margin: 80px 0 0 0;
+    margin: 40px 0 0 0;
 }
 .doctor .profile .inner .name span {
     padding: 2px 10px;
@@ -390,58 +441,95 @@
 .doctor .more:hover::after {
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_103_149' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_103_149)'%3E%3Cpath d='M9.16699 10.8334H4.16699V9.16675H9.16699V4.16675H10.8337V9.16675H15.8337V10.8334H10.8337V15.8334H9.16699V10.8334Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
+/********** 769px ~ 1024px **********/
 @media screen and (max-width:1024px) {
+    .doctor {
+        margin: 100px 0 180px 0;
+    }
     .doctor .profile {
-        display: block;
-        flex-direction: column;
-        justify-content: center;
+        gap: 30px;
     }
     .doctor .profile .photo {
-        width: 60%;
-        height: auto;
-        /* overflow: hidden;
-        justify-content: center; */
+        width: 350px;
+        height: 433px;
+    }
+    .doctor .profile .inner .history .txt2 {
+        display: none;
+    }
+}
+/********** 6001px ~ 768px **********/
+@media screen and (max-width:768px) {
+    .doctor {
+        margin: 80px 0 80px 0;
+    }
+    .doctor .profile {
+        gap: 25px;
+    }
+    .doctor .profile .photo {
+        width: 350px;
+        height: 433px;
     }
     .doctor .profile .inner .tit {
-        display: none;
-    }
-    .doctor .profile .inner .history {
-        display: none;
-    }
-    .doctor .profile .inner .name {
         margin: 20px 0 0 0;
     }
-    .doctor .profile .inner .name span {
-        padding: 2px 10px;
-        margin: 0 10px 0 0;
+    .doctor .profile .inner .tit p {
+        font-size: 16px;
     }
-    .doctor .profile .inner .name strong {
-        font-size: 30px;
-    }
-}
-@media screen and (max-width:768px) {
-    .doctor .profile .inner .name span {
-        padding: 2px 10px;
-        margin: 0 10px 0 0;
-    }
-    .doctor .profile .inner .name strong {
-        font-size: 30px;
+    /* .doctor .profile .inner .history .txt1 {
+        display: none;
+    } */
+    .doctor .profile .inner .history p {
+    /* 4줄 제한, padding x */
+    height: 6em;
+    overflow: hidden;
     }
 }
-@media screen and (max-width:468px) {
-    
+/* ********* 481px ~ 600px *********
+@media screen and (max-width:600px) {
+    .doctor .profile .inner .history .txt1 {
+        display: none;
+    }
+} */
+/********** ~ 480px **********/
+@media screen and (max-width:600px) {
+    .doctor {
+        margin: 60px 0 140px 0;
+    }
+    .doctor .profile {
+        display: block;
+    }
+    .doctor .profile .photo {
+        width: 100%;
+        height: 400px;
+    }
+    .doctor .profile .inner .tit {
+        margin: 15px 0 0 0;
+    }
+    .doctor .profile .inner .tit p {
+        font-size: 14px;
+    }
+    .doctor .profile .inner .name {
+        margin: 15px 0 0 0;
+    }
+    .doctor .profile .inner .history .txt1 {
+        display: none;
+    }
 }
-/****************************** treat start ******************************/
+/****************************** section - treat ******************************/
 .treat {
     background-color: blue;
     height: 900px;
 }
-/****************************** info start ******************************/
+
+
+/****************************** section - info ******************************/
 .info {
     background-color: black;
     height: 900px;
 }
-/****************************** footer start ******************************/
+
+
+/****************************** footer ******************************/
 .footer {
     background-color: red;
     height: 900px;
