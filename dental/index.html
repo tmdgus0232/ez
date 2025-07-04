@@ -10,6 +10,9 @@
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
@@ -147,42 +150,102 @@
             </section><!-- //merit -->
             <section class="doctor">
                 <div class="wrapper">
-                    <div class="profile">
-                        <div class="photo"><img src="images/main/doctor01.jpg" alt=""></div>
-                        <div class="inner">
-                            <div class="tit">
-                                <h2>노하우로 차이를 만듭니다</h2>
-                                <p>정확한 진단과 친절한 상담, 참조은치과의 의료진이 함께합니다</p>
-                            </div><!-- //tit -->
+                    <div class="tit">
+                        <h2>환한 미소를 함께 만듭니다</h2>
+                        <p>정확한 진단과 친절한 상담, 참조은치과의 의료진이 함께합니다</p>
+                    </div>
+                    <div data-aos="fade-up" class="profile">
+                        <div class="photo">
+                            <img src="images/main/doctor01.jpg" alt="">
+                            <div class="sub_profile">
+                                <div class="name">
+                                    <span>대표원장</span>
+                                    <strong>김00</strong>
+                                </div>                                
+                                <div class="more"><a href="#"><span class="blind">더보기</span></a></div>
+                            </div>
+                        </div>
+                        <div class="side">
                             <div class="name">
                                 <span>대표원장</span>
                                 <strong>김OO</strong>
-                            </div><!-- //name -->
-                            <div class="history">
-                                <p class="txt1">
+                            </div>
+                            <div class="sub_tit">
+                                <h3>더 나은 내일을 위한 진료</h3>
+                            </div>
+                            <div class="work">
+                                <strong>진료과목</strong>
+                                <p>임플란트, 심미보철</p>
+                            </div>
+                            <div class="spec">
+                                <strong>약력</strong>
+                                <p class="txt01">
                                     - 치과보철과 전문의<br>
                                     - OO대학교 치과대학 졸업<br>
-                                    - OO대학교병원 인턴, 레지던트 수료<br>
-                                    - OO대학교 치과대학대학원  석사, 박사<br>
-                                    - 대한치과보철학회 대상수상, 인정의<br>
-                                    - 대한임플란트학회 우수발표상, 정회원
-                                </p><!-- //txt1 -->
-                                <p class="txt2">
+                                    - OO대학교 치과대학부속병원 보철과 인턴, 레지던트 수료<br>
+                                    - OO대학교 치과대학대학원 보철학 석사, 박사<br>
+                                    - 대한치과보철학회 대상수상<br>
+                                </p>
+                                <p class="txt02">
+                                    - 대한임플란트학회 우수발표상, 정회원<br>
                                     - 대한심미치과학회 정회원<br>
                                     - 대한치과턱관절기능교합학회 정회원<br>
                                     - ICOI(국제임플란트학회) 증례발표<br>
-                                    - KAO(대한인공치아골유착학회) 증례발표<br>
-                                    - 전) OO대학교 치기공과 교수<br>
-                                    - 현) OO대학교 치의학전문대학원 외래교수
-                                </p><!-- //txt2 -->
-                            </div><!-- //history -->
-                        </div><!-- //inner -->
+                                    - KAO(대한인공치아골유착학회) 증례발표
+                                </p>
+                            </div>
+                            <div class="more">
+                                <a href="#"><span class="blind">더보기</span></a>
+                            </div>
+                        </div><!-- //side -->
                     </div><!-- //profile -->
-                    <div class="more"><a href="#"><span>의료진 소개</span></a></div>
                 </div><!-- //wrapper -->
             </section><!-- //doctor -->
-            <section class="treat">
-                <h1>4</h1>
+            <section class="service">
+                <div class="tit">
+                    <h2>진료안내</h2>
+                    <p>정확한 진단과 친절한 상담, 참조은치과의 의료진이 함께합니다.</p>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li class="list01">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/service01.jpg" alt=""></div>
+                                <div class="txt">
+                                    <h3>임플란트</h3>
+                                    <p>발치즉시임플란트, 앞니심미임플란트 </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list02">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/service02.jpg" alt=""></div>
+                                <div class="txt">
+                                    <h3>심미보철</h3>
+                                    <p>지르코니아, 라미네이트, 앞니재성형</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list03">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/service03.jpg" alt=""></div>
+                                <div class="txt">
+                                    <h3>소아 · 청소년</h3>
+                                    <p>수면웃음가스치료, 앞니치료, 어금니치료</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list04">
+                            <a href="#">
+                                <div class="photo"><img src="images/main/service04.jpg" alt=""> </div>
+                                <div class="txt">
+                                    <h3>치아교정</h3>
+                                    <p>2D교정, 개방교합, 과개교합(옥니), 덧니</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </section><!-- //treat -->
             <section class="info">
                 <h1>5</h1>

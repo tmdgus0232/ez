@@ -1,25 +1,21 @@
 html, body {
     font-family: "Pretendard", "YESMyoungjo", sans-serif;
-    /* 앞에 쓴 서체를 적용하고 지원이 안되면 두번째 서체를 적용 */
     font-size: 17px;
     font-weight: 400;
-    line-height: 1.5; /* 배수 */
+    line-height: 1.5;
     color: #555;
-    word-break: keep-all; /* 스페이스기준 단어별로 줄바꿈 */
+    word-break: keep-all;
     word-wrap: break-word;
-    /* 단어가 너무 긴경우 강제로 줄바꿈을 주는 방법  */
 }
 #wrap {
-    position: relative; /* header 정렬의 기준 */
-    overflow-x: hidden; /* 가로스크롤 삭제 */
+    position: relative;
+    overflow-x: hidden;
     width: 100%;
 }
 .wrapper {
     width: 1260px;
-    margin: 0 auto; /* 가운데 */
+    margin: 0 auto;
 }
-
-/* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
 .blind {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -29,22 +25,20 @@ html, body {
     overflow: hidden;
     color: transparent;
 }
-@media screen and (max-width:1300px){ /* 20+20 = 40 + 1260 = 1300 */
+@media screen and (max-width:1300px){
     .wrapper {
         width: auto;
         margin: 0 20px;
     }
-}
+}/*@media*/
 :root {
     /* header */
-    --header-h: 100px; /* header 높이 */
-    --header-h-m: -100px; /* header 높이 마이너스값 */
-
+    --header-h: 100px;
+    --header-h-m: -100px;
     /* font */
     --tit-font-size: 45px;
     --bold-weight: 700;
     --tit-line-height: 1.2;
-
     /* color */
     --tit-color: #1d1d1d;
     --base-color: #555;
@@ -56,20 +50,20 @@ html, body {
 /********** 769px ~ 1024px **********/
 @media screen and (max-width:1024px){
     :root {
-        --header-h: 60px; /* header 높이 */
+        --header-h: 60px;
         --header-h-m: -60px;
-        --tit-font-size: 36px; /* 35px/17 = 2.06 */
+        --tit-font-size: 36px;
     }
-}
+}/*@media*/
 /********** 481px ~ 768px **********/
 @media screen and (max-width:768px){
     :root {
-        --tit-font-size: 28px; /* 30px/16 = 1.88 */
+        --tit-font-size: 28px;
     }
-}
+}/*@media*/
 /********** ~ 480px **********/
 @media screen and (max-width:480px){
     :root {
-        --tit-font-size: 18px; /* 30px/16 = 1.88 */
+        --tit-font-size: 22px;
     }
-}
+}/*@media*/
