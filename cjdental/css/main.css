@@ -977,10 +977,26 @@ footer .f_info span {
 }
 footer .copyright {
     margin: 40px 0 0 0;
+    font-family: "YESMyoungjo";
 }
 /********** ~ 1024px **********/
 @media screen and (max-width:1024px) {
     footer .f_info {
         display: block;
+    }
+    footer .f_info .cheonan {
+        margin: 20px 0 0 0;
+    }
+}/* @media */
+@media screen and (max-width:480px) {
+    footer {
+        padding: 50px 0 60px 0;
+    }
+    footer .f_nav ul {
+        display: block;
+        gap: 0;
+    }
+    footer .f_nav ul li {
+        margin: 3px 0 0 0;
     }
 }/* @media */
