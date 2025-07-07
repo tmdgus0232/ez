@@ -75,6 +75,7 @@
     max-width: 1260px;
     color: #fff;
     display: flex;
+    gap: 10px;
 }
 .visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .visual .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
@@ -150,8 +151,7 @@
 /****************************** section - merit ******************************/
 .merit {
     background: url(../images/main/merit01.jpg);
-    height: 900px;
-    padding: 160px 0 0 0;
+    padding: 160px 0 250px 0;
 }
 .merit .tit h2 {
     text-align: center;
@@ -223,8 +223,7 @@
     opacity: 0;
     transition: 0.3s;
 }
-/********** 1025px ~ **********/
-/********** 1024px 이하부턴 애니메이션 x **********/
+/********** 768px 이하부턴 애니메이션 x **********/
 @media screen and (min-width:768px) {
     .merit .list ul li {
         transition: 0.5s;
@@ -257,8 +256,7 @@
 /********** 769px ~ 1024px **********/
 @media screen and (max-width:1024px) {
     .merit {
-        height: 800px;
-        padding: 150px 0 0 0;
+        padding: 140px 0 200px 0;
     }
     .merit .tit h2 {
         font-size: 16px;
@@ -283,19 +281,19 @@
     }
     .merit .list ul li p {
         font-size: 16px;
+        bottom: -100px;
     }
 }/* @media */
 /********** 481px ~ 768px **********/
 @media screen and (max-width:768px) {
     .merit {
         /* height: 700px; */
-        padding: 120px 0 0 0;
+        padding: 100px 0 100px 0;
     }
     .merit .tit h2 {
         font-size: 14px;
     }
     .merit .tit p {
-        font-size: 22px;
         margin: 7px 0 0 0;
     }
     .merit .list {
@@ -322,8 +320,7 @@
 /********** ~ 480px **********/
 @media screen and (max-width:480px) {
     .merit {
-        height: 600px;
-        padding: 80px 0 0 0;
+        padding: 60px 0 60px 0;
     }
     .merit .tit h2 {
         font-size: 12px;
@@ -334,7 +331,7 @@
     .merit .tit p {
         margin: 5px 0 0 0;
     }
-    .merit .list {
+    /* .merit .list {
         margin: 15px 0 0 0;
     }
     .merit .list ul {
@@ -351,7 +348,7 @@
         width: 30px;
         height: 30px;
         margin: 0 0 3px 0;
-    }
+    } */
 }/* @media */
 /****************************** section - doctor ******************************/
 .doctor {
@@ -395,13 +392,19 @@
     color: #fff;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
 }
-.doctor .profile .side .name strong {
+.doctor .profile .side .name {
+    display: flex;
+    align-items: baseline;
+}
+.doctor .profile .side .name h3 {
+    margin: 0 10px 0 0;
+}
+.doctor .profile .side .name span {
     font-size: 36px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    margin: 0 0 0 5px;
 }
-.doctor .profile .side .sub_tit {
+.doctor .profile .side .sub_tit{
     margin: 30px 0 0 0;
     font-size: 36px;
     font-weight: var(--bold-weight);
@@ -411,14 +414,51 @@
     margin: 40px 0 0 0;
 }
 .doctor .profile .side .work strong {
+    display: block;
+    margin: 0 0 5px 0;
+}
+.doctor .profile .side .work ul li {
+    position: relative;
+    margin: 0 0 0 20px;
+}
+.doctor .profile .side .work ul li::before {
+    position: absolute;
+    content: "";
+    left: -15px;
+    top: 10px;
+    width: 1px;
+    height: 1px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    background-position: center center;
+}
+.doctor .profile .side .work strong {
     font-weight: var(--bold-weight);
 }
 .doctor .profile .side .spec {
     margin: 20px 0 0 0;
 }
 .doctor .profile .side .spec strong {
+    display: block;
     font-weight: var(--bold-weight);
     margin: 0 0 5px 0;
+}
+.doctor .profile .side .spec ul li {
+    position: relative;
+    margin: 0 0 0 20px;
+}
+.doctor .profile .side .spec ul li::before {
+    position: absolute;
+    content: "";
+    left: -15px;
+    top: 10px;
+    width: 1px;
+    height: 1px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    background-position: center center;
 }
 .doctor .profile .side .more {
     position: absolute;
@@ -461,7 +501,7 @@
     .doctor .profile .side {
         height: 600px;
     }
-    .doctor .profile .side .spec p.txt02 {
+    .doctor .profile .side .spec ul.txt02 li {
         display: none;
     }
 }/* @media */
@@ -489,13 +529,13 @@
     .doctor .profile .side .work {
         font-size: 16px;
     }
-    .doctor .profile .side .name strong {
+    .doctor .profile .side .name span {
         font-size: 28px;
     }
     .doctor .profile .side .spec strong {
         display: none;
     }
-    .doctor .profile .side .spec p {
+    .doctor .profile .side .spec ul {
         display: none;
     }
 }/* @media */
@@ -518,10 +558,10 @@
         height: 350px;
         padding: 30px 30px 0 40px;
     }
-    .doctor .profile .side .name span {
+    .doctor .profile .side .name h3 {
         font-size: 14px;
     }
-    .doctor .profile .side .name strong {
+    .doctor .profile .side .name span {
         font-size: 24px;
     }
     .doctor .profile .side .sub_tit {
@@ -573,13 +613,13 @@
         display: flex;
         align-items: flex-end;
     }
-    .doctor .profile .photo .sub_profile .name span {
+    .doctor .profile .photo .sub_profile .name h3 {
         font-size: 10px;
         padding: 2px 7px;
         background-color: var(--sub-color);
         color: #fff;
     }
-    .doctor .profile .photo .sub_profile .name strong {
+    .doctor .profile .photo .sub_profile .name span {
         font-size: 28px;
         font-weight: var(--bold-weight);
         line-height: 1.0;
@@ -640,7 +680,7 @@
     position: relative;
 }
 .service .list ul li a .photo {
-    height: 600px;
+    height: 500px;
     overflow: hidden;
 }
 .service .list ul li a .photo img {
@@ -695,10 +735,10 @@
 /********** 1025px ~ 1300px **********/
 @media screen and (max-width:1300px) {
     .service .tit {
-        height: 270px;
+        height: 250px;
     }
     .service .list ul li a .photo {
-        height: 550px;
+        height: 400px;
     }
     .service .list ul li a .txt h3 {
         font-size: 36px;
@@ -722,7 +762,7 @@
         width: 50%;
     }
     .service .list ul li a .photo {
-        height: 480px;
+        height: 320px;
     }
 }/* @media */
 /********** 480px ~ 768px **********/
@@ -741,7 +781,7 @@
         width: 50%;
     }
     .service .list ul li a .photo {
-        height: 360px;
+        height: 270px;
     }
         .service .list ul li a .txt h3 {
         font-size: 24px;
@@ -769,7 +809,7 @@
         margin: 5px 0 0 0;
     }
     .service .list ul li a .photo {
-        height: 250px;
+        height: 200px;
     }
     .service .list ul li a .txt {
         bottom: 20px;
@@ -814,24 +854,28 @@
     margin: 65px 0 0 0;
     gap: 24px;
 }
-.info .inner .txt .book a span {
-    padding: 24px 90px 24px 30px;
+.info .inner .txt .book a {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 80px;
     color: #fff;
     background-color: var(--point-color);
     border: 1px solid var(--point-color);
     position: relative;
     transition: 0.3s;
 }
-.info .inner .txt .book a:nth-child(2) span {
-    padding: 24px 144px 24px 30px;
+.info .inner .txt .book a span {
+    margin: 0 0 0 30px;
+    font-size: 22px;
 }
 .info .inner .txt .book a span::after {
     position: absolute;
     content: "";
     right: 30px;
-    top: 16px;
-    width: 24px;
-    height: 24px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
     padding: 6px;
     border-radius: 50%;
     background-color: #fff;
@@ -852,7 +896,7 @@
 }
 /********** 1024px 이하부턴 애니메이션 x **********/
 @media screen and (min-width:1025px) {
-    .info .inner .txt .book a:hover span {
+    .info .inner .txt .book a:hover {
         background-color: #555;
         border: 1px solid #555;
     }
@@ -887,19 +931,19 @@
         margin: 50px 0 0 0;
         gap: 20px;
     }
-    .info .inner .txt .book a span {
-        padding: 16px 65px 16px 20px;
-        font-size: 16px;
+    .info .inner .txt .book a {
+        width: 220px;
+        height: 70px;
     }
-    .info .inner .txt .book a:nth-child(2) span {
-        padding: 16px 105px 16px 20px;
+    .info .inner .txt .book a span {
+        font-size: 20px;
+        margin: 0 0 0 25px;
     }
     .info .inner .txt .book a span::after {
-        right: 20px;
-        top: 13px;
+        right: 25px;
+        top: 20px;
         width: 14px;
         height: 14px;
-        padding: 5px;
     }
     .info .inner .txt .time {
         margin: 60px 0 0 0;
@@ -921,6 +965,23 @@
     .info .inner {
         display: block;
         gap: 0;
+    }
+    .info .inner .txt .book {
+        margin: 30px 0 0 0;
+    }
+    .info .inner .txt .book a {
+        width: 200px;
+        height: 60px;
+    }
+    .info .inner .txt .book a span {
+        font-size: 18px;
+        margin: 0 0 0 20px;
+    }
+    .info .inner .txt .book a span::after {
+        right: 20px;
+        top: 18px;
+        width: 12px;
+        height: 12px;
     }
     .info .inner .map {
         width: 100%;
