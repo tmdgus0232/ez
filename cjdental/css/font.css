@@ -19,7 +19,7 @@
 	font-weight: 400;
 	font-display: swap;
 	src: local('YESMyoungjo Regular'), 
-	url(../font/YESMyoungjo-Regular.woff) format('woff'), 
+	url(../font/YESMyoungjo-Regular.woff) format('woff');
 }
 @font-face {
 	font-family: 'YESMyoungjo';
