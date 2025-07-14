@@ -286,3 +286,49 @@ header.menu_over .util .lang .lang_open::before {
         100% { opacity: 1; }
     }
 }/*@media*/
+/****************************** footer ******************************/
+footer {
+    padding: 100px 0 120px 0;
+    color: #fff;
+    background-color: #1d1d1d;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 30px;
+}
+footer .f_info {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+footer .f_info p {
+    margin: 0 0 5px 0;
+}
+footer .f_info span {
+    margin: 0 20px 0 0;
+}
+footer .copyright {
+    margin: 40px 0 0 0;
+    font-family: "YESMyoungjo";
+}
+/********** ~ 1024px **********/
+@media screen and (max-width:1024px) {
+    footer .f_info {
+        display: block;
+    }
+    footer .f_info .cheonan {
+        margin: 20px 0 0 0;
+    }
+}/* @media */
+@media screen and (max-width:480px) {
+    footer {
+        padding: 50px 0 60px 0;
+    }
+    footer .f_nav ul {
+        display: block;
+        gap: 0;
+    }
+    footer .f_nav ul li {
+        margin: 3px 0 0 0;
+    }
+}/* @media */
