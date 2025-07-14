@@ -11,10 +11,14 @@
     color: #fff;
     padding: 620px 0 0 0;
 }
-/* .visual .wrapper {
-    height: 100vh;
-    min-height: 500px;
-} */
+.visual .wrapper {
+    position: relative;
+}
+.visual .txt {
+    position: absolute;
+    left: 0;
+    bottom: 15%;
+}
 .visual h2 {
     font-size: 70px;
     font-weight: var(--bold-weight);
