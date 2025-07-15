@@ -49,18 +49,18 @@ html, body {
     :root {
         --header-h: 60px;
         --header-h-m: -60px;
-        --tit-font-size: 36px;
+        /* --tit-font-size: 36px; */
     }
 }/*@media*/
 /********** 481px ~ 768px **********/
 @media screen and (max-width:768px){
     :root {
-        --tit-font-size: 28px;
+        /* --tit-font-size: 28px; */
     }
 }/*@media*/
 /********** ~ 480px **********/
 @media screen and (max-width:480px){
     :root {
-        --tit-font-size: 22px;
+        /* --tit-font-size: 22px; */
     }
 }/*@media*/

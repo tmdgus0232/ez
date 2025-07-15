@@ -2,35 +2,473 @@
 @import url(font.css);
 @import url(common.css);
 @import url(layout.css);
-
+/****************************** section - visual ******************************/
 .visual {
     position: relative;
-    background: url(../images/main/visual_bg.jpg) no-repeat center center / cover;
-    height: 100vh;
+}
+.visual .swiper-slide .photo {
+    overflow: hidden;
+    height: 100dvh;
     min-height: 500px;
-    color: #fff;
-    padding: 620px 0 0 0;
 }
-.visual .wrapper {
-    position: relative;
+.visual .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1.5s;
 }
-.visual .txt {
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1.1, 1.1, 1);
+}
+.visual .swiper-slide .txt_wrap {
     position: absolute;
     left: 0;
-    bottom: 15%;
+    bottom: 35%;
+    width: 100%;
 }
-.visual h2 {
+.visual .swiper-slide .txt_wrap .txt {
+    /* overflow: hidden; */
+    color: #fff;
+}
+.visual .swiper-slide .txt_wrap .txt h2 {
     font-size: 70px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
+    /* transform: translateY(100%);
+    transition: 0.5s;
+    transition-delay: 0.8s; */
 }
-.visual p {
+.visual .swiper-slide .txt_wrap .txt h2 br {
+    display: none;
+}
+.visual .swiper-slide .txt_wrap .txt p {
     margin: 5px 0 0 0;
 }
-.tech {
-    height: 1000px;
-    background-color: yellow;
+/********** swiper button **********/
+.visual .ctrl_wrap {
+    position: absolute;
+    left: calc(50% - 630px);
+    bottom: 30%;
+    z-index: 10;
+    display: flex;
+    gap: 5px;
 }
+.visual .ctrl_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .ctrl_wrap button.btn_prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 12.75L0 6.5L6.25 0.25L7.35938 1.35938L2.21875 6.5L7.35938 11.6406L6.25 12.75Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .ctrl_wrap button.btn_next {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.75 0.25L8 6.5L1.75 12.75L0.640625 11.6406L5.78125 6.5L0.640625 1.35937L1.75 0.25Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .btn_scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%);
+    animation: btn_move 1.0s infinite linear;
+    z-index: 10;
+    color: #fff;
+}
+.visual .btn_scroll span {
+    position: relative;
+}
+.visual .btn_scroll span::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    margin: 5px 0 0 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_103' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_103)'%3E%3Cpath d='M12 22L5 15L6.4 13.575L11 18.175V11H13V18.175L17.6 13.6L19 15L12 22ZM11 9V6H13V9H11ZM11 4V2H13V4H11Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+@keyframes btn_move {
+    0%, 100% {
+        transform:translate(-50%,-50%)
+    }
+    50% {
+        transform: translate(-50%,-80%);
+    }
+}
+@media screen and (max-width:1300px) {
+    .visual .ctrl_wrap {
+        left: 20px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .visual .swiper-slide .txt_wrap .txt h2 {
+        font-size: 55px;
+    }
+    .visual .swiper-slide .txt_wrap .txt p {
+        font-size: 16px;
+    }
+    .visual .btn_scroll span {
+        font-size: 16px;
+    }
+    .visual .btn_scroll span::after {
+        width: 22px;
+        height: 22px;
+    }
+}
+@media screen and (max-width:768px) {
+    .visual .swiper-slide .photo {
+        height: 800px;
+    }
+    .visual .swiper-slide .txt_wrap .txt h2 {
+        font-size: 55px;
+    }
+}
+@media screen and (max-width:480px) {
+    
+    .visual .swiper-slide .photo {
+        height: 600px;
+    }
+    .visual .swiper-slide .txt_wrap .txt h2 {
+        font-size: 40px;
+    }
+    .visual .swiper-slide .txt_wrap .txt h2 br {
+        display: block;
+    }
+    .visual .ctrl_wrap {
+        bottom: 28%;
+    }
+}
+/****************************** section - tech ******************************/
+.tech {
+    background-color: #f7f7f7;
+}
+.tech .tit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+.tech .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+}
+.tech .tit p {
+    margin: 5px 0 0 0;
+}
+.tech .list {
+    color: #fff;
+}
+.tech .list ul {
+    display: flex;
+    gap: 20px;
+    /* width: 100%; */
+}
+.tech .list ul li {
+    width: 30%;
+    transition: 0.5s;
+}
+.tech .list ul li a {
+    display: block;
+    position: relative;
+}
+.tech .list ul li a .photo {
+    height: 600px;
+}
+.tech .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tech .list ul li a .inner {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: flex-end; */
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    transition: 0.5s;
+}
+.tech .list ul li a .inner .txt h3 {
+    font-size: 45px;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    white-space: nowrap;
+    transition: 0.5s;
+}
+.tech .list ul li a .inner .txt p {
+    display: none;
+}
+.tech .list ul li a .more {
+    display: none;
+    position: absolute;
+    right: 120px;
+    bottom: 105px;
+}
+.tech .list ul li a .more span {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 10px 39px 10px 20px;
+    position: relative;
+    transition: 0.5s;
+}
+.tech .list ul li a .more:hover span {
+    background-color: #fff;
+    color: #555;
+}
+.tech .list ul li a .more span::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    bottom: 10px;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_4_9' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_4_9)'%3E%3Cpath d='M9.1665 10.8337H4.1665V9.16699H9.1665V4.16699H10.8332V9.16699H15.8332V10.8337H10.8332V15.8337H9.1665V10.8337Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    transition: 0.5s;
+}
+.tech .list ul li a .more:hover span::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_36_2' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_36_2)'%3E%3Cpath d='M9.1665 10.8332H4.1665V9.1665H9.1665V4.1665H10.8332V9.1665H15.8332V10.8332H10.8332V15.8332H9.1665V10.8332Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.tech .list ul li a .more2 {
+    display: none;
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+}
+.tech .list ul li a .more2 span {
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.tech .list ul li a .more2 span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_4_9' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_4_9)'%3E%3Cpath d='M9.1665 10.8337H4.1665V9.16699H9.1665V4.16699H10.8332V9.16699H15.8332V10.8337H10.8332V15.8337H9.1665V10.8337Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+/* 1025px ~ */
+@media screen and (min-width:1025px) {
+    .tech .list ul li.over {
+        width: 70%;
+    }
+    .tech .list ul li.over a .inner {
+        left: 120px;
+        bottom: 100px;
+        transform: none;
+    }
+    .tech .list ul li.over a .inner h3 {
+        font-size: 70px;
+    }
+    .tech .list ul li.over a .inner p {
+        display: block;
+    }
+    .tech .list ul li.over a .more {
+        display: block;
+    }  
+}
+/* 1201px ~ 1400px */
+@media screen and (min-width:1201px) and (max-width:1400px) {
+    .tech .tit {
+        height: 280px;
+    }
+    .tech .list ul li a .photo {
+        height: 550px;
+    }
+    .tech .list ul li.over a .inner {
+        left: 80px;
+        bottom: 60px;
+        transform: none;
+    }
+    .tech .list ul li a .inner .txt h3 {
+        font-size: 40px;
+    }
+    .tech .list ul li.over a .inner h3 {
+        font-size: 60px;
+    }
+    .tech .list ul li.over a .more {
+        right: 80px;
+        bottom: 65px;
+    }
+}
+/* 1025px ~ 1200px */
+@media screen and (min-width:1025px) and (max-width:1200px) {
+    .tech .tit {
+        height: 250px;
+    }
+    .tech .list ul li a .photo {
+        height: 500px;
+    }
+    .tech .list ul li.over a .inner {
+        left: 40px;
+        bottom: 50px;
+        transform: none;
+    }
+    .tech .list ul li a .inner .txt h3 {
+        font-size: 32px;
+    }
+    .tech .list ul li.over a .inner h3 {
+        font-size: 50px;
+    }
+    .tech .list ul li.over a .more {
+        right: 40px;
+        bottom: 55px;
+    }
+}
+/* ~ 1024px */
+@media screen and (max-width:1024px) {
+    .tech .tit {
+        height: 200px;
+    }
+    .tech .tit h2 {
+        font-size: 40px;
+    }
+    .tech .tit p {
+        font-size: 16px;
+    }
+    .tech .list ul {
+        display: block;
+        gap: 0;
+    }
+    .tech .list ul li {
+        width: 100%;
+    }
+    .tech .list ul li a .photo {
+        height: 240px;
+    }
+    .tech .list ul li a .inner {
+        transform: none;
+        left: 50px;
+        bottom: 30px;
+    }
+    .tech .list ul li a .inner .txt p {
+        display: block;
+        font-size: 16px;
+    }
+    .tech .list ul li a .more {
+        display: block;
+        right: 50px;
+        bottom: 35px;
+    }
+    .tech .list ul li a .more span {
+        font-size: 16px;
+        padding: 8px 37px 8px 18px;
+    }
+    .tech .list ul li a .more span::after {
+        right: 15px;
+        bottom: 9px;
+        width: 18px;
+        height: 18px;
+    }
+}
+@media screen and (max-width:768px) {
+    .tech .tit {
+        height: 170px;
+    }
+    .tech .tit h2 {
+        font-size: 36px;
+    }
+    .tech .list ul li a .photo {
+        height: 200px;
+    }
+    .tech .list ul li a .inner {
+        left: 30px;
+        bottom: 20px;
+    }
+    .tech .list ul li a .inner .txt h3 {
+        font-size: 32px;
+    }
+    .tech .list ul li a .inner .txt p {
+        display: none;
+    }
+    .tech .list ul li a .more {
+        right: 30px;
+        bottom: 30px;
+    }
+    .tech .list ul li a .more span {
+        font-size: 16px;
+        padding: 8px 37px 8px 18px;
+    }
+    .tech .list ul li a .more span::after {
+        right: 15px;
+        bottom: 9px;
+        width: 18px;
+        height: 18px;
+    }
+}
+@media screen and (max-width:480px) {
+    .tech .tit {
+        height: 140px;
+    }
+    .tech .tit h2 {
+        font-size: 24px;
+    }
+    .tech .list ul li a .photo {
+        height: 180px;
+    }
+    .tech .list ul li a .inner {
+        left: 20px;
+        bottom: 50px;
+    }
+    .tech .list ul li a .inner .txt h3 {
+        font-size: 24px;
+    }
+    .tech .list ul li a .more {
+        right: 0;
+        left: 20px;
+        bottom: 20px;
+    }
+    .tech .list ul li a .more span {
+        font-size: 12px;
+        padding: 6px 30px 6px 16px;
+    }
+    .tech .list ul li a .more span::after {
+        right: 13px;
+        bottom: 8px;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .item {
     height: 1000px;
     background-color: green;

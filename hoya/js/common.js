@@ -85,7 +85,18 @@ $(document).ready(function(){//문서가 로딩 되고 단 1번 실행
             }
         } 
     })
+    /*************************************************************************
+     * section - tech
+     * 브라우저 사이즈가 1024px 이상일 경우, li에 over 클래스 추가/삭제, li가 7:3 가로로 존재
+     * 브라우저 사이즈가 1023px 이하일 경우, li에 fixed 클래스 추가 삭제, li가 1:1 위아래로 존재
+     */
 
+    // 처음 로딩되었을 때 브라우저 사이즈 구분하고 li 배치
+
+    $('.tech .list ul li').on('mouseenter', function(){
+        $('.tech .list ul li').removeClass('over')
+        $(this).addClass('over')
+    })
 })
 
 //함수의 선언 
