@@ -30,37 +30,20 @@ html, body {
         width: auto;
         margin: 0 20px;
     }
-}/*@media*/
+}
 :root {
-    /* header */
     --header-h: 100px;
     --header-h-m: -100px;
-    /* font */
     --tit-font-size: 45px;
     --bold-weight: 700;
     --tit-line-height: 1.2;
-    /* color */
     --tit-color: #1d1d1d;
     --base-color: #555;
     --point-color: #255bec;
 }
-/********** 769px ~ 1024px **********/
 @media screen and (max-width:1024px){
     :root {
         --header-h: 60px;
         --header-h-m: -60px;
-        /* --tit-font-size: 36px; */
     }
-}/*@media*/
-/********** 481px ~ 768px **********/
-@media screen and (max-width:768px){
-    :root {
-        /* --tit-font-size: 28px; */
-    }
-}/*@media*/
-/********** ~ 480px **********/
-@media screen and (max-width:480px){
-    :root {
-        /* --tit-font-size: 22px; */
-    }
-}/*@media*/
+}

@@ -1,7 +1,4 @@
-/* 태그별로 브라우저에서 기본스타일을 줌
-   그걸 모두 삭제하고 body에서 선언한 글자 스타일 대로만 적용 
-   여백, 동그라미 삭제 */
-   h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6 {
     font-size: inherit;
     font-weight: inherit;
 }
@@ -26,7 +23,7 @@ button {
     font-weight: inherit;
     color: inherit;
     line-height: inherit;
-    cursor: pointer; /* 마우스 오버 시 손바닥 모양 */
+    cursor: pointer;
     text-align: left;
 }
 * {

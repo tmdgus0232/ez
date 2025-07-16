@@ -1,59 +1,52 @@
+@import url(common.css);
 @import url(default.css);
 @import url(font.css);
-@import url(common.css);
 @import url(layout.css);
-/****************************** section - visual ******************************/
-.visual {
+
+/********** sec01 **********/
+.sec01 {
     position: relative;
+    color: #fff;
 }
-.visual .swiper-slide .photo {
-    overflow: hidden;
+.sec01 .swiper-slide .photo {
     height: 100dvh;
-    min-height: 500px;
+    min-height: 600px;
+    overflow: hidden;
 }
-.visual .swiper-slide .photo img {
+.sec01 .swiper-slide .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 1.5s;
 }
-.visual .swiper-slide.swiper-slide-active .photo img {
+.sec01 .swiper-slide.swiper-slide-active .photo img {
     transform: scale3d(1.1, 1.1, 1);
 }
-.visual .swiper-slide .txt_wrap {
+.sec01 .swiper-slide .txt_wrap {
     position: absolute;
     left: 0;
-    bottom: 35%;
+    bottom: 30%;
     width: 100%;
 }
-.visual .swiper-slide .txt_wrap .txt {
-    /* overflow: hidden; */
-    color: #fff;
-}
-.visual .swiper-slide .txt_wrap .txt h2 {
+.sec01 .swiper-slide .txt_wrap .txt h2 {
     font-size: 70px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    /* transform: translateY(100%);
-    transition: 0.5s;
-    transition-delay: 0.8s; */
+    margin-bottom: 5px;
 }
-.visual .swiper-slide .txt_wrap .txt h2 br {
+.sec01 .swiper-slide .txt_wrap .txt h2 br {
     display: none;
 }
-.visual .swiper-slide .txt_wrap .txt p {
-    margin: 5px 0 0 0;
-}
-/********** swiper button **********/
-.visual .ctrl_wrap {
+.sec01 .ctrl_wrap {
+    display: flex;
     position: absolute;
     left: calc(50% - 630px);
-    bottom: 30%;
+    bottom: 25%;
     z-index: 10;
     display: flex;
     gap: 5px;
 }
-.visual .ctrl_wrap button {
+.sec01 .ctrl_wrap button {
     border: 1px solid #fff;
     border-radius: 50%;
     width: 30px;
@@ -61,25 +54,25 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
-.visual .ctrl_wrap button.btn_prev {
+.sec01 .ctrl_wrap button.btn_prev {
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 12.75L0 6.5L6.25 0.25L7.35938 1.35938L2.21875 6.5L7.35938 11.6406L6.25 12.75Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-.visual .ctrl_wrap button.btn_next {
+.sec01 .ctrl_wrap button.btn_next {
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.75 0.25L8 6.5L1.75 12.75L0.640625 11.6406L5.78125 6.5L0.640625 1.35937L1.75 0.25Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-.visual .btn_scroll {
+.sec01 .btn_scroll {
     position: absolute;
     left: 50%;
     bottom: 10%;
     transform: translate(-50%);
-    animation: btn_move 1.0s infinite linear;
+    animation: scroll_down 1.0s infinite linear;
     z-index: 10;
     color: #fff;
 }
-.visual .btn_scroll span {
+.sec01 .btn_scroll span {
     position: relative;
 }
-.visual .btn_scroll span::after {
+.sec01 .btn_scroll span::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -92,7 +85,7 @@
     background-position: center center;
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_103' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_103)'%3E%3Cpath d='M12 22L5 15L6.4 13.575L11 18.175V11H13V18.175L17.6 13.6L19 15L12 22ZM11 9V6H13V9H11ZM11 4V2H13V4H11Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
-@keyframes btn_move {
+@keyframes scroll_down {
     0%, 100% {
         transform:translate(-50%,-50%)
     }
@@ -101,49 +94,48 @@
     }
 }
 @media screen and (max-width:1300px) {
-    .visual .ctrl_wrap {
+    .sec01 .ctrl_wrap {
         left: 20px;
     }
 }
 @media screen and (max-width:1024px) {
-    .visual .swiper-slide .txt_wrap .txt h2 {
+    .sec01 .swiper-slide .txt_wrap .txt h2 {
         font-size: 55px;
     }
-    .visual .swiper-slide .txt_wrap .txt p {
+    .sec01 .swiper-slide .txt_wrap .txt p {
         font-size: 16px;
     }
-    .visual .btn_scroll span {
+    .sec01 .btn_scroll span {
         font-size: 16px;
     }
-    .visual .btn_scroll span::after {
+    .sec01 .btn_scroll span::after {
         width: 22px;
         height: 22px;
     }
 }
 @media screen and (max-width:768px) {
-    .visual .swiper-slide .photo {
+    .sec01 .swiper-slide .photo {
         height: 800px;
     }
-    .visual .swiper-slide .txt_wrap .txt h2 {
+    .sec01 .swiper-slide .txt_wrap .txt h2 {
         font-size: 55px;
     }
 }
 @media screen and (max-width:480px) {
     
-    .visual .swiper-slide .photo {
+    .sec01 .swiper-slide .photo {
         height: 600px;
     }
-    .visual .swiper-slide .txt_wrap .txt h2 {
+    .sec01 .swiper-slide .txt_wrap .txt h2 {
         font-size: 40px;
     }
-    .visual .swiper-slide .txt_wrap .txt h2 br {
+    .sec01 .swiper-slide .txt_wrap .txt h2 br {
         display: block;
     }
-    .visual .ctrl_wrap {
+    .sec01 .ctrl_wrap {
         bottom: 28%;
     }
 }
-/****************************** section - tech ******************************/
 .tech {
     background-color: #f7f7f7;
 }
@@ -155,7 +147,7 @@
     height: 300px;
 }
 .tech .tit h2 {
-    font-size: var(--tit-font-size);
+    font-size: 45px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
     color: var(--tit-color);
@@ -169,11 +161,10 @@
 .tech .list ul {
     display: flex;
     gap: 20px;
-    /* width: 100%; */
 }
 .tech .list ul li {
     width: 30%;
-    transition: 0.5s;
+    transition: 0.7s;
 }
 .tech .list ul li a {
     display: block;
@@ -187,151 +178,58 @@
     height: 100%;
     object-fit: cover;
 }
-.tech .list ul li a .inner {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: flex-end; */
+.tech .list ul li a .txt {
     position: absolute;
     left: 50%;
     bottom: 50%;
     transform: translate(-50%, 50%);
     transition: 0.5s;
 }
-.tech .list ul li a .inner .txt h3 {
+.tech .list ul li a .txt h3 {
     font-size: 45px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
     white-space: nowrap;
-    transition: 0.5s;
+    transition: 0.7s;
 }
-.tech .list ul li a .inner .txt p {
+.tech .list ul li a .txt p {
     display: none;
+    white-space: nowrap;
 }
-.tech .list ul li a .more {
-    display: none;
-    position: absolute;
-    right: 120px;
-    bottom: 105px;
-}
-.tech .list ul li a .more span {
-    border: 1px solid #fff;
-    border-radius: 30px;
-    padding: 10px 39px 10px 20px;
-    position: relative;
-    transition: 0.5s;
-}
-.tech .list ul li a .more:hover span {
-    background-color: #fff;
-    color: #555;
-}
-.tech .list ul li a .more span::after {
-    content: "";
-    position: absolute;
-    right: 17px;
-    bottom: 10px;
-    width: 20px;
-    height: 20px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_4_9' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_4_9)'%3E%3Cpath d='M9.1665 10.8337H4.1665V9.16699H9.1665V4.16699H10.8332V9.16699H15.8332V10.8337H10.8332V15.8337H9.1665V10.8337Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
-    transition: 0.5s;
-}
-.tech .list ul li a .more:hover span::after {
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_36_2' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_36_2)'%3E%3Cpath d='M9.1665 10.8332H4.1665V9.1665H9.1665V4.1665H10.8332V9.1665H15.8332V10.8332H10.8332V15.8332H9.1665V10.8332Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
-}
-.tech .list ul li a .more2 {
-    display: none;
-    position: absolute;
-    left: 20px;
-    bottom: 15px;
-}
-.tech .list ul li a .more2 span {
-    position: relative;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-.tech .list ul li a .more2 span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_4_9' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_4_9)'%3E%3Cpath d='M9.1665 10.8337H4.1665V9.16699H9.1665V4.16699H10.8332V9.16699H15.8332V10.8337H10.8332V15.8337H9.1665V10.8337Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
-}
-/* 1025px ~ */
 @media screen and (min-width:1025px) {
     .tech .list ul li.over {
         width: 70%;
     }
-    .tech .list ul li.over a .inner {
+    .tech .list ul li.over a .txt {
         left: 120px;
         bottom: 100px;
         transform: none;
     }
-    .tech .list ul li.over a .inner h3 {
+    .tech .list ul li.over a .txt h3 {
         font-size: 70px;
     }
-    .tech .list ul li.over a .inner p {
+    .tech .list ul li.over a .txt p {
         display: block;
     }
-    .tech .list ul li.over a .more {
-        display: block;
-    }  
 }
-/* 1201px ~ 1400px */
-@media screen and (min-width:1201px) and (max-width:1400px) {
+@media screen and (max-width:1300px) {
     .tech .tit {
-        height: 280px;
+        height: 270px;
     }
     .tech .list ul li a .photo {
-        height: 550px;
+        height: 400px;
     }
-    .tech .list ul li.over a .inner {
+    .tech .list ul li.over a .txt {
         left: 80px;
         bottom: 60px;
-        transform: none;
     }
-    .tech .list ul li a .inner .txt h3 {
+    .tech .list ul li a .txt h3 {
         font-size: 40px;
     }
-    .tech .list ul li.over a .inner h3 {
-        font-size: 60px;
-    }
-    .tech .list ul li.over a .more {
-        right: 80px;
-        bottom: 65px;
-    }
-}
-/* 1025px ~ 1200px */
-@media screen and (min-width:1025px) and (max-width:1200px) {
-    .tech .tit {
-        height: 250px;
-    }
-    .tech .list ul li a .photo {
-        height: 500px;
-    }
-    .tech .list ul li.over a .inner {
-        left: 40px;
-        bottom: 50px;
-        transform: none;
-    }
-    .tech .list ul li a .inner .txt h3 {
-        font-size: 32px;
-    }
-    .tech .list ul li.over a .inner h3 {
+    .tech .list ul li.over a .txt h3 {
         font-size: 50px;
     }
-    .tech .list ul li.over a .more {
-        right: 40px;
-        bottom: 55px;
-    }
 }
-/* ~ 1024px */
 @media screen and (max-width:1024px) {
     .tech .tit {
         height: 200px;
@@ -352,34 +250,19 @@
     .tech .list ul li a .photo {
         height: 240px;
     }
-    .tech .list ul li a .inner {
-        transform: none;
+    .tech .list ul li a .txt {
         left: 50px;
         bottom: 30px;
+        transform: none;
     }
-    .tech .list ul li a .inner .txt p {
+    .tech .list ul li a .txt p {
         display: block;
         font-size: 16px;
-    }
-    .tech .list ul li a .more {
-        display: block;
-        right: 50px;
-        bottom: 35px;
-    }
-    .tech .list ul li a .more span {
-        font-size: 16px;
-        padding: 8px 37px 8px 18px;
-    }
-    .tech .list ul li a .more span::after {
-        right: 15px;
-        bottom: 9px;
-        width: 18px;
-        height: 18px;
     }
 }
 @media screen and (max-width:768px) {
     .tech .tit {
-        height: 170px;
+        height: 180px;
     }
     .tech .tit h2 {
         font-size: 36px;
@@ -387,63 +270,96 @@
     .tech .list ul li a .photo {
         height: 200px;
     }
-    .tech .list ul li a .inner {
+    .tech .list ul li a .txt {
         left: 30px;
         bottom: 20px;
     }
-    .tech .list ul li a .inner .txt h3 {
+    .tech .list ul li a .txt h3 {
         font-size: 32px;
-    }
-    .tech .list ul li a .inner .txt p {
-        display: none;
-    }
-    .tech .list ul li a .more {
-        right: 30px;
-        bottom: 30px;
-    }
-    .tech .list ul li a .more span {
-        font-size: 16px;
-        padding: 8px 37px 8px 18px;
-    }
-    .tech .list ul li a .more span::after {
-        right: 15px;
-        bottom: 9px;
-        width: 18px;
-        height: 18px;
     }
 }
 @media screen and (max-width:480px) {
     .tech .tit {
-        height: 140px;
+        height: 160px;
     }
     .tech .tit h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
     .tech .list ul li a .photo {
-        height: 180px;
+        height: 160px;
     }
-    .tech .list ul li a .inner {
-        left: 20px;
-        bottom: 50px;
+    .tech .list ul li a .txt h3 {
+        font-size: 32px;
     }
-    .tech .list ul li a .inner .txt h3 {
-        font-size: 24px;
+    .tech .list ul li a .txt p {
+        display: none;
     }
-    .tech .list ul li a .more {
-        right: 0;
-        left: 20px;
-        bottom: 20px;
-    }
-    .tech .list ul li a .more span {
-        font-size: 12px;
-        padding: 6px 30px 6px 16px;
-    }
-    .tech .list ul li a .more span::after {
-        right: 13px;
-        bottom: 8px;
-        width: 10px;
-        height: 10px;
-    }
+}
+.product {
+    display: flex;
+    justify-content: space-between;
+    margin: 135px 0 0 7.81%;    
+}
+.product .tit h2 {
+    font-size: 70px;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+}
+.product .tit p {
+    margin: 5px 0 0 0;
+}
+.product .tit .ctrl_wrap {
+    margin: 20px 0 0 0;
+}
+.product .tit .ctrl_wrap button {
+    border: 1px solid #1d1d1d;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.product .tit .ctrl_wrap button.btn_prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.66667 13.6663L0 6.99967L6.66667 0.333008L7.85 1.51634L2.36667 6.99967L7.85 12.483L6.66667 13.6663Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+.product .tit .ctrl_wrap button.btn_next {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.33333 0.33366L8 7.00033L1.33333 13.667L0.15 12.4837L5.63333 7.00033L0.15 1.51699L1.33333 0.33366Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+.product .list {
+    width: calc(100% - 580px);
+    height: 600px;
+}
+.product .list .swiper-slide {
+    width: 400px;
+}
+.product .list .swiper-slide a {
+    display: block;
+    position: relative;
+}
+.product .list .swiper-slide a .photo {
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.product .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product .list .swiper-slide a .txt {
+    position: absolute;
+    left: 40px;
+    bottom: 50px;
+    color: #fff;
+}
+.product .list .swiper-slide a .txt h3 {
+    font-size: 45px;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+}
+.product .list .swiper-slide a .txt p {
+    margin: 5px 0 0 0;
 }
 
 
@@ -452,28 +368,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.item {
-    height: 1000px;
-    background-color: green;
-}
 .guide {
+    margin: 135px 0 0 0;
     height: 1000px;
     background-color: pink;
 }

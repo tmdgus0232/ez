@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper 동적 크기 조절 예제 - 좌우 분할 레이아웃</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* 기본 CSS: body에 마진을 제거하여 전체 화면을 활용 */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif; /* Inter 폰트 사용 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden; /* 가로 스크롤 방지 */
+        }
+
+        /* product 섹션 스타일: Flexbox 컨테이너로 변경 */
+        .product {
+            width: 100%; /* 전체 너비의 90% 사용 */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px; /* 둥근 모서리 */
+            display: flex; /* 내부 요소를 가로로 배열 */
+            gap: 30px; /* 좌측 섹션과 우측 섹션 사이 간격 */
+            box-sizing: border-box; /* 패딩을 너비에 포함 */
+        }
+
+        /* 좌측 섹션 스타일 (제목 및 컨트롤) */
+        .product .left-section {
+            flex-shrink: 0; /* 축소되지 않음 */
+            width: 580px; /* 고정된 너비 */
+            padding-right: 20px; /* 우측 여백 */
+            box-sizing: border-box; /* 패딩을 너비에 포함 */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* 상단 정렬 */
+            align-items: flex-start;
+        }
+
+        .product .tit { /* .left-section 내의 제목 및 컨트롤 랩퍼 */
+            width: 100%; /* 부모 너비에 맞춤 */
+            display: flex;
+            flex-direction: column; /* 세로로 배치 */
+            align-items: flex-start; /* 좌측 정렬 */
+            margin-bottom: 20px;
+            padding: 0; /* 기존 패딩 제거, left-section에서 처리 */
+        }
+
+        .product .tit h2 {
+            font-size: 2.5em; /* 글자 크기 키움 */
+            color: #333;
+            margin-bottom: 15px; /* 제목 아래 간격 */
+            white-space: nowrap; /* 줄 바꿈 방지 */
+        }
+
+        /* 내비게이션 버튼 컨트롤 랩퍼 스타일 */
+        .product .tit .ctrl_wrap {
+            display: flex;
+            gap: 15px; /* 버튼 사이 간격 */
+        }
+
+        /* 내비게이션 버튼 스타일 */
+        .product .tit .ctrl_wrap button {
+            background-color: #4CAF50; /* 버튼 배경색 */
+            color: white; /* 버튼 글자색 */
+            border: none; /* 테두리 없음 */
+            padding: 14px 25px; /* 패딩 */
+            border-radius: 10px; /* 둥근 모서리 */
+            cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 전환 효과 */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* 버튼 그림자 */
+        }
+
+        .product .tit .ctrl_wrap button:hover {
+            background-color: #45a049; /* 호버 시 배경색 변경 */
+            transform: translateY(-2px); /* 호버 시 약간 위로 이동 */
+        }
+
+        .product .tit .ctrl_wrap button:active {
+            transform: translateY(0); /* 클릭 시 원래 위치로 */
+        }
+
+        /* 우측 섹션 (Swiper) 스타일 */
+        .product .right-section {
+            flex-grow: 1; /* 남은 공간을 모두 차지 */
+            min-width: 0; /* Flex 아이템이 내용물 때문에 확장되는 것을 방지 */
+        }
+
+        /* Swiper를 감싸는 .list div */
+        .product .list {
+            width: 100%; /* 부모 (.right-section) 너비에 맞춤 */
+            height: 100%; /* Swiper 컨테이너 높이와 연동 */
+            display: flex;
+            justify-content: flex-end; /* 슬라이더를 우측으로 밀어냄 (필요시) */
+        }
+
+        /* Swiper 컨테이너 스타일 */
+        .product .swiper {
+            width: 100%; /* .list의 100%를 사용 */
+            height: 650px; /* 활성 슬라이드의 최대 높이(600px)와 여백을 고려한 높이 */
+            box-sizing: border-box;
+            padding-left: 50px; /* 좌측 여백: 원하는 만큼 충분히 확보 */
+            padding-right: 0; /* 슬라이드가 모두 보이도록 우측 패딩은 필요 없음 (slidesPerView로 조절) */
+            overflow: hidden; /* Swiper 내부에서 넘치는 내용 숨김 */
+        }
+
+        /* Swiper wrapper 스타일: 슬라이드들을 세로로 가운데 정렬 */
+        .product .swiper-wrapper {
+            display: flex;
+            align-items: center; /* 자식 요소(슬라이드)들을 세로 가운데 정렬 */
+        }
+
+        /* Swiper 슬라이드 기본 스타일 */
+        .product .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e9ecef;
+            border-radius: 10px; /* 둥근 모서리 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 슬라이드 그림자 */
+            width: 300px; /* 기본 너비 */
+            height: 500px;
+            transition: width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            overflow: hidden; /* 이미지 등이 슬라이드 밖으로 나가지 않도록 */
+            flex-shrink: 0; /* flex 컨테이너 내에서 축소되지 않도록 */
+        }
+
+        /* 활성 슬라이드 스타일 */
+        .product .swiper-slide-active {
+            width: 400px !important; /* 활성 슬라이드 너비 */
+            height: 600px !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* 활성 슬라이드 그림자 강조 */
+            background-color: #d1e7dd; /* 활성 슬라이드 배경색 변경 */
+        }
+
+        /* 슬라이드 내부 이미지 스타일 */
+        .product .swiper-slide img {
+            max-width: 90%; /* 슬라이드 너비에 맞춰 이미지 크기 조절 */
+            max-height: 80%; /* 슬라이드 높이에 맞춰 이미지 크기 조절 */
+            object-fit: contain; /* 이미지 비율 유지하며 채우기 */
+            border-radius: 8px; /* 이미지 둥근 모서리 */
+            margin-bottom: 10px;
+        }
+
+        /* 슬라이드 내부 텍스트 스타일 */
+        .product .swiper-slide p {
+            font-size: 1.2em;
+            color: #555;
+            text-align: center;
+            padding: 0 10px;
+            margin: 0;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 1024px) { /* 데스크톱에서 태블릿으로 넘어가는 중간 지점 조정 */
+            .product {
+                flex-direction: column; /* 세로로 정렬 */
+                gap: 20px;
+            }
+            .product .left-section {
+                width: 100%; /* 전체 너비 차지 */
+                padding-right: 0;
+                align-items: center; /* 가운데 정렬 */
+            }
+            .product .tit {
+                align-items: center; /* 가운데 정렬 */
+                text-align: center;
+            }
+            .product .tit h2 {
+                font-size: 2em;
+            }
+            .product .tit .ctrl_wrap {
+                justify-content: center; /* 버튼 가운데 정렬 */
+            }
+            .product .right-section {
+                width: 100%; /* 전체 너비 차지 */
+            }
+            .product .swiper {
+                padding-left: 50px; /* Swiper 좌측 패딩 유지 */
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                padding: 15px;
+                gap: 15px;
+            }
+            .product .tit h2 {
+                font-size: 1.8em;
+            }
+            .product .tit .ctrl_wrap button {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            .product .swiper {
+                padding-left: 30px; /* 반응형 좌측 패딩 조정 */
+                height: 550px;
+            }
+            .product .swiper-slide {
+                width: 250px;
+                height: 400px;
+            }
+            .product .swiper-slide-active {
+                width: 320px !important;
+                height: 500px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                padding: 10px;
+            }
+            .product .swiper {
+                padding-left: 15px; /* 모바일 좌측 여백 */
+                padding-right: 15px; /* 모바일 우측 여백 (하나만 보일 때) */
+                height: 500px;
+            }
+            .product .swiper-slide {
+                width: 280px; /* 모바일에서 1개 슬라이드가 보일 때의 크기 */
+                height: 450px;
+            }
+            .product .swiper-slide-active {
+                width: 280px !important; /* 모바일에서는 활성화 시에도 동일한 크기로 (가득 채움) */
+                height: 450px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="product">
+        <div class="left-section">
+            <div class="tit">
+                <h2>인기 상품</h2>
+                <div class="ctrl_wrap">
+                    <button class="btn_prev">이전</button>
+                    <button class="btn_next">다음</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="list">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://placehold.co/300x500/FF5733/FFFFFF?text=Product+A" alt="상품 A">
+                            <p>프리미엄 커피 원두</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://placehold.co/300x500/33FF57/FFFFFF?text=Product+B" alt="상품 B">
+                            <p>유기농 허브티 세트</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://placehold.co/300x500/3357FF/FFFFFF?text=Product+C" alt="상품 C">
+                            <p>수제 초콜릿 컬렉션</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://placehold.co/300x500/FFFF33/000000?text=Product+D" alt="상품 D">
+                            <p>신선한 과일 바구니</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://placehold.co/300x500/FF33FF/FFFFFF?text=Product+E" alt="상품 E">
+                            <p>고급 와인 셀렉션</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        let product_swiper; // Swiper 인스턴스를 전역으로 선언
+
+        // 슬라이드 개수를 동적으로 계산하는 함수
+        function getSlidesPerViewByWindowWidth() {
+            const screenWidth = window.innerWidth;
+            const swiperContainer = $('.product .swiper');
+            if (swiperContainer.length === 0) return 1; // 컨테이너 없으면 기본값 반환
+
+            const swiperWidth = swiperContainer.width(); // 실제 Swiper 컨테이너 너비
+            const slideDefaultWidth = 300; // 일반 슬라이드 너비
+            const activeSlideWidth = 400; // 활성 슬라이드 너비
+            const spaceBetween = 30; // 슬라이드 간 간격
+            const paddingLeft = parseInt(swiperContainer.css('padding-left')); // 좌측 패딩값
+
+            let slidesVisible = 0;
+
+            // 1. 활성 슬라이드 고려
+            slidesVisible = 1;
+
+            // 2. 남은 공간에 일반 슬라이드가 얼마나 들어갈 수 있는지 계산
+            // Swiper 컨테이너의 실제 사용 가능한 너비는 'swiperWidth - paddingLeft'
+            let remainingSpace = swiperWidth - paddingLeft - activeSlideWidth - spaceBetween;
+
+            // 최소 1개의 다음 슬라이드는 완전히 보여야 하므로, 남은 공간이 0보다 커야 함
+            if (remainingSpace > 0) {
+                // 다음 슬라이드를 완전히 보여주기 위한 계산
+                if (remainingSpace >= (slideDefaultWidth + spaceBetween)) {
+                    slidesVisible++;
+                    remainingSpace -= (slideDefaultWidth + spaceBetween);
+
+                    // 그 다음 슬라이드가 얼마나 보일 수 있는지 계산 (부분적으로라도)
+                    if (remainingSpace > 0) {
+                        const partialSlideFraction = remainingSpace / (slideDefaultWidth + spaceBetween);
+                        slidesVisible += partialSlideFraction;
+                    }
+                } else {
+                    // 다음 슬라이드의 일부만 보일 수 있는 경우 (예: 1.x)
+                    const partialSlideFraction = remainingSpace / (slideDefaultWidth + spaceBetween);
+                    slidesVisible += partialSlideFraction;
+                }
+            }
+
+            // 모바일일 경우 (1024px 이하부터는 세로 레이아웃으로 변경되므로 1개만 보이게 조정)
+            if (screenWidth <= 1024) {
+                return 1; // 1024px 이하에서는 1개만 보이도록 강제 (확대된 슬라이드만)
+            } else if (screenWidth <= 768) { // 태블릿
+                // 태블릿에서는 최소 1개 + 다음 슬라이드의 일부 또는 전체가 보이도록 조정
+                // 화면에 따라 1.x ~ 2.x 정도의 값이 나올 수 있도록
+                if (swiperWidth - paddingLeft > (activeSlideWidth + spaceBetween + slideDefaultWidth)) {
+                    // 활성 슬라이드와 다음 슬라이드 전체가 보일 공간이 있다면 2.x
+                    remainingSpace = swiperWidth - paddingLeft - (activeSlideWidth + spaceBetween + slideDefaultWidth);
+                    slidesVisible = 2 + (remainingSpace / (slideDefaultWidth + spaceBetween));
+                } else {
+                    // 활성 슬라이드와 다음 슬라이드 일부만 보이는 경우 1.x
+                    slidesVisible = 1 + ((swiperWidth - paddingLeft - activeSlideWidth - spaceBetween) / (slideDefaultWidth + spaceBetween));
+                }
+                return Math.max(1, slidesVisible); // 최소 1개는 보이도록
+            }
+            
+            // 데스크톱에서는 2개 또는 그 이상이 완전히/부분적으로 보이도록 계산
+            return Math.max(1, slidesVisible); // 최소 1개는 보이도록
+        }
+
+
+        function initializeSwiper() {
+            if (product_swiper) {
+                product_swiper.destroy(true, true); // 기존 Swiper 인스턴스가 있으면 파괴
+            }
+
+            product_swiper = new Swiper('.product .swiper', {
+                slidesPerView: getSlidesPerViewByWindowWidth(), // 동적으로 계산된 값 사용
+                spaceBetween: 30, // 슬라이드 간의 간격
+                centeredSlides: false, // 활성 슬라이드를 중앙에 배치하지 않습니다.
+                loop: true,
+                loopedSlides: 5, // 총 슬라이드 개수 (5개)와 동일하게 설정하여 튕김 현상 완화
+                navigation: {
+                    nextEl: '.product .tit .ctrl_wrap button.btn_next',
+                    prevEl: '.product .tit .ctrl_wrap button.btn_prev',
+                },
+                watchOverflow: true,
+                updateOnImagesReady: true,
+                speed: 600, // 슬라이드 전환 속도를 약간 높여 튕기는 느낌을 완화
+                on: {
+                    init: function() {
+                        this.update(); // 초기화 시 레이아웃 업데이트
+                    },
+                    resize: function() { // 화면 크기 변경 시 Swiper 다시 초기화
+                        initializeSwiper();
+                    },
+                },
+                breakpoints: {
+                    1025: { // 1025px 이상 (데스크톱)
+                        spaceBetween: 60,
+                        // slidesPerView는 getSlidesPerViewByWindowWidth 함수에서 처리
+                    },
+                    769: { // 769px ~ 1024px (태블릿 중간)
+                        slidesPerView: 1, // 태블릿 가로일 경우 1개만 보이도록 강제
+                        spaceBetween: 30,
+                    },
+                    481: { // 481px ~ 768px (태블릿 세로)
+                        slidesPerView: 1, // 태블릿 세로일 경우 1개만 보이도록 강제
+                        spaceBetween: 20,
+                    },
+                    320: { // 320px ~ 480px (모바일)
+                        slidesPerView: 1, // 모바일에서는 1개만 보이도록 강제
+                        spaceBetween: 10,
+                        centeredSlides: false, // 모바일에서도 좌측 정렬 유지
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function(){
+            initializeSwiper(); // 페이지 로드 시 Swiper 초기화
+        });
+    </script>
+</body>
+</html>
