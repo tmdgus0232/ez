@@ -41,7 +41,7 @@
     display: flex;
     position: absolute;
     left: calc(50% - 630px);
-    bottom: 25%;
+    bottom: 24%;
     z-index: 10;
     display: flex;
     gap: 5px;
@@ -71,6 +71,7 @@
 }
 .sec01 .btn_scroll span {
     position: relative;
+    margin-bottom: 5px;
 }
 .sec01 .btn_scroll span::after {
     content: "";
@@ -80,7 +81,6 @@
     transform: translateX(-50%);
     width: 24px;
     height: 24px;
-    margin: 5px 0 0 0;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_103' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_103)'%3E%3Cpath d='M12 22L5 15L6.4 13.575L11 18.175V11H13V18.175L17.6 13.6L19 15L12 22ZM11 9V6H13V9H11ZM11 4V2H13V4H11Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -118,11 +118,10 @@
         height: 800px;
     }
     .sec01 .swiper-slide .txt_wrap .txt h2 {
-        font-size: 55px;
+        font-size: 45px;
     }
 }
 @media screen and (max-width:480px) {
-    
     .sec01 .swiper-slide .photo {
         height: 600px;
     }
@@ -132,166 +131,151 @@
     .sec01 .swiper-slide .txt_wrap .txt h2 br {
         display: block;
     }
-    .sec01 .ctrl_wrap {
-        bottom: 28%;
-    }
 }
-.tech {
+.sec02 {
     background-color: #f7f7f7;
 }
-.tech .tit {
+.sec02 .tit {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 250px;
 }
-.tech .tit h2 {
-    font-size: 45px;
+.sec02 .tit h2 {
+    font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
     color: var(--tit-color);
+    margin-bottom: 5px;
 }
-.tech .tit p {
-    margin: 5px 0 0 0;
-}
-.tech .list {
+.sec02 .list {
     color: #fff;
 }
-.tech .list ul {
+.sec02 .list ul {
     display: flex;
     gap: 20px;
 }
-.tech .list ul li {
+.sec02 .list ul li {
     width: 30%;
-    transition: 0.7s;
+    transition: 0.8s;
 }
-.tech .list ul li a {
+.sec02 .list ul li a {
     display: block;
     position: relative;
 }
-.tech .list ul li a .photo {
-    height: 600px;
+.sec02 .list ul li a .photo {
+    height: 400px;
 }
-.tech .list ul li a .photo img {
+.sec02 .list ul li a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.tech .list ul li a .txt {
+.sec02 .list ul li a .txt {
     position: absolute;
     left: 50%;
     bottom: 50%;
     transform: translate(-50%, 50%);
-    transition: 0.5s;
+    white-space: nowrap;
 }
-.tech .list ul li a .txt h3 {
-    font-size: 45px;
+.sec02 .list ul li a .txt h3 {
+    font-size: 36px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    white-space: nowrap;
-    transition: 0.7s;
+    transition: font-size 0.5s ease-in-out;
 }
-.tech .list ul li a .txt p {
+.sec02 .list ul li a .txt p {
     display: none;
-    white-space: nowrap;
 }
 @media screen and (min-width:1025px) {
-    .tech .list ul li.over {
+    .sec02 .list ul li.over {
         width: 70%;
     }
-    .tech .list ul li.over a .txt {
-        left: 120px;
-        bottom: 100px;
+    .sec02 .list ul li.over a .txt {
+        left: 50px;
+        bottom: 50px;
         transform: none;
     }
-    .tech .list ul li.over a .txt h3 {
-        font-size: 70px;
+    .sec02 .list ul li.over a .txt h3 {
+        font-size: 60px;
     }
-    .tech .list ul li.over a .txt p {
+    .sec02 .list ul li.over a .txt p {
         display: block;
     }
 }
 @media screen and (max-width:1300px) {
-    .tech .tit {
-        height: 270px;
+    .sec02 .tit {
+        height: 220px;
     }
-    .tech .list ul li a .photo {
-        height: 400px;
+    .sec02 .list ul li a .photo {
+        height: 370px;
     }
-    .tech .list ul li.over a .txt {
-        left: 80px;
-        bottom: 60px;
+    .sec02 .list ul li a .txt h3 {
+        font-size: 32px;
     }
-    .tech .list ul li a .txt h3 {
-        font-size: 40px;
-    }
-    .tech .list ul li.over a .txt h3 {
-        font-size: 50px;
+    .sec02 .list ul li.over a .txt h3 {
+        font-size: 55px;
     }
 }
 @media screen and (max-width:1024px) {
-    .tech .tit {
+    .sec02 .tit {
         height: 200px;
     }
-    .tech .tit h2 {
+    .sec02 .tit h2 {
         font-size: 40px;
     }
-    .tech .tit p {
+    .sec02 .tit p {
         font-size: 16px;
     }
-    .tech .list ul {
+    .sec02 .list ul {
         display: block;
         gap: 0;
     }
-    .tech .list ul li {
+    .sec02 .list ul li {
         width: 100%;
     }
-    .tech .list ul li a .photo {
-        height: 240px;
+    .sec02 .list ul li a .photo {
+        height: 250px;
     }
-    .tech .list ul li a .txt {
-        left: 50px;
+    .sec02 .list ul li a .txt {
+        left: 40px;
         bottom: 30px;
         transform: none;
     }
-    .tech .list ul li a .txt p {
+    .sec02 .list ul li a .txt h3,
+    .sec02 .list ul li.over a .txt h3 {
+        font-size: 45px;
+    }
+    .sec02 .list ul li a .txt p {
         display: block;
         font-size: 16px;
     }
 }
 @media screen and (max-width:768px) {
-    .tech .tit {
-        height: 180px;
-    }
-    .tech .tit h2 {
-        font-size: 36px;
-    }
-    .tech .list ul li a .photo {
-        height: 200px;
-    }
-    .tech .list ul li a .txt {
+    .sec02 .list ul li a .txt {
         left: 30px;
-        bottom: 20px;
-    }
-    .tech .list ul li a .txt h3 {
-        font-size: 32px;
     }
 }
 @media screen and (max-width:480px) {
-    .tech .tit {
-        height: 160px;
+    .sec02 .tit {
+        height: 180px;
     }
-    .tech .tit h2 {
-        font-size: 28px;
+    .sec02 .tit h2 {
+        font-size: 36px;
     }
-    .tech .list ul li a .photo {
-        height: 160px;
+    .sec02 .list ul li a .photo {
+        height: 220px;
     }
-    .tech .list ul li a .txt h3 {
-        font-size: 32px;
+    .sec02 .list ul li a .txt {
+        left: 20px;
+        bottom: 20px;
     }
-    .tech .list ul li a .txt p {
+    .sec02 .list ul li a .txt h3,
+    .sec02 .list ul li.over a .txt h3 {
+        font-size: 36px;
+    }
+    .sec02 .list ul li a .txt p {
         display: none;
     }
 }
