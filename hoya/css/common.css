@@ -25,7 +25,7 @@ html, body {
     overflow: hidden;
     color: transparent;
 }
-@media screen and (max-width:1300px){
+@media screen and (max-width:1300px) {
     .wrapper {
         width: auto;
         margin: 0 20px;
@@ -41,9 +41,20 @@ html, body {
     --base-color: #555;
     --point-color: #255bec;
 }
-@media screen and (max-width:1024px){
+@media screen and (max-width:1024px) {
     :root {
         --header-h: 60px;
         --header-h-m: -60px;
+        --tit-font-size: 40px;
+    }
+}
+@media screen and (max-width:768px) {
+    :root {
+        --tit-font-size: 36px;
+    }
+}
+@media screen and (max-width:480px) {
+    :root {
+        --tit-font-size: 32px;
     }
 }
