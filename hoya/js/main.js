@@ -76,26 +76,30 @@ $(document).ready(function(){
     });
 
     // sec04 cnt
-    $('.sec04 .btn_wrap .btn_01').on('click', function(){
-        console.log("1번 눌림")
-        $('.sec04 ul li').removeClass('click');
-        $('.sec04 ul li:nth-child(1)').addClass('click');
-        $('.sec04 .btn_wrap button').removeClass('click');
-        $(this).addClass('click');
-    });
-    $('.sec04 .btn_wrap .btn_02').on('click', function(){
-        console.log("2번 눌림")
-        $('.sec04 ul li').removeClass('click');
-        $('.sec04 ul li:nth-child(2)').addClass('click');
-        $('.sec04 .btn_wrap button').removeClass('click');
-        $(this).addClass('click');
-    });
-    $('.sec04 .btn_wrap .btn_03').on('click', function(){
-        console.log("3번 눌림")
-        $('.sec04 ul li').removeClass('click');
-        $('.sec04 ul li:nth-child(3)').addClass('click');
-        $('.sec04 .btn_wrap button').removeClass('click');
-        $(this).addClass('click');
+    let sec04_cnt
+    $('.sec04 .top .tab ul li').on('click', function(){
+        console.log('ㅇㅋㅇㅋ');
+        if($(this).hasClass('active') == false){
+            sec04_cnt = $(this).attr('aria-controls');
+
+            $('.sec04 .tab_contents .cnt').removeClass('active');
+            $('.sec04 .tab_contents').find('#'+sec04_cnt).addClass('active');
+
+            $('.sec04 .top .tab ul li').removeClass('active');
+            $(this).addClass('active');
+
+            $('.sec04 .top .tab ul li btn_tab span').text('');
+            $(this).find('span').text('선택됨');
+
+            $('.sec04 .top .tab ul li').attr('aria-selected', 'false');
+            $(this).attr('aria-selected', 'true');
+        }
+    })
+
+    AOS.init({
+        offset: 150, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+        duration: 500, // 애니메이션 효과가 작동되는 시간
+        easing: 'ease', // 가속도
     });
 
 

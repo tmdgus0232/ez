@@ -29,11 +29,11 @@
                     <div class="gnb_util">
                         <div class="lang">
                             <button class="lang_open"><span>KR</span></button>
-                        </div>
+                        </div><!-- //lang -->
                         <div class="search">
                             <button class="search_open"><span>검색</span></button>
-                        </div>
-                    </div>
+                        </div><!-- //search -->
+                    </div><!-- //gnb_util -->
                     <ul class="depth1">
                         <li>
                             <a href="#"><span>호야렌즈</span></a>
@@ -69,19 +69,19 @@
                                 <li><a href="#"><span>채용정보</span></a></li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul><!-- //depth1 -->
                     <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
-                </div>
+                </div><!-- //gnb_wrap -->
                 <div class="gnb_bg"></div>
-            </nav>
+            </nav><!-- //gnb -->
             <div class="util">
                 <div class="lang">
                     <button class="lang_open"><span>KR</span></button>
-                </div>
+                </div><!-- //lang -->
                 <div class="search">
                     <button class="search_open"><span>검색</span></button>
-                </div>
-            </div>
+                </div><!-- //search -->
+            </div><!-- //util -->
         </header>
         <main class="container">
             <section class="sec01">
@@ -121,22 +121,22 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div><!-- //swiper -->
                 <div class="ctrl_wrap">
                     <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
                     <button class="btn_next"><span class="blind">다음팝업보기</span></button>
-                </div>
+                </div><!-- //ctrl_wrap -->
                 <div class="btn_scroll">
                     <span>Scroll Down</span>
-                </div>
+                </div><!-- //btn_scroll -->
             </section>
             <section class="sec02">
                 <div class="wrapper">
                     <div class="tit">
                         <h2>렌즈 그 이상의 기술</h2>
                         <p>변화하는 라이프스타일에 맞춘 렌즈 기술의 혁신</p>
-                    </div>
-                </div>
+                    </div><!-- //tit -->
+                </div><!-- //wrapper -->
                 <div class="list">
                     <ul>
                         <li class="over">
@@ -144,7 +144,7 @@
                                 <div class="photo"><img src="images/main/sec02_01.jpg" alt=""></div>
                                 <div class="txt">
                                     <h3>MiYOSMART</h3>
-                                    <p>아이들이 더 나아갈 수 있게, 근시 진행 속도를 늦춥니다</p>
+                                    <p>아이들이 더 나아갈 수 있게, 근시 진행 속도를 늦춥니다.</p>
                                 </div>
                             </a>
                         </li>
@@ -153,25 +153,25 @@
                                 <div class="photo"><img src="images/main/sec02_02.jpg" alt=""></div>
                                 <div class="txt">
                                     <h3>Hi-Vision Meiryo</h3>
-                                    <p>어떤 환경에서도 렌즈를 더 오랫동안 깨끗하게 유지합니다</p>
+                                    <p>어떤 환경에서도 렌즈를 더 오랫동안 깨끗하게 유지합니다.</p>
                                 </div>
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div><!-- //list -->
             </section>
             <section class="sec03">
                 <div class="tit">
                     <h2>PRODUCT</h2>
-                    <P>다양한 시각 환경에서도 선명하고 자연스러운 초점을 유지합니다</P>
+                    <P>다양한 시각 환경에서도 선명하고 자연스러운 초점을 유지합니다.</P>
                     <div class="paging_wrap">
                         <div class="paging"></div>
                         <div class="ctrl_wrap">
                             <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
                             <button class="btn_next"><span class="blind">다음팝업보기</span></button>
-                        </div>
-                    </div>
-                </div>
+                        </div><!-- //ctrl_wrap -->
+                    </div><!-- //paging_wrap -->
+                </div><!-- //tit -->
                 <div class="list">
                     <div class="swiper">
                         <ul class="swiper-wrapper">
@@ -212,49 +212,57 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                </div>
+                    </div><!-- //swiper -->
+                </div><!-- //list -->
             </section>
             <section class="sec04">
                 <div class="wrapper">
-                    <div class="btn_wrap">
-                        <button class="btn_01"><span>안경테 선택</span></button>
-                        <button class="btn_02"><span>렌즈 선택</span></button>
-                        <button class="btn_03"><span>렌즈 코팅 선택</span></button>
-                    </div>
-                    <ul>
-                        <li class="click">
-                            <div class="cnt">
-                                <div class="txt">
-                                    <h2>당신에게 딱 맞는 <br>안경테를 찾아보세요1</h2>
-                                    <p>안경테는 단순한 액세서리가 아니라 당신의 분위기와 스타일을 결정짓는 중요한 요소입니다. <br>얼굴형, 피부 톤, 라이프스타일까지 고려해 가장 잘 어울리는 프레임을 함께 골라보세요</p>
-                                    <a href="#"><span>Learn More</span></a>
-                                </div>
-                                <div class="photo"><img src="images/main/sec04_01.jpg" alt=""></div>
+                    <div class="top">
+                        <div class="tit">
+                            <h2>호야 비전 안경을 선택하는 방법</h2>
+                        </div><!-- //tit -->
+                        <div class="tab">
+                            <ul role="tab_list">
+                                <li id="tab_01" role="tab" aria-selected="true" aria-controls="cnt_01" class="active">
+                                    <button class="btn_tab">안경테 선택<span class="blind">선택됨</span></button>
+                                </li>
+                                <li id="tab_02" role="tab" aria-selected="false" aria-controls="cnt_02">
+                                    <button class="btn_tab">렌즈 선택<span class="blind"></span></button>
+                                </li>
+                                <li id="tab_03" role="tab" aria-selected="false" aria-controls="cnt_03">
+                                    <button class="btn_tab">코팅 선택<span class="blind"></span></button>
+                                </li>
+                            </ul><!-- //tablist -->
+                        </div><!-- //tab -->
+                    </div><!-- //top -->
+                    <div class="tab_contents">
+                        <div id="cnt_01" aria-labelledby="tab_01" class="cnt active">
+                            <div class="txt">
+                                <h3>스타일과 편안함을 <br>동시에 잡는 안경테</h3>
+                                <!-- <p>어떤 테를 쓰느냐에 따라 분위기가 완전히 달라집니다 <br>얼굴형에 어울리는 테를 찾아보세요</p> -->
+                                <p>안경테는 단순한 액세서리가 아니라 당신의 분위기와 스타일을 결정짓는 중요한 요소입니다. 얼굴형, 피부 톤, 라이프스타일까지 고려해 가장 잘 어울리는 프레임을 함께 골라보세요.</p>
+                                <a href="#"><span class="more">Learn More</span></a>
                             </div>
-                        </li>
-                        <li>
-                            <div class="cnt">
-                                <div class="txt">
-                                    <h2>당신에게 딱 맞는 <br>안경테를 찾아보세요2</h2>
-                                    <p>안경테는 단순한 액세서리가 아니라 당신의 분위기와 스타일을 결정짓는 중요한 요소입니다. <br>얼굴형, 피부 톤, 라이프스타일까지 고려해 가장 잘 어울리는 프레임을 함께 골라보세요</p>
-                                    <a href="#"><span>Learn More</span></a>
-                                </div>
-                                <div class="photo"><img src="images/main/sec04_01.jpg" alt=""></div>
+                            <div class="photo"><img src="images/main/sec04_01.jpg" alt=""></div>
+                        </div>
+                        <div id="cnt_02" aria-labelledby="tab_02" class="cnt">
+                            <div class="txt">
+                                <h3>눈 건강을 지키는 <br>스마트한 렌즈 선택</h3>
+                                <p>렌즈는 매일 사용하는 만큼, 그 만족감은 오래갑니다. 렌즈에도 품질과 기능의 차이가 크기 때문에 눈에 맞는 렌즈를 찾는 데 시간을 들여보세요.</p>
+                                <a href="#"><span class="more">Learn More</span></a>
                             </div>
-                        </li>
-                        <li>
-                            <div class="cnt">
-                                <div class="txt">
-                                    <h2>당신에게 딱 맞는 <br>안경테를 찾아보세요3</h2>
-                                    <p>안경테는 단순한 액세서리가 아니라 당신의 분위기와 스타일을 결정짓는 중요한 요소입니다. <br>얼굴형, 피부 톤, 라이프스타일까지 고려해 가장 잘 어울리는 프레임을 함께 골라보세요</p>
-                                    <a href="#"><span>Learn More</span></a>
-                                </div>
-                                <div class="photo"><img src="images/main/sec04_01.jpg" alt=""></div>
+                            <div class="photo"><img src="images/main/sec04_01.jpg" alt=""></div>
+                        </div>
+                        <div id="cnt_03" aria-labelledby="tab_04" class="cnt">
+                            <div class="txt">
+                                <h3>깨끗하고 선명한 시야 <br>코팅에서 시작됩니다</h3>
+                                <p>렌즈에 어떤 코팅을 하느냐에 따라 선명도와 착용감, 그리고 렌즈의 수명이 달라집니다. 먼지와 오염에 강하고 스크래치나 김서림을 방지하는 기능성 코팅을 경험해보세요.</p>
+                                <a href="#"><span class="more">Learn More</span></a>
                             </div>
-                        </li>
-                    </ul>
-                </div>
+                            <div class="photo"><img src="images/main/sec04_01.jpg" alt=""></div>
+                        </div>
+                    </div><!-- //tab_contents -->
+                </div><!-- //wrapper -->
             </section>
             <section class="sec05">
                 <h1>news</h1>
