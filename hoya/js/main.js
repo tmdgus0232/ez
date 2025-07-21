@@ -17,26 +17,30 @@ $(document).ready(function(){
     });
 
     // sec02 list
-    $('.sec02 .list ul li').on('mouseenter', function(){
-        $('.sec02 .list ul li').removeClass('over');
-        $(this).addClass('over');
-    });
+    // $('.sec02 .list ul li').on('mouseenter', function(){
+    //     $('.sec02 .list ul li').removeClass('over');
+    //     $(this).addClass('over');
+    // });
 
     // sec03 swiper
     const news_swiper = new Swiper('.sec03 .swiper', {
-        slidesPerView: 'auto',
+        slidesPerView: 2,
         spaceBetween: 20,
         breakpoints: {
-            1300: {
-                spaceBetween: 50,
-            },
-            1024: {
-                spaceBetween: 40,
-            },
-            768: {
+            1025: {
+                slidesPerView: 'auto',
                 spaceBetween: 30,
             },
-            480: {
+            769: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            601: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            481: {
+                slidesPerView: 2,
                 spaceBetween: 20,
             },
         },
@@ -46,39 +50,19 @@ $(document).ready(function(){
             disableOnInteraction: true,
         },
         navigation: {
-            nextEl: '.sec03 .ctrl_wrap .btn_next',
-            prevEl: '.sec03 .ctrl_wrap .btn_prev',
+            nextEl: '.sec03 .tit .paging_wrap .ctrl_wrap .btn_next',
+            prevEl: '.sec03 .tit .paging_wrap .ctrl_wrap .btn_prev',
         },
         pagination: {
 		    el: '.sec03 .paging',
 		    clickable: true,
 		    type: 'fraction',
 	    },
-        on: {
-            slideChange: function() {
-                const activeSlide = $('.sec03 .swiper .swiper-slide.swiper-slide-active');
-                const activeSlideWidth = activeSlide.width();
-                
-                const otherSlides = $('.sec03 .swiper .swiper-slide:not(.swiper-slide-active)')
-                const otherSlideWidth = otherSlides.width();
-    
-                const slideWidthDifference = activeSlideWidth - otherSlideWidth;
-                console.log(slideWidthDifference);
-    
-                this.setTranslate(this.translate + slideWidthDifference);
-            },
-            slideChangeTransitionEnd: function() {
-                setTimeout(() => {
-                    this.update();
-                }, 100);
-            }
-        },
     });
 
     // sec04 cnt
     let sec04_cnt
     $('.sec04 .top .tab ul li').on('click', function(){
-        console.log('ㅇㅋㅇㅋ');
         if($(this).hasClass('active') == false){
             sec04_cnt = $(this).attr('aria-controls');
 
@@ -96,10 +80,31 @@ $(document).ready(function(){
         }
     })
 
-    AOS.init({
-        offset: 150, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
-        duration: 500, // 애니메이션 효과가 작동되는 시간
-        easing: 'ease', // 가속도
+    // sec05 swiper
+    const swiper = new Swiper('.sec05 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            640: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 20,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 2500,
+            disableOnInteraction: true,
+        },
+        navigation: {
+            nextEl: '.sec05 .cnt .ctrl_wrap button.btn_next',
+            prevEl: '.sec05 .cnt .ctrl_wrap button.btn_prev',
+        },
+        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.swiper-pagination', /* 해당 요소의 class명 */
+            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+        },
     });
 
 

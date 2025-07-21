@@ -159,7 +159,7 @@
     font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    color: var(--point-color);
+    color: var(--tit-color);
     margin-bottom: 5px;
 }
 .sec02 .list {
@@ -168,70 +168,60 @@
 .sec02 .list ul {
     display: flex;
     gap: 20px; /* li 사이의 여백*/
+    margin: 0 20px;
 }
 .sec02 .list ul li {
-    width: 40%;
+    width: 50%;
     transition: 0.5s;
+    position: relative;
 }
 .sec02 .list ul li a {
     display: block;
-    position: relative; /* .txt의 기준 */
 }
 .sec02 .list ul li a .photo {
     height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 .sec02 .list ul li a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: grayscale(0.4);
 }
-.sec02 .list ul li a .txt {
-    position: absolute; /* a를 기준으로 정렬 */
-    left: 50%;
-    bottom: 50%;
-    transform: translate(-50%, 50%); /* 정가운데로 배치 */
-    white-space: nowrap;
+.sec02 .list ul li a .desc {
+    position: absolute;
+    right: 30px;
+    top: 25px;
 }
-.sec02 .list ul li a .txt h3 {
+.sec02 .list ul li a .sub{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+}
+.sec02 .list ul li a .sub h3 {
     font-size: var(--tit-font-size);
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    transition: font-size 0.5s ease-in-out;
 }
-.sec02 .list ul li a .txt p {
-    display: none; /* hover 하지 않으면 보이지 않음 */
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-/* 1025px 이상에선 hover 했을 때 li의 비율 변함 */
 @media screen and (min-width:1025px) {
-    .sec02 .list ul li.over {
-        width: 60%;
+    .sec02 .list ul li:hover {
+        width: 70%;
     }
-    .sec02 .list ul li.over a .txt {
-        left: 50px;
-        bottom: 50px;
-        transform: none;
-        width: calc(100% - 50px);
-        padding-right: 50px;
-    }
-    .sec02 .list ul li.over a .txt h3 {
-        font-size: 60px;
-    }
-    .sec02 .list ul li.over a .txt p {
-        display: block; /* hover 하면 보임 */
+    .sec02 .list ul li:hover a .photo img {
+        filter: grayscale(0);
     }
 }
 @media screen and (max-width:1024px) {
     .sec02 .tit {
-        height: 200px;
+        height: 180px;
     }
     .sec02 .tit p {
         font-size: 16px;
     }
     .sec02 .list ul {
-        display: block; /* li 위 아래로 배치 */
-        gap: 0;
+        display: block;
+        gap: 0; /* li 사이의 여백*/
     }
     .sec02 .list ul li {
         width: 100%;
@@ -239,45 +229,41 @@
     .sec02 .list ul li a .photo {
         height: 250px;
     }
-    .sec02 .list ul li a .txt {
-        left: 30px;
-        bottom: 30px;
-        transform: none;
-        width: calc(100% - 30px);
-        padding-right: 30px;
+    .sec02 .list ul li a .photo img {
+        filter: grayscale(0);
     }
-    .sec02 .list ul li.over a .txt h3 {
-        font-size: var(--tit-font-size);
+    .sec02 .list ul li:nth-child(1) {
+        margin-bottom: 20px;
     }
-    .sec02 .list ul li a .txt p {
-        display: block;
+    .sec02 .list ul li a .desc p {
         font-size: 16px;
     }
 }
 @media screen and (max-width:768px) {
     .sec02 .tit {
-        height: 170px;
+        height: 160px;
     }
     .sec02 .list ul li a .photo {
-        height: 220px;
+        height: 200px;
+    }
+    .sec02 .list ul li a .desc p {
+        display: none;
     }
 }
 @media screen and (max-width:480px) {
     .sec02 .tit {
         height: 140px;
     }
-    .sec02 .list ul li a .photo {
-        height: 190px;
-    }
-    .sec02 .list ul li a .txt {
-        left: 20px;
-        bottom: 20px;
-        width: calc(100% - 20px);
-        padding-right: 20px;
-    }
-    .sec02 .list ul li a .txt p {
+    .sec02 .tit p {
         font-size: 14px;
     }
+    .sec02 .list ul li:nth-child(1) {
+        margin-bottom: 15px;
+    }
+    .sec02 .list ul li a .photo {
+        height: 160px;
+    }
+
 }
 /****************************** sec03 ******************************/
 .sec03 {
@@ -286,10 +272,10 @@
     margin: 135px 0 135px 7.81%;    
 }
 .sec03 .tit h2 {
-    font-size: 70px;
+    font-size: 60px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    color: var(--point-color);
+    color: var(--tit-color);
     margin-bottom: 5px;
 }
 .sec03 .tit .paging_wrap {
@@ -299,10 +285,9 @@
 }
 .sec03 .tit .paging_wrap .paging {
     width: fit-content;
-    margin-right: 12px;
 }
 .sec03 .tit .paging_wrap .ctrl_wrap {
-    margin-top: 4px;
+    margin: 4px 0 0 10px;
 }
 .sec03 .tit .paging_wrap .ctrl_wrap button {
     width: 30px;
@@ -325,20 +310,14 @@
 .sec03 .list .swiper-slide {
     width: 300px;
 }
-.sec03 .list .swiper-slide.swiper-slide-active {
-    width: 400px;
-}
 .sec03 .list .swiper-slide a {
     display: block;
-    position: relative; /* .txt의 기준 */
+    position: relative; /* h3의 기준 */
 }
 .sec03 .list .swiper-slide a .photo {
     height: 500px;
     overflow: hidden;
-    border-radius: 30px;
-}
-.sec03 .list .swiper-slide.swiper-slide-active a .photo {
-    height: 600px;
+    border-radius: 15px;
 }
 .sec03 .list .swiper-slide a .photo img {
     width: 100%;
@@ -346,32 +325,15 @@
     object-fit: cover;
     transition: 0.5s;
 }
-.sec03 .list .swiper-slide a .txt {
+.sec03 .list .swiper-slide a h3 {
     position: absolute; /* a를 기준으로 정렬 */
-    left: 30px;
-    bottom: 30px;
-    width: calc(100% - 30px);
-    padding-right: 30px;
-    color: #fff;
-}
-.sec03 .list .swiper-slide a .txt h3 {
-    font-size: 32px;
+    left: 25px;
+    bottom: 25px;
+    font-size: 30px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
+    color: #fff;
     white-space: nowrap;
-}
-.sec03 .list .swiper-slide.swiper-slide-active a .txt h3 {
-    font-size: 45px;
-    margin-bottom: 5px;
-}
-.sec03 .list .swiper-slide a .txt p {
-    display: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.sec03 .list .swiper-slide.swiper-slide-active a .txt p {
-    display: block;
 }
 @media screen and (min-width:1025px) {
     .sec03 .tit .paging_wrap .ctrl_wrap button:hover {
@@ -392,138 +354,99 @@
     .sec03 .list {
         width: calc(100% - 520px); /* .tit 시작점 사이의 여백 520px */
     }
-    .sec03 .list .swiper-slide {
-        width: 270px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active {
-        width: 360px;
-    }
-    .sec03 .list .swiper-slide a .photo {
-        height: 450px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active a .photo {
-        height: 540px;
-    }
 }
 @media screen and (max-width:1024px) {
     .sec03 {
         display: block; /* .list를 아래로 배치 */
-        margin: 100px 0 100px 20px; 
+        margin: 70px 0 110px 0px;
     }
     .sec03 .tit {
-        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
     }
     .sec03 .tit h2 {
-        font-size: 60px;
+        font-size: var(--tit-font-size);
     }
     .sec03 .tit p {
         font-size: 16px;
     }
+    .sec03 .tit .paging_wrap .paging {
+        font-size: 16px;
+    }
+    .sec03 .tit .paging_wrap .ctrl_wrap button {
+        width: 24px;
+        height: 24px;
+    }
+    .sec03 .tit .paging_wrap .ctrl_wrap button.btn_prev {
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10L0 5L5 0L5.8875 0.8875L1.775 5L5.8875 9.1125L5 10Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+    }
+    .sec03 .tit .paging_wrap .ctrl_wrap button.btn_next {
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0L6 5L1 10L0.1125 9.1125L4.225 5L0.1125 0.8875L1 0Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+    }
     .sec03 .list {
         width: 100%;
-        margin-top: 25px;
-    }
-    .sec03 .list .swiper-slide {
-        width: 240px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active {
-        width: 320px;
+        padding: 0 20px;
     }
     .sec03 .list .swiper-slide a .photo {
-        height: 400px;
+        height: 360px;
     }
-    .sec03 .list .swiper-slide.swiper-slide-active a .photo {
-        height: 480px;
-    }
-    .sec03 .list .swiper-slide a .txt h3 {
-        font-size: 28px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active a .txt h3 {
-        font-size: 36px;
-    }
-    .sec03 .list .swiper-slide a .txt p {
-        font-size: 16px;
+    .sec03 .list .swiper-slide a h3 {
+        left: 20px;
+        bottom: 20px;
+        font-size: 24px;
     }
 }
 @media screen and (max-width:768px) {
     .sec03 {
-        margin: 80px 0 80px 20px; 
+        margin: 50px 0 70px 0px;
     }
-    .sec03 .tit h2 {
-        font-size: 45px;
-    }
-    .sec03 .list .swiper-slide {
-        width: 210px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active {
-        width: 280px;
-    }
-    .sec03 .list .swiper-slide a .photo {
-        height: 350px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active a .photo {
-        height: 420px;
-    }
-    .sec03 .list .swiper-slide a .txt {
-        left: 20px;
-        bottom: 25px;
-        width: calc(100% - 20px);
-        padding-right: 20px;
-    }
-    .sec03 .list .swiper-slide a .txt h3 {
-        font-size: 24px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active a .txt h3 {
-        font-size: 32px;
-    }
-    .sec03 .list .swiper a .txt p {
-        font-size: 14px;
-    }
-}
-@media screen and (max-width:480px) {
-    .sec03 {
-        margin: 60px 0 60px 20px; 
-    }
-    .sec03 .tit h2 {
-        font-size: 40px;
-    }
-    .sec03 .list {
-        margin-top: 20px;
-    }
-    .sec03 .list .swiper-slide {
-        width: 180px;
-    }
-    .sec03 .list .swiper-slide.swiper-slide-active {
-        width: 240px;
+    .sec03 .tit {
+        margin-bottom: 20px;
     }
     .sec03 .list .swiper-slide a .photo {
         height: 300px;
     }
-    .sec03 .list .swiper-slide.swiper-slide-active a .photo {
-        height: 360px;
+    .sec03 .list .swiper-slide a h3 {
+        font-size: 22px;
     }
-    .sec03 .list .swiper-slide a .txt {
-        bottom: 20px;
+}
+@media screen and (max-width:480px) {
+    .sec03 {
+        margin: 45px 0 60px 0px;
     }
-    .sec03 .list .swiper-slide a .txt h3 {
-        font-size: 20px;
+    .sec03 .tit p {
+        font-size: 14px;
     }
-    .sec03 .list .swiper-slide.swiper-slide-active a .txt h3 {
-        font-size: 28px;
+    .sec03 .list .swiper-slide a .photo {
+        height: 250px;
+    }
+    .sec03 .list .swiper-slide a h3 {
+        left: 15px;
+        bottom: 15px;
+        font-size: 18px;
     }
 }
 
 .sec04 {
     background-color: #f7f7f7;
     padding: 135px 0;
+
 }
 .sec04 .top {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
 }
-.sec04 .top .tit {
-    margin-top: 6px;
+.sec04 .top .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+    margin-bottom: 30px;
 }
 .sec04 .top .tab ul {
     display: flex;
@@ -555,15 +478,16 @@
     display: flex;
 }
 .sec04 .tab_contents .cnt .txt h3 {
-    font-size: var(--tit-font-size);
+    font-size: 36px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
     white-space: nowrap;
-    color: var(--point-color);
+    color: var(--tit-color);
     margin-bottom: 30px;
 }
 .sec04 .tab_contents .cnt .txt {
     width: 50%;
+    margin-right: 20px;
 }
 .sec04 .tab_contents .cnt .txt a {
     display: block;
@@ -587,29 +511,34 @@
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_14_324' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23555555'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_14_324)'%3E%3Cpath d='M9.16699 10.8337H4.16699V9.16699H9.16699V4.16699H10.8337V9.16699H15.8337V10.8337H10.8337V15.8337H9.16699V10.8337Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 .sec04 .tab_contents .cnt .photo {
-    width: 40%;
+    width: 550px;
     height: 400px;
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 15px;
 }
 .sec04 .tab_contents .cnt .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+@media screen and (max-width:1300px) {
+    /* .sec04 .tab_contents .cnt .txt p {
+        display: none;
+    } */
+}
 @media screen and (max-width:1024px) {
     .sec04 {
-        padding: 100px 0;
+        padding: 80px 0;
     }
     .sec04 .top .tab ul li {
         width: 100px;
-        margin-left: 16px;
+        margin-left: 15px;
     }
     .sec04 .top .tab ul li .btn_tab {
         font-size: 16px;
     }
     .sec04 .tab_contents .cnt .txt p {
-        font-size: 16px;
+        display: none;
     }
     .sec04 .tab_contents .cnt .txt a {
         margin-top: 40px;
@@ -627,31 +556,100 @@
         height: 18px;
     }
     .sec04 .tab_contents .cnt .photo {
-        height: 400px;
+        width: 440px;
+        height: 320px;
     }
 }
 @media screen and (max-width:768px) {
-    .sec04 .top .tab ul li {
-        width: 70px;
-        margin-left: 10px;
-    }
-    .sec04 .top .tab ul li .btn_tab {
-        font-size: 14px;
-    }
-    .sec04 .tab_contents .cnt .txt p {
-        display: none;
-    }
-    .sec04 .tab_contents .cnt .photo {
-        height: 300px;
-    }
+
 }
 
 
 
 .sec05 {
-    height: 1000px;
-    background-color: brown;
+    background: url(../images/main/sec05_01.jpg);
+    height: 800px;
+    padding: 135px 0;
 }
+.sec05 .top {
+    display: flex; /* .tit, .more 좌우로 배치 */
+    justify-content: space-between; /* .tit, .more 양쪽 끝 배치 */
+    color: #fff;
+    margin-bottom: 50px;
+}
+.sec05 .top .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    margin-bottom: 5px;
+}
+.sec05 .top .more a {
+    display: block;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+}
+.sec05 .top .more a span {
+    position: relative; /* span::after의 기준 */
+}
+.sec05 .top .more a span::after {
+    content: "";
+    position: absolute; /* span을 기준으로 정렬 */
+    right: -22px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_9_66' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23555555'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_9_66)'%3E%3Cpath d='M9.1665 10.8337H4.1665V9.16699H9.1665V4.16699H10.8332V9.16699H15.8332V10.8337H10.8332V15.8337H9.1665V10.8337Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+.sec05 .cnt ul {
+    display: flex;
+    gap: 24px;
+}
+.sec05 .cnt ul li {
+    position: relative; /* .more 정렬의 기준 */
+    padding: 50px 40px;
+    width: 404px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+}
+.sec05 .cnt ul li h3 {
+    font-size: 24px;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+    margin-bottom: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sec05 .cnt ul li p {
+    height: 4.5em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    word-break: normal;
+    margin-bottom: 87px;
+}
+.sec05 .cnt ul li .more {
+    position: absolute; /* li 기준으로 정렬 */
+    right: 40px;
+    bottom: 55px;
+}
+.sec05 .cnt ul li .more a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_9_38' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_9_38)'%3E%3Cpath d='M6.68766 18.3337L5.2085 16.8545L12.0627 10.0003L5.2085 3.14616L6.68766 1.66699L15.021 10.0003L6.68766 18.3337Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
 footer {
     height: 1000px;
     background-color: #1d1d1d;

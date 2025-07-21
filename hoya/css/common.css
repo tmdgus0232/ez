@@ -45,16 +45,16 @@ html, body {
     :root {
         --header-h: 60px;
         --header-h-m: -60px;
-        --tit-font-size: 40px;
+        --tit-font-size: 36px;
     }
 }
 @media screen and (max-width:768px) {
     :root {
-        --tit-font-size: 36px;
+        --tit-font-size: 30px;
     }
 }
 @media screen and (max-width:480px) {
     :root {
-        --tit-font-size: 32px;
+        --tit-font-size: 24px;
     }
 }
