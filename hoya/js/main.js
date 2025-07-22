@@ -24,24 +24,11 @@ $(document).ready(function(){
 
     // sec03 swiper
     const news_swiper = new Swiper('.sec03 .swiper', {
-        slidesPerView: 2,
+        slidesPerView: 'auto',
         spaceBetween: 20,
         breakpoints: {
             1025: {
-                slidesPerView: 'auto',
                 spaceBetween: 30,
-            },
-            769: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            601: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            481: {
-                slidesPerView: 2,
-                spaceBetween: 20,
             },
         },
         loop: true,
@@ -58,6 +45,22 @@ $(document).ready(function(){
 		    clickable: true,
 		    type: 'fraction',
 	    },
+        on: {
+            slideChange: function() {
+                const activeSlide = this.slides[this.activeIndex]
+                const activeSlideWidth = activeSlide.offsetWidth
+                const otherSlides = this.slides[this.previousIndex]
+                const otherSlideWidth = otherSlides.offsetWidth			
+                const slideWidthDifference = activeSlideWidth - otherSlideWidth;
+                this.setTranslate(this.translate - slideWidthDifference);
+            },
+            slideChangeTransitionEnd: function() {
+                // 전환이 끝나면 Swiper를 다시 업데이트
+                setTimeout(() => {
+                    this.update();
+                }, 100);  // 잠시 딜레이를 주고 업데이트
+            }
+        },
     });
 
     // sec04 cnt

@@ -319,21 +319,38 @@
     overflow: hidden;
     border-radius: 15px;
 }
+.sec03 .list .swiper-slide.swiper-slide-active {
+    width: 400px;
+}
+.sec03 .list .swiper-slide.swiper-slide-active a .photo {
+    height: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+}
 .sec03 .list .swiper-slide a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.5s;
 }
-.sec03 .list .swiper-slide a h3 {
+.sec03 .list .swiper-slide a .txt_wrap {
     position: absolute; /* a를 기준으로 정렬 */
     left: 25px;
     bottom: 25px;
+    color: #fff;
+    white-space: nowrap;
+}
+.sec03 .list .swiper-slide a .txt_wrap h3 {
     font-size: 30px;
     font-weight: var(--bold-weight);
     line-height: var(--tit-line-height);
-    color: #fff;
-    white-space: nowrap;
+    margin-bottom: 5px;
+}
+.sec03 .list .swiper-slide a .txt_wrap p {
+    display: none;
+}
+.sec03 .list .swiper-slide.swiper-slide-active a .txt_wrap p {
+    display: block;
 }
 @media screen and (min-width:1025px) {
     .sec03 .tit .paging_wrap .ctrl_wrap button:hover {
@@ -352,7 +369,7 @@
 }
 @media screen and (max-width:1300px) {
     .sec03 .list {
-        width: calc(100% - 520px); /* .tit 시작점 사이의 여백 520px */
+        width: calc(100% - 450px); /* .tit 시작점 사이의 여백 520px */
     }
 }
 @media screen and (max-width:1024px) {
@@ -361,10 +378,7 @@
         margin: 70px 0 110px 0px;
     }
     .sec03 .tit {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 30px;
+        margin: 0 0 10px 20px;
     }
     .sec03 .tit h2 {
         font-size: var(--tit-font-size);
@@ -387,29 +401,29 @@
     }
     .sec03 .list {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 0 0 20px;
     }
-    .sec03 .list .swiper-slide a .photo {
-        height: 360px;
+    .sec03 .list .swiper .swiper-slide {
+        width: 240px;
     }
-    .sec03 .list .swiper-slide a h3 {
+    .sec03 .list .swiper .swiper-slide.swiper-slide-active {
+        width: 320px;
+    }
+    .sec03 .list .swiper .swiper-slide a .photo {
+        height: 400px;
+    }
+    .sec03 .list .swiper .swiper-slide.swiper-slide-active a .photo {
+        height: 480px;
+    }
+    .sec03 .list .swiper .swiper-slide a .txt_wrap {
         left: 20px;
         bottom: 20px;
+    }
+    .sec03 .list .swiper .swiper-slide a .txt_wrap h3 {
         font-size: 24px;
     }
-}
-@media screen and (max-width:768px) {
-    .sec03 {
-        margin: 50px 0 70px 0px;
-    }
-    .sec03 .tit {
-        margin-bottom: 20px;
-    }
-    .sec03 .list .swiper-slide a .photo {
-        height: 300px;
-    }
-    .sec03 .list .swiper-slide a h3 {
-        font-size: 22px;
+    .sec03 .list .swiper .swiper-slide a .txt_wrap p {
+        font-size: 16px;
     }
 }
 @media screen and (max-width:480px) {
@@ -426,6 +440,28 @@
         left: 15px;
         bottom: 15px;
         font-size: 18px;
+    }
+    .sec03 .list .swiper .swiper-slide {
+        width: 240px;
+    }
+    .sec03 .list .swiper .swiper-slide.swiper-slide-active {
+        width: 320px;
+    }
+    .sec03 .list .swiper .swiper-slide a .photo {
+        height: 400px;
+    }
+    .sec03 .list .swiper .swiper-slide.swiper-slide-active a .photo {
+        height: 480px;
+    }
+    .sec03 .list .swiper .swiper-slide a .txt_wrap {
+        left: 20px;
+        bottom: 20px;
+    }
+    .sec03 .list .swiper .swiper-slide a .txt_wrap h3 {
+        font-size: 24px;
+    }
+    .sec03 .list .swiper .swiper-slide a .txt_wrap p {
+        font-size: 16px;
     }
 }
 
