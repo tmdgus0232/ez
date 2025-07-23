@@ -91,18 +91,9 @@
     background-color: #fff;
     border-radius: 20px;
 } */
- .sec02 .wrapper {
-    display: flex;
-    align-items: center;
+.sec02 {
+    background: black;
 }
- .sec02 h2 {
-    /* position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%) rotate(270deg); */
-    rotate: 270deg;
-    font-size: 200px;
-    font-weight: var(--bold-weight);
-    line-height: var(--tit-line-height);
-    color: var(--main-color);
- }
+.sec03 {
+    background: blue;
+}
