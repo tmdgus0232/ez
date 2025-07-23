@@ -1,0 +1,63 @@
+/* 모든페이지에 공통으로 들어가는 기본 스타일 */
+html, body {
+    font-family: "Title", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5; /* 배수 */
+    color: #555;
+    word-break: keep-all; /* 스페이스기준 단어별로 줄바꿈 */
+    word-wrap: break-word;
+    /* 단어가 너무 긴경우 강제로 줄바꿈을 주는 방법  */
+    background-color: #E1E7E6;
+}
+.wrapper {
+    width: 1520px;
+    margin: 0 auto; /* 가운데 */
+}
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 가로스크롤 삭제 */
+    width: 100%;
+}
+
+
+/* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000; /* 맨위 */
+    width: 100%;
+}
+.skip_nav a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #F56765;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: -1000px;
+    width: 100%;
+}
+.skip_nav a:focus {
+    top: 0;
+}
+
+/* css  변수 */
+:root {
+    --base-color: #555;
+    --main-color: #3D613B;
+    --point-color: #9B5E37;
+    --bold-weight: 700;
+    --tit-line-height: 1.2;
+}
