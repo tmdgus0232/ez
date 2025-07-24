@@ -15,16 +15,16 @@
 	url(../font/Pretendard-Bold.woff) format('woff');
 }
 @font-face {
-	font-family: 'Title';
+	font-family: 'GyeonggiBatang';
 	font-weight: 400;
 	font-display: swap;
-	src: local('Title Medium'), 
-	url(../font/Title_Medium.woff) format('woff'), 
+	src: local('GyeonggiBatang Regular'), 
+	url(../font/Batang_Regular.woff) format('woff'), 
 }
 @font-face {
-	font-family: 'Title';
+	font-family: 'GyeonggiBatang';
 	font-weight: 700;
 	font-display: swap;
-	src: local('Title Bold'), 
-	url(../font/Title_Bold.woff) format('woff'), 
+	src: local('GyeonggiBatang Bold'), 
+	url(../font/Batang_Bold.woff) format('woff'), 
 }
