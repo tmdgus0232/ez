@@ -1,0 +1,25 @@
+@import url(common.css);
+@import url(default.css);
+@import url(font.css);
+@import url(layout.css);
+
+.sec01 {
+    background-color: blue;
+    height: 1000px;
+}
+.sec02 {
+    background-color: pink;
+    height: 1000px;
+}
+.sec03 {
+    background-color: green;
+    height: 1000px;
+}
+.sec04 {
+    background-color: gray;
+    height: 1000px;
+}
+.sec05 {
+    background-color: black;
+    height: 1000px;
+}
